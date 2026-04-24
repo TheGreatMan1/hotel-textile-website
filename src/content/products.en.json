@@ -1,0 +1,80 @@
+{
+  "isVisible": true,
+  "eyebrow": "Product Collection",
+  "title": "Textiles Designed for Daily Hotel Use",
+  "description": "A practical showroom of core hospitality textile categories. Every entry can be edited, hidden, reordered, or replaced from Decap CMS.",
+  "items": [
+    {
+      "slug": "bed-sheets",
+      "title": "Bed Sheets",
+      "category": "Bed Linen",
+      "shortDescription": "High-quality bed sheets designed for comfort, durability, and professional hotel use.",
+      "image": "/placeholders/bed-sheets.svg",
+      "imageAlt": "Stack of white hotel bed sheets",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 1
+    },
+    {
+      "slug": "towels",
+      "title": "Towels",
+      "category": "Bath Textiles",
+      "shortDescription": "Soft, absorbent, and long-lasting towels suitable for daily hospitality operations.",
+      "image": "/placeholders/towels.svg",
+      "imageAlt": "Folded hotel towels",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 2
+    },
+    {
+      "slug": "cushion-covers",
+      "title": "Cushion Covers",
+      "category": "Interior Textiles",
+      "shortDescription": "Elegant cushion covers that add comfort and style to hotel interiors.",
+      "image": "/placeholders/cushions.svg",
+      "imageAlt": "Decorative cushion covers on hotel seating",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 3
+    },
+    {
+      "slug": "pillow-covers",
+      "title": "Pillow Covers",
+      "category": "Bed Linen",
+      "shortDescription": "Clean, durable pillow covers available for different hospitality needs.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "Crisp white hotel pillow covers",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 4
+    },
+    {
+      "slug": "duvet-covers",
+      "title": "Duvet Covers",
+      "category": "Bed Linen",
+      "shortDescription": "Premium duvet covers designed for guest comfort and easy maintenance.",
+      "image": "/placeholders/duvet-covers.svg",
+      "imageAlt": "Soft duvet cover on a premium hotel bed",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 5
+    },
+    {
+      "slug": "hotel-textile-sets",
+      "title": "Hotel Textile Sets",
+      "category": "Complete Sets",
+      "shortDescription": "Complete textile solutions for rooms, suites, and hospitality projects.",
+      "image": "/placeholders/textile-sets.svg",
+      "imageAlt": "Coordinated hotel textile set with linens and towels",
+      "buttonText": "Contact Us",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 6
+    }
+  ]
+}

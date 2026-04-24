@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Duvet covers placeholder">
+  <rect width="1000" height="750" fill="#fbf8f1"/>
+  <rect x="125" y="190" width="750" height="360" rx="50" fill="#fff"/>
+  <path d="M125 355c175-70 300-55 470 0 130 42 210 30 280-25v220H125z" fill="#eee4d2"/>
+  <path d="M210 250h580M190 470h620" stroke="#d7bd7f" stroke-width="12" stroke-linecap="round" opacity=".5"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Duvet Covers</text>
+</svg>

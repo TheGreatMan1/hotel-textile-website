@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Hotel room textile styling placeholder">
+  <rect width="900" height="1100" fill="#1c1a17"/>
+  <rect x="70" y="80" width="760" height="620" rx="40" fill="#eee4d2"/>
+  <rect x="140" y="280" width="620" height="350" rx="38" fill="#ffffff"/>
+  <rect x="190" y="330" width="210" height="90" rx="24" fill="#fbf8f1"/>
+  <rect x="500" y="330" width="210" height="90" rx="24" fill="#fbf8f1"/>
+  <rect x="120" y="740" width="660" height="28" rx="14" fill="#d7bd7f"/>
+  <text x="450" y="920" text-anchor="middle" fill="#f7f0e4" font-family="Georgia, serif" font-size="48">Room Styling</text>
+</svg>

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fbf8f1;
+  color: #1c1a17;
+}
+
+.dark body {
+  background: #11100f;
+  color: #f7f0e4;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #d7bd7f;
+  color: #11100f;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-brass dark:text-champagne;
+  }
+
+  .section-title {
+    @apply mt-3 font-serif text-4xl leading-tight text-charcoal dark:text-ivory sm:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 max-w-3xl text-base leading-8 text-stone-700 dark:text-stone-300 sm:text-lg;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-charcoal px-6 text-sm font-semibold text-ivory shadow-soft transition hover:-translate-y-0.5 hover:bg-ink focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:bg-champagne dark:text-ink dark:hover:bg-linen dark:focus:ring-champagne dark:focus:ring-offset-ink;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-stone-300 px-5 text-sm font-semibold text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+  }
+
+  .icon-button {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/75 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+  }
+}

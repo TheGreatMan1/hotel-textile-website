@@ -1,0 +1,20 @@
+{
+  "isVisible": true,
+  "title": {
+    "en": "Download the Textile Catalog",
+    "ge": "ჩამოტვირთეთ ტექსტილის კატალოგი"
+  },
+  "description": {
+    "en": "Share product ranges, specifications, and project options with your hotel purchasing team.",
+    "ge": "გაუზიარეთ პროდუქციის კატეგორიები, სპეციფიკაციები და პროექტის ვარიანტები თქვენს შესყიდვების გუნდს."
+  },
+  "buttonText": {
+    "en": "Download Catalog",
+    "ge": "კატალოგის ჩამოტვირთვა"
+  },
+  "noFileText": {
+    "en": "Catalog PDF will be available soon.",
+    "ge": "კატალოგის PDF მალე იქნება ხელმისაწვდომი."
+  },
+  "pdfFile": "/uploads/catalog/catalog-placeholder.pdf"
+}

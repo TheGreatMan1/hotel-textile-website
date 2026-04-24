@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Bed sheets placeholder">
+  <rect width="1000" height="750" fill="#fbf8f1"/>
+  <path d="M130 260c190-58 300-48 470-4 120 32 200 24 270-22v310H130z" fill="#ffffff"/>
+  <path d="M130 410c190-46 305-38 475 8 114 31 200 22 265-25v151H130z" fill="#eee4d2"/>
+  <rect x="180" y="180" width="640" height="90" rx="28" fill="#fff"/>
+  <rect x="210" y="206" width="580" height="16" rx="8" fill="#d7bd7f" opacity=".55"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Bed Sheets</text>
+</svg>

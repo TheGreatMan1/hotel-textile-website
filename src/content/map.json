@@ -1,0 +1,17 @@
+{
+  "isVisible": true,
+  "title": {
+    "en": "Visit or Contact Our Showroom",
+    "ge": "ეწვიეთ ან დაუკავშირდით ჩვენს შოურუმს"
+  },
+  "address": {
+    "en": "Tbilisi, Georgia - showroom address placeholder",
+    "ge": "თბილისი, საქართველო - შოურუმის მისამართის მაგალითი"
+  },
+  "embedUrl": "https://www.google.com/maps?q=Tbilisi%2C%20Georgia&output=embed",
+  "buttonText": {
+    "en": "Open in Google Maps",
+    "ge": "Google Maps-ში გახსნა"
+  },
+  "externalLink": "https://www.google.com/maps/search/?api=1&query=Tbilisi%2C%20Georgia"
+}

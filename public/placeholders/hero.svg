@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" role="img" aria-label="Premium hotel bed textile placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8f1e4"/>
+      <stop offset="1" stop-color="#d7bd7f"/>
+    </linearGradient>
+    <linearGradient id="linen" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e7ded0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bg)"/>
+  <rect x="110" y="160" width="980" height="980" rx="52" fill="#ffffff" opacity=".72"/>
+  <rect x="180" y="250" width="840" height="210" rx="36" fill="#fdfbf6"/>
+  <rect x="230" y="300" width="300" height="110" rx="24" fill="url(#linen)"/>
+  <rect x="570" y="300" width="300" height="110" rx="24" fill="url(#linen)"/>
+  <path d="M170 520c180-52 320-52 490 0s250 50 370 0v470H170z" fill="#fffaf2"/>
+  <path d="M170 730c210-68 340-38 505 10 145 42 236 38 355-12v262H170z" fill="#efe3cf"/>
+  <rect x="310" y="1040" width="580" height="26" rx="13" fill="#a47f36" opacity=".55"/>
+  <text x="600" y="1245" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="54">Hotel Bed Linen</text>
+</svg>

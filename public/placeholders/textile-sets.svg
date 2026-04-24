@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Hotel textile sets placeholder">
+  <rect width="1000" height="750" fill="#f5f0e7"/>
+  <rect x="145" y="210" width="315" height="210" rx="36" fill="#ffffff"/>
+  <rect x="520" y="210" width="335" height="150" rx="34" fill="#eee4d2"/>
+  <rect x="520" y="392" width="335" height="92" rx="40" fill="#d7bd7f"/>
+  <rect x="205" y="455" width="250" height="70" rx="35" fill="#fffaf2"/>
+  <path d="M190 275h225M570 270h235" stroke="#a47f36" stroke-width="10" stroke-linecap="round" opacity=".5"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Textile Sets</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Pillow covers placeholder">
+  <rect width="1000" height="750" fill="#f5f0e7"/>
+  <rect x="140" y="235" width="720" height="260" rx="72" fill="#ffffff"/>
+  <rect x="205" y="285" width="590" height="160" rx="46" fill="#fbf8f1"/>
+  <path d="M250 365h500" stroke="#d7bd7f" stroke-width="12" stroke-linecap="round" opacity=".65"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Pillow Covers</text>
+</svg>

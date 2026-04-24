@@ -1,0 +1,63 @@
+{
+  "isVisible": true,
+  "title": {
+    "en": "Let's Work Together",
+    "ge": "ვითანამშრომლოთ"
+  },
+  "description": {
+    "en": "Contact us to learn more about our hotel textile products and custom supply options.",
+    "ge": "დაგვიკავშირდით სასტუმროს ტექსტილის პროდუქტებისა და ინდივიდუალური მიწოდების პირობების შესახებ."
+  },
+  "methods": [
+    {
+      "key": "phone",
+      "isVisible": true,
+      "label": {
+        "en": "Phone",
+        "ge": "ტელეფონი"
+      },
+      "value": "+995 555 12 34 56",
+      "url": "tel:+995555123456"
+    },
+    {
+      "key": "whatsapp",
+      "isVisible": true,
+      "label": {
+        "en": "WhatsApp",
+        "ge": "WhatsApp"
+      },
+      "value": "+995 555 12 34 56",
+      "url": "https://wa.me/995555123456"
+    },
+    {
+      "key": "email",
+      "isVisible": true,
+      "label": {
+        "en": "Email",
+        "ge": "ელფოსტა"
+      },
+      "value": "hello@luxetex.example",
+      "url": "mailto:hello@luxetex.example"
+    },
+    {
+      "key": "instagram",
+      "isVisible": true,
+      "label": {
+        "en": "Instagram",
+        "ge": "Instagram"
+      },
+      "value": "@luxetexhotel",
+      "url": "https://www.instagram.com/"
+    },
+    {
+      "key": "facebook",
+      "isVisible": true,
+      "label": {
+        "en": "Facebook",
+        "ge": "Facebook"
+      },
+      "value": "LuxeTex Hotel Textiles",
+      "url": "https://www.facebook.com/"
+    }
+  ]
+}

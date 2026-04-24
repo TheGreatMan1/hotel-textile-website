@@ -1,0 +1,80 @@
+{
+  "isVisible": true,
+  "eyebrow": "პროდუქციის კოლექცია",
+  "title": "ტექსტილი ყოველდღიური სასტუმროს გამოყენებისთვის",
+  "description": "ძირითადი ჰოსპიტალიტის ტექსტილის კატეგორიები. თითოეული პროდუქტის რედაქტირება, დამალვა, გადალაგება ან შეცვლა შესაძლებელია Decap CMS-დან.",
+  "items": [
+    {
+      "slug": "bed-sheets",
+      "title": "საწოლის თეთრეული",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "მაღალი ხარისხის საწოლის თეთრეული კომფორტისთვის, გამძლეობისთვის და პროფესიონალური სასტუმრო გამოყენებისთვის.",
+      "image": "/placeholders/bed-sheets.svg",
+      "imageAlt": "თეთრი სასტუმროს საწოლის თეთრეულის დასტა",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 1
+    },
+    {
+      "slug": "towels",
+      "title": "პირსახოცები",
+      "category": "აბაზანის ტექსტილი",
+      "shortDescription": "რბილი, კარგად შემწოვი და გამძლე პირსახოცები ყოველდღიური სასტუმრო ოპერაციებისთვის.",
+      "image": "/placeholders/towels.svg",
+      "imageAlt": "დაკეცილი სასტუმროს პირსახოცები",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 2
+    },
+    {
+      "slug": "cushion-covers",
+      "title": "დეკორატიული ბალიშის გადასაკრავები",
+      "category": "ინტერიერის ტექსტილი",
+      "shortDescription": "ელეგანტური გადასაკრავები, რომლებიც სასტუმროს ინტერიერს სტილსა და კომფორტს მატებს.",
+      "image": "/placeholders/cushions.svg",
+      "imageAlt": "დეკორატიული ბალიშის გადასაკრავები სასტუმროს სავარძელზე",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 3
+    },
+    {
+      "slug": "pillow-covers",
+      "title": "ბალიშის პირები",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "სუფთა და გამძლე ბალიშის პირები სხვადასხვა სასტუმრო საჭიროებისთვის.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "თეთრი სასტუმროს ბალიშის პირები",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 4
+    },
+    {
+      "slug": "duvet-covers",
+      "title": "საბნის გადასაკრავები",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "პრემიუმ საბნის გადასაკრავები სტუმრის კომფორტისა და მარტივი მოვლისთვის.",
+      "image": "/placeholders/duvet-covers.svg",
+      "imageAlt": "რბილი საბნის გადასაკრავი პრემიუმ სასტუმროს საწოლზე",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 5
+    },
+    {
+      "slug": "hotel-textile-sets",
+      "title": "სასტუმროს ტექსტილის ნაკრები",
+      "category": "სრული ნაკრები",
+      "shortDescription": "სრული ტექსტილის გადაწყვეტები ნომრებისთვის, ლუქსებისთვის და ჰოსპიტალიტის პროექტებისთვის.",
+      "image": "/placeholders/textile-sets.svg",
+      "imageAlt": "კოორდინირებული სასტუმროს ტექსტილის ნაკრები",
+      "buttonText": "დაგვიკავშირდით",
+      "buttonLink": "#contact",
+      "isVisible": true,
+      "sortOrder": 6
+    }
+  ]
+}

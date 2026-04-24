@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Fabric texture gallery placeholder">
+  <rect width="900" height="1100" fill="#eee4d2"/>
+  <path d="M0 230c140-80 260-80 420 0s270 80 480 0v250c-180 78-320 80-480 0S140 400 0 480z" fill="#fffaf2"/>
+  <path d="M0 560c140-80 260-80 420 0s270 80 480 0v250c-180 78-320 80-480 0S140 730 0 810z" fill="#d7bd7f" opacity=".65"/>
+  <path d="M120 140v820M270 80v920M430 120v840M600 90v930M760 135v830" stroke="#a47f36" stroke-width="7" opacity=".28"/>
+  <text x="450" y="955" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="48">Fabric Details</text>
+</svg>

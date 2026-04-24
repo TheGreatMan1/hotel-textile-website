@@ -1,0 +1,50 @@
+{
+  "brandName": "LuxeTex Hotel Textiles",
+  "tagline": "Premium hospitality textile supplier",
+  "navLinks": [
+    { "label": "About", "href": "#about" },
+    { "label": "Products", "href": "#products" },
+    { "label": "Gallery", "href": "#gallery" },
+    { "label": "Catalog", "href": "#catalog" },
+    { "label": "Location", "href": "#location" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "isVisible": true,
+    "eyebrow": "Hotel Textile Supplier",
+    "headline": "Premium Textile Solutions for Hotels",
+    "subtitle": "We supply high-quality bed linen, towels, cushion covers, and hospitality textile products designed for comfort, durability, and timeless elegance.",
+    "ctaText": "View Products",
+    "ctaLink": "#products",
+    "secondaryCtaText": "Contact Us",
+    "secondaryCtaLink": "#contact",
+    "image": "/placeholders/hero.svg",
+    "imageAlt": "Premium hotel bed prepared with crisp white textile layers"
+  },
+  "about": {
+    "isVisible": true,
+    "eyebrow": "About LuxeTex",
+    "title": "Crafted for Comfort. Built for Hospitality.",
+    "description": "LuxeTex Hotel Textiles provides premium textile products for hotels, guesthouses, and hospitality businesses. Our collections are designed to combine comfort, durability, and refined presentation.",
+    "image": "/placeholders/towels.svg",
+    "imageAlt": "Folded hotel towels with soft beige textile details",
+    "features": [
+      {
+        "title": "Premium Quality",
+        "description": "Selected fabrics and refined finishes for rooms that feel calm, clean, and welcoming."
+      },
+      {
+        "title": "Tailored Hotel Solutions",
+        "description": "Practical textile options for guest rooms, suites, spas, and hospitality projects."
+      },
+      {
+        "title": "Reliable Supply Partner",
+        "description": "A professional B2B supplier focused on consistency, clarity, and long-term service."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Elegant textile products for hotels, guesthouses, and hospitality interiors.",
+    "copyright": "All rights reserved."
+  }
+}

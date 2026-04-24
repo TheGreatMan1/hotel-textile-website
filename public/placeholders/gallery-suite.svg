@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Hotel suite textile set placeholder">
+  <rect width="900" height="1100" fill="#11100f"/>
+  <rect x="95" y="130" width="710" height="540" rx="44" fill="#fbf8f1"/>
+  <rect x="150" y="360" width="600" height="230" rx="32" fill="#ffffff"/>
+  <rect x="190" y="285" width="170" height="135" rx="28" fill="#d7bd7f"/>
+  <rect x="380" y="285" width="170" height="135" rx="28" fill="#eee4d2"/>
+  <rect x="570" y="285" width="170" height="135" rx="28" fill="#d7bd7f"/>
+  <text x="450" y="890" text-anchor="middle" fill="#f7f0e4" font-family="Georgia, serif" font-size="48">Suite Sets</text>
+</svg>

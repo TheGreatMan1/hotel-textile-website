@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Hotel towel gallery placeholder">
+  <rect width="900" height="1100" fill="#fbf8f1"/>
+  <rect x="130" y="590" width="640" height="90" rx="45" fill="#d7bd7f"/>
+  <rect x="170" y="480" width="560" height="120" rx="48" fill="#fff"/>
+  <rect x="210" y="355" width="480" height="140" rx="54" fill="#eee4d2"/>
+  <rect x="250" y="215" width="400" height="150" rx="58" fill="#fff"/>
+  <text x="450" y="880" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="48">Towel Collection</text>
+</svg>

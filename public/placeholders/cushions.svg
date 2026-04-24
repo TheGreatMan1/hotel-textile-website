@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Cushion covers placeholder">
+  <rect width="1000" height="750" fill="#eee4d2"/>
+  <rect x="135" y="250" width="300" height="260" rx="42" fill="#fffaf2"/>
+  <rect x="350" y="210" width="300" height="300" rx="48" fill="#d7bd7f"/>
+  <rect x="565" y="250" width="300" height="260" rx="42" fill="#f8f1e4"/>
+  <path d="M395 250h210M175 290h220M605 292h220" stroke="#a47f36" stroke-width="10" stroke-linecap="round" opacity=".45"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Cushion Covers</text>
+</svg>
