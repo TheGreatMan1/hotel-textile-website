@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Microfiber textile material placeholder">
+  <rect width="800" height="520" fill="#eee4d2"/>
+  <path d="M120 120h560v260H120z" fill="#fffaf2"/>
+  <path d="M160 155h480M160 205h480M160 255h480M160 305h480M210 120v260M300 120v260M390 120v260M480 120v260M570 120v260" stroke="#a47f36" stroke-width="7" opacity=".33"/>
+  <text x="400" y="430" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Microfiber</text>
+</svg>

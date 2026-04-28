@@ -1,12 +1,16 @@
 {
   "isVisible": true,
+  "eyebrow": {
+    "en": "Contact",
+    "ge": "კონტაქტი"
+  },
   "title": {
-    "en": "Let's Work Together",
-    "ge": "ვითანამშრომლოთ"
+    "en": "Let's Prepare Your Hotel Textile Offer",
+    "ge": "მოვამზადოთ თქვენი სასტუმროს ტექსტილის შეთავაზება"
   },
   "description": {
-    "en": "Contact us to learn more about our hotel textile products and custom supply options.",
-    "ge": "დაგვიკავშირდით სასტუმროს ტექსტილის პროდუქტებისა და ინდივიდუალური მიწოდების პირობების შესახებ."
+    "en": "Contact us to learn more about hotel textile products, custom sizes, material options, and supply conditions.",
+    "ge": "დაგვიკავშირდით სასტუმროს ტექსტილის, ინდივიდუალური ზომების, მასალებისა და მიწოდების პირობების შესახებ."
   },
   "methods": [
     {

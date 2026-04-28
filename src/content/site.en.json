@@ -2,24 +2,126 @@
   "brandName": "LuxeTex Hotel Textiles",
   "tagline": "Premium hospitality textile supplier",
   "navLinks": [
-    { "label": "About", "href": "#about" },
-    { "label": "Products", "href": "#products" },
-    { "label": "Gallery", "href": "#gallery" },
-    { "label": "Catalog", "href": "#catalog" },
-    { "label": "Location", "href": "#location" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Explorer",
+      "href": "#interactive-bed",
+      "sectionKey": "interactiveBed"
+    },
+    {
+      "label": "Products",
+      "href": "#products",
+      "sectionKey": "products"
+    },
+    {
+      "label": "Why Us",
+      "href": "#why-us",
+      "sectionKey": "whyChooseUs"
+    },
+    {
+      "label": "About",
+      "href": "#about",
+      "sectionKey": "about"
+    },
+    {
+      "label": "Gallery",
+      "href": "#gallery",
+      "sectionKey": "gallery"
+    },
+    {
+      "label": "Process",
+      "href": "#process",
+      "sectionKey": "process"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "sectionKey": "contact"
+    }
   ],
   "hero": {
     "isVisible": true,
     "eyebrow": "Hotel Textile Supplier",
-    "headline": "Premium Textile Solutions for Hotels",
+    "title": "Premium Textile Solutions for Hotels",
     "subtitle": "We supply high-quality bed linen, towels, cushion covers, and hospitality textile products designed for comfort, durability, and timeless elegance.",
-    "ctaText": "View Products",
-    "ctaLink": "#products",
-    "secondaryCtaText": "Contact Us",
-    "secondaryCtaLink": "#contact",
+    "primaryButtonText": "Explore Products",
+    "primaryButtonLink": "#products",
+    "secondaryButtonText": "Explore the Bed",
+    "secondaryButtonLink": "#interactive-bed",
     "image": "/placeholders/hero.svg",
-    "imageAlt": "Premium hotel bed prepared with crisp white textile layers"
+    "imageAlt": "Premium hotel bed prepared with crisp white textile layers",
+    "stats": [
+      {
+        "title": "Hotel-ready",
+        "description": "Durable textile ranges",
+        "icon": "Sparkles",
+        "isVisible": true,
+        "sortOrder": 1
+      },
+      {
+        "title": "Custom sizes",
+        "description": "Room and suite solutions",
+        "icon": "Ruler",
+        "isVisible": true,
+        "sortOrder": 2
+      },
+      {
+        "title": "Reliable supply",
+        "description": "B2B hospitality focus",
+        "icon": "Truck",
+        "isVisible": true,
+        "sortOrder": 3
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "isVisible": true,
+    "eyebrow": "Why Hotels Choose Us",
+    "title": "Textiles That Work Beautifully Every Day",
+    "subtitle": "Every product is selected for a balance of guest comfort, operational durability, and refined presentation.",
+    "features": [
+      {
+        "title": "Premium quality",
+        "description": "Soft-touch fabrics and polished finishes for a refined guest-room impression.",
+        "icon": "Gem",
+        "isVisible": true,
+        "sortOrder": 1
+      },
+      {
+        "title": "Built for daily hotel use",
+        "description": "Practical products designed for repeated washing and high occupancy operations.",
+        "icon": "RefreshCw",
+        "isVisible": true,
+        "sortOrder": 2
+      },
+      {
+        "title": "Comfortable guest experience",
+        "description": "Textiles chosen to support restful sleep, fresh presentation, and quiet luxury.",
+        "icon": "Moon",
+        "isVisible": true,
+        "sortOrder": 3
+      },
+      {
+        "title": "Custom sizes available",
+        "description": "Options for standard rooms, suites, spas, and special hospitality projects.",
+        "icon": "Ruler",
+        "isVisible": true,
+        "sortOrder": 4
+      },
+      {
+        "title": "Reliable supply",
+        "description": "A B2B partner focused on clear communication and consistent product availability.",
+        "icon": "Truck",
+        "isVisible": true,
+        "sortOrder": 5
+      },
+      {
+        "title": "Elegant presentation",
+        "description": "Coordinated bed, bath, and decorative textile collections for cohesive interiors.",
+        "icon": "BadgeCheck",
+        "isVisible": true,
+        "sortOrder": 6
+      }
+    ]
   },
   "about": {
     "isVisible": true,
@@ -30,21 +132,26 @@
     "imageAlt": "Folded hotel towels with soft beige textile details",
     "features": [
       {
-        "title": "Premium Quality",
-        "description": "Selected fabrics and refined finishes for rooms that feel calm, clean, and welcoming."
+        "title": "Curated textile ranges",
+        "description": "Bedding, bath, and decorative textiles in one clean catalog.",
+        "icon": "Layers",
+        "isVisible": true,
+        "sortOrder": 1
       },
       {
-        "title": "Tailored Hotel Solutions",
-        "description": "Practical textile options for guest rooms, suites, spas, and hospitality projects."
+        "title": "Hospitality-focused advice",
+        "description": "Product recommendations shaped around hotel operations.",
+        "icon": "ConciergeBell",
+        "isVisible": true,
+        "sortOrder": 2
       },
       {
-        "title": "Reliable Supply Partner",
-        "description": "A professional B2B supplier focused on consistency, clarity, and long-term service."
+        "title": "Simple B2B communication",
+        "description": "A showroom-style process without ecommerce complexity.",
+        "icon": "MessagesSquare",
+        "isVisible": true,
+        "sortOrder": 3
       }
     ]
-  },
-  "footer": {
-    "tagline": "Elegant textile products for hotels, guesthouses, and hospitality interiors.",
-    "copyright": "All rights reserved."
   }
 }

@@ -1,6 +1,7 @@
 import { localized } from "@/lib/content";
 import type { Language, MapContent } from "@/lib/types";
 import { MapPin } from "lucide-react";
+import SectionWrapper from "./SectionWrapper";
 
 type MapSectionProps = {
   map: MapContent;
@@ -14,13 +15,16 @@ export default function MapSection({ map, language }: MapSectionProps) {
   const hasExternalLink = Boolean(map.externalLink?.trim());
 
   return (
-    <section id="location" className="section-padding bg-smoke dark:bg-ink">
+    <SectionWrapper id="location" className="bg-smoke dark:bg-ink">
       <div className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
-          <p className="eyebrow">{language === "en" ? "Location" : "მისამართი"}</p>
+          <p className="eyebrow">{localized(map.eyebrow, language)}</p>
           <h2 className="section-title">{localized(map.title, language)}</h2>
           <p className="mt-5 flex gap-3 text-lg leading-8 text-stone-700 dark:text-stone-300">
-            <MapPin aria-hidden className="mt-1 shrink-0 text-brass dark:text-champagne" />
+            <MapPin
+              aria-hidden
+              className="mt-1 shrink-0 text-brass dark:text-champagne"
+            />
             <span>{localized(map.address, language)}</span>
           </p>
           {hasExternalLink ? (
@@ -47,6 +51,6 @@ export default function MapSection({ map, language }: MapSectionProps) {
           </div>
         ) : null}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,0 +1,43 @@
+{
+  "isVisible": true,
+  "eyebrow": "How to Order",
+  "title": "A Clear B2B Supply Process",
+  "description": "A simple showroom-led workflow for hotels, purchasing teams, designers, and hospitality operators.",
+  "steps": [
+    {
+      "title": "Choose textile products",
+      "description": "Review the bed, bath, and decorative textile ranges that suit your rooms.",
+      "icon": "MousePointerClick",
+      "isVisible": true,
+      "sortOrder": 1
+    },
+    {
+      "title": "Contact us",
+      "description": "Send your preferred products, quantities, sizes, and project notes.",
+      "icon": "MessagesSquare",
+      "isVisible": true,
+      "sortOrder": 2
+    },
+    {
+      "title": "Receive an offer",
+      "description": "We prepare a clear proposal with product options and supply details.",
+      "icon": "FileText",
+      "isVisible": true,
+      "sortOrder": 3
+    },
+    {
+      "title": "Confirm order details",
+      "description": "Finalize quantities, materials, colors, sizing, and delivery expectations.",
+      "icon": "BadgeCheck",
+      "isVisible": true,
+      "sortOrder": 4
+    },
+    {
+      "title": "Delivery arrangement",
+      "description": "Coordinate supply timing for hotel rooms, suites, spa areas, or project phases.",
+      "icon": "Truck",
+      "isVisible": true,
+      "sortOrder": 5
+    }
+  ]
+}

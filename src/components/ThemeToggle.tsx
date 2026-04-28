@@ -21,23 +21,17 @@ function getPreferredTheme(): Theme {
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
   const [isReady, setIsReady] = useState(false);
+  const isDark = theme === "dark";
 
   useEffect(() => {
-    const preferredTheme = getPreferredTheme();
-    setTheme(preferredTheme);
+    setTheme(getPreferredTheme());
     setIsReady(true);
   }, []);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-
-    if (isReady) {
-      window.localStorage.setItem("theme", theme);
-    }
-  }, [theme, isReady]);
-
-  const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    if (isReady) window.localStorage.setItem("theme", theme);
+  }, [isDark, isReady, theme]);
 
   return (
     <button

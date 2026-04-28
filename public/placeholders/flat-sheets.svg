@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Flat sheets placeholder">
+  <rect width="1000" height="750" fill="#fbf8f1"/>
+  <path d="M120 280c170-58 310-54 500-4 120 32 190 24 260-20v330H120z" fill="#fff"/>
+  <path d="M120 440c190-46 320-34 500 12 112 29 190 24 260-18v152H120z" fill="#eee4d2"/>
+  <path d="M170 365h650" stroke="#d7bd7f" stroke-width="14" stroke-linecap="round" opacity=".55"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Flat Sheets</text>
+</svg>

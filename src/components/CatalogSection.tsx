@@ -18,9 +18,9 @@ export default function CatalogSection({
   return (
     <section id="catalog" className="bg-charcoal py-16 text-ivory dark:bg-black sm:py-20">
       <div className="container-shell">
-        <div className="grid gap-8 rounded-2xl border border-champagne/25 bg-white/5 p-8 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-8 rounded-2xl border border-champagne/25 bg-white/5 p-8 shadow-glow sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="eyebrow">{language === "en" ? "Catalog" : "კატალოგი"}</p>
+            <p className="eyebrow">{localized(catalog.eyebrow, language)}</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
               {localized(catalog.title, language)}
             </h2>

@@ -1,8 +1,9 @@
+# Decap CMS uses the GitHub backend for this project.
+# Replace repo below if you fork or move the repository.
 backend:
-  name: git-gateway
+  name: github
+  repo: TheGreatMan1/hotel-textile-website
   branch: main
-
-local_backend: true
 
 media_folder: "public/uploads/images"
 public_folder: "/uploads/images"
@@ -11,17 +12,14 @@ collections:
   - name: "site_settings"
     label: "Site Settings"
     files:
-      - name: "global_settings"
-        label: "Global Site Settings"
+      - name: "settings"
+        label: "Global SEO and Settings"
         file: "src/content/settings.json"
         editor:
           preview: false
         fields:
           - { label: "Site Name", name: "siteName", widget: "string" }
-          - label: "Default Language"
-            name: "defaultLanguage"
-            widget: "select"
-            options: ["en", "ge"]
+          - { label: "Default Language", name: "defaultLanguage", widget: "select", options: ["en", "ge"] }
           - { label: "SEO Title", name: "seoTitle", widget: "string" }
           - { label: "SEO Description", name: "seoDescription", widget: "text" }
           - { label: "Admin Note", name: "adminNote", widget: "text", required: false }
@@ -29,12 +27,12 @@ collections:
   - name: "english_page_content"
     label: "English Page Content"
     files:
-      - name: "english_site_content"
-        label: "English Header, Hero, About, Footer"
+      - name: "site_en"
+        label: "English Header, Hero, Why Us, About"
         file: "src/content/site.en.json"
         editor:
           preview: false
-        fields:
+        fields: &site_fields
           - { label: "Brand Name", name: "brandName", widget: "string" }
           - { label: "Header Tagline", name: "tagline", widget: "string" }
           - label: "Navigation Links"
@@ -43,114 +41,91 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "href", widget: "string" }
+              - { label: "Section Key", name: "sectionKey", widget: "select", options: ["hero", "interactiveBed", "products", "whyChooseUs", "about", "gallery", "catalog", "process", "map", "contact"] }
           - label: "Hero Section"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Show Hero Section", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Headline", name: "headline", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
-              - { label: "Primary Button Text", name: "ctaText", widget: "string" }
-              - { label: "Primary Button Link", name: "ctaLink", widget: "string" }
-              - { label: "Secondary Button Text", name: "secondaryCtaText", widget: "string" }
-              - { label: "Secondary Button Link", name: "secondaryCtaLink", widget: "string" }
-              - { label: "Hero Image", name: "image", widget: "image" }
-              - { label: "Hero Image Alt Text", name: "imageAlt", widget: "string" }
-          - label: "About Section"
-            name: "about"
-            widget: "object"
-            fields:
-              - { label: "Show About Section", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Show Hero", name: "isVisible", widget: "boolean", default: true }
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "About Image", name: "image", widget: "image" }
-              - { label: "About Image Alt Text", name: "imageAlt", widget: "string" }
-              - label: "Feature Points"
-                name: "features"
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
+              - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
+              - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
+              - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image" }
+              - { label: "Hero Image Alt Text", name: "imageAlt", widget: "string" }
+              - label: "Hero Stat Cards"
+                name: "stats"
                 widget: "list"
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-          - label: "Footer"
-            name: "footer"
+                  - { label: "Icon", name: "icon", widget: "select", options: ["Sparkles", "Ruler", "Truck", "Gem", "RefreshCw", "Moon", "BadgeCheck", "Layers", "ConciergeBell", "MessagesSquare", "FileText", "MousePointerClick"] }
+                  - { label: "Show", name: "isVisible", widget: "boolean", default: true }
+                  - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
+          - label: "Why Hotels Choose Us"
+            name: "whyChooseUs"
             widget: "object"
             fields:
-              - { label: "Footer Tagline", name: "tagline", widget: "text" }
-              - { label: "Copyright Text", name: "copyright", widget: "string" }
+              - { label: "Show Section", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - label: "Feature Cards"
+                name: "features"
+                widget: "list"
+                fields: &feature_fields
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Icon", name: "icon", widget: "select", options: ["Sparkles", "Ruler", "Truck", "Gem", "RefreshCw", "Moon", "BadgeCheck", "Layers", "ConciergeBell", "MessagesSquare", "FileText", "MousePointerClick"] }
+                  - { label: "Show", name: "isVisible", widget: "boolean", default: true }
+                  - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Show About", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+              - label: "Feature Points"
+                name: "features"
+                widget: "list"
+                fields: *feature_fields
 
   - name: "georgian_page_content"
     label: "Georgian Page Content"
     files:
-      - name: "georgian_site_content"
-        label: "Georgian Header, Hero, About, Footer"
+      - name: "site_ge"
+        label: "Georgian Header, Hero, Why Us, About"
         file: "src/content/site.ge.json"
         editor:
           preview: false
-        fields:
-          - { label: "Brand Name", name: "brandName", widget: "string" }
-          - { label: "Header Tagline", name: "tagline", widget: "string" }
-          - label: "Navigation Links"
-            name: "navLinks"
-            widget: "list"
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Link", name: "href", widget: "string" }
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Show Hero Section", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Headline", name: "headline", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
-              - { label: "Primary Button Text", name: "ctaText", widget: "string" }
-              - { label: "Primary Button Link", name: "ctaLink", widget: "string" }
-              - { label: "Secondary Button Text", name: "secondaryCtaText", widget: "string" }
-              - { label: "Secondary Button Link", name: "secondaryCtaLink", widget: "string" }
-              - { label: "Hero Image", name: "image", widget: "image" }
-              - { label: "Hero Image Alt Text", name: "imageAlt", widget: "string" }
-          - label: "About Section"
-            name: "about"
-            widget: "object"
-            fields:
-              - { label: "Show About Section", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "About Image", name: "image", widget: "image" }
-              - { label: "About Image Alt Text", name: "imageAlt", widget: "string" }
-              - label: "Feature Points"
-                name: "features"
-                widget: "list"
-                fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Footer Tagline", name: "tagline", widget: "text" }
-              - { label: "Copyright Text", name: "copyright", widget: "string" }
+        fields: *site_fields
 
   - name: "english_products"
     label: "English Products"
     files:
       - name: "products_en"
-        label: "English Product List"
+        label: "English Product Collections"
         file: "src/content/products.en.json"
         editor:
           preview: false
-        fields:
-          - { label: "Show Products Section", name: "isVisible", widget: "boolean", default: true }
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Title", name: "title", widget: "string" }
-          - { label: "Section Description", name: "description", widget: "text" }
+        fields: &product_collection_fields
+          - { label: "Show Product Collections", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Material Label", name: "materialLabel", widget: "string" }
+          - { label: "Sizes Label", name: "sizesLabel", widget: "string" }
+          - { label: "Colors Label", name: "colorsLabel", widget: "string" }
           - label: "Products"
             name: "items"
             widget: "list"
-            summary: "{{fields.sortOrder}}. {{fields.title}}"
             fields:
               - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
@@ -160,191 +135,211 @@ collections:
               - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
               - { label: "Button Text", name: "buttonText", widget: "string" }
               - { label: "Button Link", name: "buttonLink", widget: "string", required: false }
+              - { label: "Material", name: "material", widget: "string", required: false }
+              - { label: "Available Sizes", name: "availableSizes", widget: "list", required: false, field: { label: "Size", name: "size", widget: "string" } }
+              - { label: "Color Options", name: "colorOptions", widget: "list", required: false, field: { label: "Color", name: "color", widget: "string" } }
               - { label: "Show Product", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int", min: 1 }
+              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
 
   - name: "georgian_products"
     label: "Georgian Products"
     files:
       - name: "products_ge"
-        label: "Georgian Product List"
+        label: "Georgian Product Collections"
         file: "src/content/products.ge.json"
         editor:
           preview: false
-        fields:
-          - { label: "Show Products Section", name: "isVisible", widget: "boolean", default: true }
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Title", name: "title", widget: "string" }
-          - { label: "Section Description", name: "description", widget: "text" }
-          - label: "Products"
-            name: "items"
+        fields: *product_collection_fields
+
+  - name: "english_interactive_bed"
+    label: "English Interactive Bed"
+    files:
+      - name: "interactive_bed_en"
+        label: "English Interactive Bed Explorer"
+        file: "src/content/interactive-bed.en.json"
+        editor:
+          preview: false
+        fields: &interactive_bed_fields
+          - { label: "Show Interactive Bed", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Bed Image", name: "bedImage", widget: "image" }
+          - { label: "Bed Image Alt Text", name: "bedImageAlt", widget: "string" }
+          - { label: "View Product Button Text", name: "viewProductText", widget: "string" }
+          - { label: "Contact Button Text", name: "contactText", widget: "string" }
+          - { label: "Close Text", name: "closeText", widget: "string" }
+          - { label: "Materials Label", name: "materialsLabel", widget: "string" }
+          - { label: "Sizes Label", name: "sizesLabel", widget: "string" }
+          - { label: "Colors Label", name: "colorsLabel", widget: "string" }
+          - { label: "Mobile List Title", name: "mobileListTitle", widget: "string" }
+          - label: "Hotspots"
+            name: "hotspots"
             widget: "list"
-            summary: "{{fields.sortOrder}}. {{fields.title}}"
             fields:
-              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "ID", name: "id", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Hotspot Label", name: "label", widget: "string" }
               - { label: "Category", name: "category", widget: "string" }
               - { label: "Short Description", name: "shortDescription", widget: "text" }
+              - { label: "Long Description", name: "longDescription", widget: "text" }
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
-              - { label: "Button Text", name: "buttonText", widget: "string" }
-              - { label: "Button Link", name: "buttonLink", widget: "string", required: false }
-              - { label: "Show Product", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int", min: 1 }
+              - { label: "Position X Percent", name: "x", widget: "number", value_type: "float", min: 0, max: 100 }
+              - { label: "Position Y Percent", name: "y", widget: "number", value_type: "float", min: 0, max: 100 }
+              - { label: "Show Hotspot", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Linked Product Slug", name: "linkedProductSlug", widget: "string", required: false }
+              - label: "Material Variants"
+                name: "materialVariants"
+                widget: "list"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Show Variant", name: "isVisible", widget: "boolean", default: true }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+                  - { label: "Sizes", name: "sizes", widget: "list", required: false, field: { label: "Size", name: "size", widget: "string" } }
+                  - { label: "Colors", name: "colors", widget: "list", required: false, field: { label: "Color", name: "color", widget: "string" } }
+
+  - name: "georgian_interactive_bed"
+    label: "Georgian Interactive Bed"
+    files:
+      - name: "interactive_bed_ge"
+        label: "Georgian Interactive Bed Explorer"
+        file: "src/content/interactive-bed.ge.json"
+        editor:
+          preview: false
+        fields: *interactive_bed_fields
 
   - name: "gallery"
     label: "Gallery"
     files:
-      - name: "gallery_settings"
+      - name: "gallery"
         label: "Gallery Images"
         file: "src/content/gallery.json"
         editor:
           preview: false
         fields:
-          - { label: "Show Gallery Section", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Show Gallery", name: "isVisible", widget: "boolean", default: true }
           - label: "Eyebrow"
             name: "eyebrow"
             widget: "object"
-            fields:
+            fields: &localized_text_fields
               - { label: "English", name: "en", widget: "string" }
               - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Title"
-            name: "title"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Description"
-            name: "description"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "text" }
-              - { label: "Georgian", name: "ge", widget: "text" }
+          - { label: "Title", name: "title", widget: "object", fields: *localized_text_fields }
+          - { label: "Description", name: "description", widget: "object", fields: *localized_text_fields }
           - label: "Images"
             name: "images"
             widget: "list"
-            summary: "{{fields.sortOrder}}. {{fields.caption.en}}"
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string" }
-              - label: "Caption"
-                name: "caption"
-                widget: "object"
-                fields:
-                  - { label: "English", name: "en", widget: "string" }
-                  - { label: "Georgian", name: "ge", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "object", fields: *localized_text_fields }
               - { label: "Show Image", name: "isVisible", widget: "boolean", default: true }
-              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int", min: 1 }
-
-  - name: "catalog_settings"
-    label: "Catalog Settings"
-    files:
-      - name: "catalog"
-        label: "Catalog PDF"
-        file: "src/content/catalog.json"
-        editor:
-          preview: false
-        fields:
-          - { label: "Show Catalog Section", name: "isVisible", widget: "boolean", default: true }
-          - label: "Title"
-            name: "title"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Description"
-            name: "description"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "text" }
-              - { label: "Georgian", name: "ge", widget: "text" }
-          - label: "Button Text"
-            name: "buttonText"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "No PDF Text"
-            name: "noFileText"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Catalog PDF File"
-            name: "pdfFile"
-            widget: "file"
-            required: false
-            media_folder: "public/uploads/catalog"
-            public_folder: "/uploads/catalog"
+              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
 
   - name: "contact_settings"
     label: "Contact Settings"
     files:
       - name: "contact"
-        label: "Contact Content and Methods"
+        label: "Contact Section"
         file: "src/content/contact.json"
         editor:
           preview: false
         fields:
-          - { label: "Show Contact Section", name: "isVisible", widget: "boolean", default: true }
-          - label: "Section Title"
-            name: "title"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Section Description"
-            name: "description"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "text" }
-              - { label: "Georgian", name: "ge", widget: "text" }
+          - { label: "Show Contact", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "object", fields: *localized_text_fields }
+          - { label: "Title", name: "title", widget: "object", fields: *localized_text_fields }
+          - { label: "Description", name: "description", widget: "object", fields: *localized_text_fields }
           - label: "Contact Methods"
             name: "methods"
             widget: "list"
-            summary: "{{fields.key}} - {{fields.value}}"
             fields:
-              - label: "Method"
-                name: "key"
-                widget: "select"
-                options: ["phone", "whatsapp", "email", "instagram", "facebook"]
-              - { label: "Show This Method", name: "isVisible", widget: "boolean", default: true }
-              - label: "Label"
-                name: "label"
-                widget: "object"
-                fields:
-                  - { label: "English", name: "en", widget: "string" }
-                  - { label: "Georgian", name: "ge", widget: "string" }
-              - { label: "Displayed Value", name: "value", widget: "string" }
-              - { label: "URL or Link", name: "url", widget: "string", required: false }
+              - { label: "Method Key", name: "key", widget: "select", options: ["phone", "whatsapp", "email", "instagram", "facebook"] }
+              - { label: "Show Method", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Label", name: "label", widget: "object", fields: *localized_text_fields }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "URL", name: "url", widget: "string", required: false }
+
+  - name: "catalog_settings"
+    label: "Catalog Settings"
+    files:
+      - name: "catalog"
+        label: "Catalog PDF Section"
+        file: "src/content/catalog.json"
+        editor:
+          preview: false
+        fields:
+          - { label: "Show Catalog", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "object", fields: *localized_text_fields }
+          - { label: "Title", name: "title", widget: "object", fields: *localized_text_fields }
+          - { label: "Description", name: "description", widget: "object", fields: *localized_text_fields }
+          - { label: "Button Text", name: "buttonText", widget: "object", fields: *localized_text_fields }
+          - { label: "No PDF Text", name: "noFileText", widget: "object", fields: *localized_text_fields }
+          - { label: "PDF File", name: "pdfFile", widget: "file", required: false, media_folder: "public/uploads/catalog", public_folder: "/uploads/catalog" }
 
   - name: "map_settings"
     label: "Map Settings"
     files:
       - name: "map"
-        label: "Location and Google Map"
+        label: "Map and Location"
         file: "src/content/map.json"
         editor:
           preview: false
         fields:
-          - { label: "Show Map Section", name: "isVisible", widget: "boolean", default: true }
-          - label: "Title"
-            name: "title"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
-          - label: "Address"
-            name: "address"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "text" }
-              - { label: "Georgian", name: "ge", widget: "text" }
+          - { label: "Show Map", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "object", fields: *localized_text_fields }
+          - { label: "Title", name: "title", widget: "object", fields: *localized_text_fields }
+          - { label: "Address", name: "address", widget: "object", fields: *localized_text_fields }
           - { label: "Google Maps Embed URL", name: "embedUrl", widget: "string", required: false }
-          - label: "Map Button Text"
-            name: "buttonText"
-            widget: "object"
-            fields:
-              - { label: "English", name: "en", widget: "string" }
-              - { label: "Georgian", name: "ge", widget: "string" }
+          - { label: "Button Text", name: "buttonText", widget: "object", fields: *localized_text_fields }
           - { label: "External Google Maps Link", name: "externalLink", widget: "string", required: false }
+
+  - name: "process_english"
+    label: "Process English"
+    files:
+      - name: "process_en"
+        label: "English Process"
+        file: "src/content/process.en.json"
+        editor:
+          preview: false
+        fields: &process_fields
+          - { label: "Show Process", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "select", options: ["MousePointerClick", "MessagesSquare", "FileText", "BadgeCheck", "Truck", "Sparkles", "Ruler"] }
+              - { label: "Show Step", name: "isVisible", widget: "boolean", default: true }
+              - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
+
+  - name: "process_georgian"
+    label: "Process Georgian"
+    files:
+      - name: "process_ge"
+        label: "Georgian Process"
+        file: "src/content/process.ge.json"
+        editor:
+          preview: false
+        fields: *process_fields
+
+  - name: "footer_settings"
+    label: "Footer Settings"
+    files:
+      - name: "footer"
+        label: "Footer"
+        file: "src/content/footer.json"
+        editor:
+          preview: false
+        fields:
+          - { label: "Show Footer", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Tagline", name: "tagline", widget: "object", fields: *localized_text_fields }
+          - { label: "Copyright", name: "copyright", widget: "object", fields: *localized_text_fields }
+          - { label: "Social Title", name: "socialTitle", widget: "object", fields: *localized_text_fields }

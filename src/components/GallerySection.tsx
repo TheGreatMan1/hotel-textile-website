@@ -1,5 +1,9 @@
+"use client";
+
 import { localized } from "@/lib/content";
 import type { GalleryContent, Language } from "@/lib/types";
+import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper";
 
 type GallerySectionProps = {
   gallery: GalleryContent;
@@ -19,7 +23,7 @@ export default function GallerySection({
   if (images.length === 0) return null;
 
   return (
-    <section id="gallery" className="section-padding bg-white dark:bg-stone-950">
+    <SectionWrapper id="gallery" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
         <div className="max-w-3xl">
           <p className="eyebrow">{localized(gallery.eyebrow, language)}</p>
@@ -30,23 +34,29 @@ export default function GallerySection({
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {images.map((image) => (
-            <figure
+          {images.map((image, index) => (
+            <motion.figure
               key={`${image.image}-${image.sortOrder}`}
-              className="group overflow-hidden rounded-lg bg-ivory dark:bg-ink"
+              className="group overflow-hidden rounded-lg border border-stone-200 bg-ivory shadow-sm dark:border-stone-800 dark:bg-ink"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
             >
-              <img
-                src={image.image}
-                alt={image.alt}
-                className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={image.image || "/placeholders/hero.svg"}
+                  alt={image.alt}
+                  className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
+                />
+              </div>
               <figcaption className="px-4 py-3 text-sm font-semibold text-stone-700 dark:text-stone-300">
                 {localized(image.caption, language)}
               </figcaption>
-            </figure>
+            </motion.figure>
           ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

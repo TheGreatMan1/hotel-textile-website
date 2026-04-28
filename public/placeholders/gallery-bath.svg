@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Bath textiles gallery placeholder">
+  <rect width="900" height="1100" fill="#11100f"/>
+  <rect x="135" y="260" width="630" height="80" rx="40" fill="#d7bd7f"/>
+  <rect x="170" y="350" width="560" height="120" rx="48" fill="#fff"/>
+  <rect x="215" y="480" width="470" height="130" rx="54" fill="#eee4d2"/>
+  <rect x="260" y="620" width="380" height="135" rx="58" fill="#fff"/>
+  <text x="450" y="920" text-anchor="middle" fill="#f7f0e4" font-family="Georgia, serif" font-size="48">Bath Textiles</text>
+</svg>

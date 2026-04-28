@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="Silicon textile material placeholder">
+  <rect width="800" height="520" fill="#fbf8f1"/>
+  <path d="M0 180c140-70 260-70 400 0s260 70 400 0v170c-150 72-260 70-400 0S140 280 0 350z" fill="#fff"/>
+  <path d="M0 265c140-55 260-55 400 0s260 55 400 0" fill="none" stroke="#d7bd7f" stroke-width="18" opacity=".6"/>
+  <text x="400" y="430" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Silicon</text>
+</svg>

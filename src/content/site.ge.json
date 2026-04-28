@@ -2,24 +2,126 @@
   "brandName": "LuxeTex Hotel Textiles",
   "tagline": "პრემიუმ ტექსტილი სასტუმროებისთვის",
   "navLinks": [
-    { "label": "ჩვენ შესახებ", "href": "#about" },
-    { "label": "პროდუქცია", "href": "#products" },
-    { "label": "გალერეა", "href": "#gallery" },
-    { "label": "კატალოგი", "href": "#catalog" },
-    { "label": "მისამართი", "href": "#location" },
-    { "label": "კონტაქტი", "href": "#contact" }
+    {
+      "label": "ექსპლორერი",
+      "href": "#interactive-bed",
+      "sectionKey": "interactiveBed"
+    },
+    {
+      "label": "პროდუქცია",
+      "href": "#products",
+      "sectionKey": "products"
+    },
+    {
+      "label": "რატომ ჩვენ",
+      "href": "#why-us",
+      "sectionKey": "whyChooseUs"
+    },
+    {
+      "label": "ჩვენ შესახებ",
+      "href": "#about",
+      "sectionKey": "about"
+    },
+    {
+      "label": "გალერეა",
+      "href": "#gallery",
+      "sectionKey": "gallery"
+    },
+    {
+      "label": "პროცესი",
+      "href": "#process",
+      "sectionKey": "process"
+    },
+    {
+      "label": "კონტაქტი",
+      "href": "#contact",
+      "sectionKey": "contact"
+    }
   ],
   "hero": {
     "isVisible": true,
     "eyebrow": "სასტუმროს ტექსტილის მომწოდებელი",
-    "headline": "პრემიუმ ტექსტილის გადაწყვეტები სასტუმროებისთვის",
-    "subtitle": "ვაწვდით მაღალი ხარისხის თეთრეულს, პირსახოცებს, ბალიშის პირებს, დეკორატიულ გადასაკრავებს და სხვა ტექსტილს კომფორტის, გამძლეობისა და ელეგანტურობისთვის.",
-    "ctaText": "პროდუქციის ნახვა",
-    "ctaLink": "#products",
-    "secondaryCtaText": "დაგვიკავშირდით",
-    "secondaryCtaLink": "#contact",
+    "title": "პრემიუმ ტექსტილის გადაწყვეტები სასტუმროებისთვის",
+    "subtitle": "ვაწვდით მაღალი ხარისხის თეთრეულს, პირსახოცებს, ბალიშის პირებს, გადასაფარებლებს და სხვა ჰოსპიტალიტის ტექსტილს კომფორტის, გამძლეობისა და ელეგანტურობისთვის.",
+    "primaryButtonText": "პროდუქციის ნახვა",
+    "primaryButtonLink": "#products",
+    "secondaryButtonText": "საწოლის დათვალიერება",
+    "secondaryButtonLink": "#interactive-bed",
     "image": "/placeholders/hero.svg",
-    "imageAlt": "ელეგანტურად გაწყობილი სასტუმროს საწოლი თეთრი ტექსტილით"
+    "imageAlt": "ელეგანტურად გაწყობილი სასტუმროს საწოლი თეთრი ტექსტილით",
+    "stats": [
+      {
+        "title": "სასტუმროსთვის მზად",
+        "description": "გამძლე ტექსტილის ხაზები",
+        "icon": "Sparkles",
+        "isVisible": true,
+        "sortOrder": 1
+      },
+      {
+        "title": "ინდივიდუალური ზომები",
+        "description": "ნომრებისა და ლუქსების გადაწყვეტები",
+        "icon": "Ruler",
+        "isVisible": true,
+        "sortOrder": 2
+      },
+      {
+        "title": "სანდო მიწოდება",
+        "description": "B2B ჰოსპიტალიტის ფოკუსი",
+        "icon": "Truck",
+        "isVisible": true,
+        "sortOrder": 3
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "isVisible": true,
+    "eyebrow": "რატომ გვირჩევენ სასტუმროები",
+    "title": "ტექსტილი, რომელიც ყოველდღე ლამაზად მუშაობს",
+    "subtitle": "პროდუქტები შერჩეულია სტუმრის კომფორტის, ოპერაციული გამძლეობისა და დახვეწილი იერისთვის.",
+    "features": [
+      {
+        "title": "პრემიუმ ხარისხი",
+        "description": "რბილი ქსოვილები და დახვეწილი დამუშავება მაღალი კლასის შთაბეჭდილებისთვის.",
+        "icon": "Gem",
+        "isVisible": true,
+        "sortOrder": 1
+      },
+      {
+        "title": "ყოველდღიური გამოყენებისთვის",
+        "description": "პრაქტიკული პროდუქტები ხშირი რეცხვისა და მაღალი დატვირთვისთვის.",
+        "icon": "RefreshCw",
+        "isVisible": true,
+        "sortOrder": 2
+      },
+      {
+        "title": "კომფორტული სტუმრის გამოცდილება",
+        "description": "ტექსტილი მშვიდი ძილისა და სუფთა პრეზენტაციისთვის.",
+        "icon": "Moon",
+        "isVisible": true,
+        "sortOrder": 3
+      },
+      {
+        "title": "ზომები შეკვეთით",
+        "description": "სტანდარტული ნომრების, ლუქსების და სპეციალური პროექტების ვარიანტები.",
+        "icon": "Ruler",
+        "isVisible": true,
+        "sortOrder": 4
+      },
+      {
+        "title": "სანდო მიწოდება",
+        "description": "B2B პარტნიორი, რომელიც კონცენტრირებულია სტაბილურობაზე.",
+        "icon": "Truck",
+        "isVisible": true,
+        "sortOrder": 5
+      },
+      {
+        "title": "ელეგანტური პრეზენტაცია",
+        "description": "საწოლის, აბაზანისა და დეკორატიული ტექსტილის შეთანხმებული კოლექციები.",
+        "icon": "BadgeCheck",
+        "isVisible": true,
+        "sortOrder": 6
+      }
+    ]
   },
   "about": {
     "isVisible": true,
@@ -30,21 +132,26 @@
     "imageAlt": "დაკეცილი სასტუმროს პირსახოცები თბილი ნეიტრალური დეტალებით",
     "features": [
       {
-        "title": "პრემიუმ ხარისხი",
-        "description": "შერჩეული ქსოვილები და დახვეწილი დამუშავება სუფთა და კომფორტული ოთახებისთვის."
+        "title": "შერჩეული ტექსტილის ხაზები",
+        "description": "საწოლის, აბაზანისა და დეკორატიული ტექსტილი ერთ კატალოგში.",
+        "icon": "Layers",
+        "isVisible": true,
+        "sortOrder": 1
       },
       {
-        "title": "მორგებული გადაწყვეტები",
-        "description": "პრაქტიკული ტექსტილი ნომრებისთვის, ლუქსებისთვის, სპა სივრცეებისა და სასტუმრო პროექტებისთვის."
+        "title": "ჰოსპიტალიტის რჩევები",
+        "description": "რეკომენდაციები სასტუმროს ყოველდღიური პროცესების გათვალისწინებით.",
+        "icon": "ConciergeBell",
+        "isVisible": true,
+        "sortOrder": 2
       },
       {
-        "title": "სანდო პარტნიორი",
-        "description": "პროფესიონალური B2B მომწოდებელი, რომელიც ორიენტირებულია სტაბილურობაზე და ხარისხიან მომსახურებაზე."
+        "title": "მარტივი B2B კომუნიკაცია",
+        "description": "შოურუმის სტილის პროცესი ecommerce სირთულის გარეშე.",
+        "icon": "MessagesSquare",
+        "isVisible": true,
+        "sortOrder": 3
       }
     ]
-  },
-  "footer": {
-    "tagline": "ელეგანტური ტექსტილი სასტუმროებისთვის, საოჯახო სასტუმროებისა და ჰოსპიტალიტის ინტერიერებისთვის.",
-    "copyright": "ყველა უფლება დაცულია."
   }
 }

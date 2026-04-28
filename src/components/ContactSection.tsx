@@ -1,25 +1,10 @@
-import { localized } from "@/lib/content";
-import type {
-  ContactContent,
-  ContactMethodKey,
-  Language
-} from "@/lib/types";
-import type { ElementType } from "react";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MessageCircle,
-  Phone
-} from "lucide-react";
+"use client";
 
-const icons: Record<ContactMethodKey, ElementType> = {
-  phone: Phone,
-  whatsapp: MessageCircle,
-  email: Mail,
-  instagram: Instagram,
-  facebook: Facebook
-};
+import { localized } from "@/lib/content";
+import { contactIconMap } from "@/lib/icons";
+import type { ContactContent, Language } from "@/lib/types";
+import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper";
 
 type ContactSectionProps = {
   contact: ContactContent;
@@ -35,18 +20,20 @@ export default function ContactSection({
   const visibleMethods = contact.methods.filter((method) => method.isVisible);
 
   return (
-    <section id="contact" className="section-padding bg-white dark:bg-stone-950">
+    <SectionWrapper id="contact" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
         <div className="max-w-3xl">
-          <p className="eyebrow">{language === "en" ? "Contact" : "კონტაქტი"}</p>
+          <p className="eyebrow">{localized(contact.eyebrow, language)}</p>
           <h2 className="section-title">{localized(contact.title, language)}</h2>
-          <p className="section-copy">{localized(contact.description, language)}</p>
+          <p className="section-copy">
+            {localized(contact.description, language)}
+          </p>
         </div>
 
         {visibleMethods.length > 0 ? (
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {visibleMethods.map((method) => {
-              const Icon = icons[method.key];
+              const Icon = contactIconMap[method.key];
               const content = (
                 <>
                   <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-champagne/25 text-brass dark:text-champagne">
@@ -62,25 +49,27 @@ export default function ContactSection({
               );
 
               return method.url ? (
-                <a
+                <motion.a
                   key={method.key}
                   href={method.url}
-                  className="rounded-lg border border-stone-200 bg-ivory p-5 transition hover:-translate-y-1 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-ink dark:hover:border-champagne"
+                  className="rounded-lg border border-stone-200 bg-ivory p-5 transition hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-ink dark:hover:border-champagne"
+                  whileHover={{ y: -5 }}
                 >
                   {content}
-                </a>
+                </motion.a>
               ) : (
-                <div
+                <motion.div
                   key={method.key}
                   className="rounded-lg border border-stone-200 bg-ivory p-5 dark:border-stone-800 dark:bg-ink"
+                  whileHover={{ y: -5 }}
                 >
                   {content}
-                </div>
+                </motion.div>
               );
             })}
           </div>
         ) : null}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

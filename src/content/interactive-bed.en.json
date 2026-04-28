@@ -1,0 +1,474 @@
+{
+  "isVisible": true,
+  "eyebrow": "Interactive Textile Explorer",
+  "title": "Explore Every Layer of Comfort",
+  "subtitle": "Click on different parts of the bed to discover textile products designed for hotel rooms, suites, and hospitality spaces.",
+  "bedImage": "/placeholders/interactive-bed.svg",
+  "bedImageAlt": "Illustrated luxury hotel bed with clickable textile hotspots",
+  "viewProductText": "View Product",
+  "contactText": "Contact Us",
+  "closeText": "Close",
+  "materialsLabel": "Materials",
+  "sizesLabel": "Sizes",
+  "colorsLabel": "Colors",
+  "mobileListTitle": "Tap a textile layer",
+  "hotspots": [
+    {
+      "id": "pillowcase",
+      "title": "Hotel Pillowcase",
+      "label": "Pillowcase",
+      "category": "Bed Linen",
+      "shortDescription": "Soft and durable pillowcases designed for daily hospitality use.",
+      "longDescription": "A polished pillowcase range for guest rooms and suites, created for comfort, repeated laundering, and a clean hotel presentation.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "Hotel pillowcase textile detail",
+      "x": 33,
+      "y": 29,
+      "isVisible": true,
+      "linkedProductSlug": "pillowcases",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Smooth silicon-touch finish with a soft hand feel for premium guest rooms.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon material placeholder",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Ivory"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Lightweight microfiber designed for practical care and consistent daily use.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber material placeholder",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Beige"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bed-sheet",
+      "title": "Fitted Bed Sheet",
+      "label": "Fitted sheet",
+      "category": "Bed Linen",
+      "shortDescription": "Secure, comfortable sheets for a crisp hotel bed base.",
+      "longDescription": "Fitted sheets help create a tight, professional foundation for housekeeping teams and guest comfort.",
+      "image": "/placeholders/bed-sheets.svg",
+      "imageAlt": "Hotel fitted sheet detail",
+      "x": 47,
+      "y": 57,
+      "isVisible": true,
+      "linkedProductSlug": "bed-sheets",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft silicon feel with a refined surface for premium hotel rooms.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon fitted sheet placeholder",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Ivory"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Easy-care microfiber for reliable everyday room turnover.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber fitted sheet placeholder",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Beige"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flat-sheet",
+      "title": "Flat Sheet",
+      "label": "Flat sheet",
+      "category": "Bed Linen",
+      "shortDescription": "Smooth top-layer sheets for refined bed styling.",
+      "longDescription": "Flat sheets add a hygienic, elegant layer between the guest and duvet while supporting classic hotel bed presentation.",
+      "image": "/placeholders/flat-sheets.svg",
+      "imageAlt": "Hotel flat sheet detail",
+      "x": 52,
+      "y": 46,
+      "isVisible": true,
+      "linkedProductSlug": "flat-sheets",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "A smooth premium finish for crisp, elegant layering.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon flat sheet placeholder",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Ivory"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Durable microfiber for efficient laundering and daily hotel operations.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber flat sheet placeholder",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Beige"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duvet-cover",
+      "title": "Premium Duvet Cover",
+      "label": "Duvet cover",
+      "category": "Bed Linen",
+      "shortDescription": "Elegant duvet covers created for guest comfort and easy maintenance.",
+      "longDescription": "A duvet cover defines the main visual layer of the bed, balancing softness, durability, and a freshly prepared look.",
+      "image": "/placeholders/duvet-covers.svg",
+      "imageAlt": "Premium duvet cover detail",
+      "x": 55,
+      "y": 38,
+      "isVisible": true,
+      "linkedProductSlug": "duvet-covers",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Silicon-touch duvet cover with a soft, hotel-ready finish.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon duvet cover placeholder",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Ivory",
+            "Champagne"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Microfiber duvet cover for easy care and operational consistency.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber duvet cover placeholder",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White",
+            "Beige"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blanket-throw",
+      "title": "Blanket / Throw",
+      "label": "Throw",
+      "category": "Comfort Layers",
+      "shortDescription": "Soft decorative throws for suites and lounge-style guest comfort.",
+      "longDescription": "Throws add warmth, texture, and a more residential sense of hospitality to beds, chairs, and suite spaces.",
+      "image": "/placeholders/blankets.svg",
+      "imageAlt": "Hotel blanket or throw detail",
+      "x": 70,
+      "y": 48,
+      "isVisible": true,
+      "linkedProductSlug": "blankets-throws",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft silicon-touch throw for a plush guest-room accent.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon throw placeholder",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "Ivory",
+            "Taupe"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Lightweight microfiber throw with practical daily-care benefits.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber throw placeholder",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "Ivory",
+            "Charcoal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bed-runner",
+      "title": "Bed Runner",
+      "label": "Bed runner",
+      "category": "Decorative Textiles",
+      "shortDescription": "A refined decorative accent for a finished hotel bed.",
+      "longDescription": "Bed runners create a strong first impression while protecting the foot of the bed and connecting the room palette.",
+      "image": "/placeholders/bed-runner.svg",
+      "imageAlt": "Hotel bed runner detail",
+      "x": 53,
+      "y": 72,
+      "isVisible": true,
+      "linkedProductSlug": "bed-runners",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft accented runner for a quieter luxury look.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon runner placeholder",
+          "sizes": [
+            "Twin",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "Gold",
+            "Ivory"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Practical decorative runner with an easy-care finish.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber runner placeholder",
+          "sizes": [
+            "Twin",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "Beige",
+            "Charcoal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cushion-cover",
+      "title": "Cushion Cover",
+      "label": "Cushion",
+      "category": "Interior Textiles",
+      "shortDescription": "Decorative cushion covers for hotel rooms, suites, and lounge settings.",
+      "longDescription": "Cushion covers add softness and visual depth while helping rooms feel considered and complete.",
+      "image": "/placeholders/cushions.svg",
+      "imageAlt": "Decorative cushion cover detail",
+      "x": 65,
+      "y": 31,
+      "isVisible": true,
+      "linkedProductSlug": "cushion-covers",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft decorative cushion cover for calm premium interiors.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon cushion cover placeholder",
+          "sizes": [
+            "40x40",
+            "45x45",
+            "Custom"
+          ],
+          "colors": [
+            "Ivory",
+            "Gold"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Microfiber decorative cover for easy maintenance and frequent use.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber cushion cover placeholder",
+          "sizes": [
+            "40x40",
+            "45x45",
+            "Custom"
+          ],
+          "colors": [
+            "Stone",
+            "Beige"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mattress-protector",
+      "title": "Mattress Protector",
+      "label": "Protector",
+      "category": "Protective Bedding",
+      "shortDescription": "A practical hidden layer for mattress protection and hygiene.",
+      "longDescription": "Mattress protectors help hotels maintain cleanliness, extend mattress life, and support guest-room standards.",
+      "image": "/placeholders/mattress-protector.svg",
+      "imageAlt": "Mattress protector detail",
+      "x": 34,
+      "y": 67,
+      "isVisible": true,
+      "linkedProductSlug": "mattress-protectors",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft quilted protector for comfort-focused rooms.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon mattress protector placeholder",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Lightweight protective layer for efficient operations.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber mattress protector placeholder",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "White"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "towel-set",
+      "title": "Towel Set",
+      "label": "Towels",
+      "category": "Bath Textiles",
+      "shortDescription": "Soft towel sets placed near the bed for hospitality presentation.",
+      "longDescription": "Coordinated towel sets support a consistent guest experience across rooms, bathrooms, spa areas, and suites.",
+      "image": "/placeholders/towels.svg",
+      "imageAlt": "Hotel towel set detail",
+      "x": 82,
+      "y": 73,
+      "isVisible": true,
+      "linkedProductSlug": "towels",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "Silicon",
+          "isVisible": true,
+          "description": "Soft touch option for premium towel presentation.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "Silicon towel placeholder",
+          "sizes": [
+            "Face",
+            "Hand",
+            "Bath",
+            "Bath sheet"
+          ],
+          "colors": [
+            "White",
+            "Ivory"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "Microfiber",
+          "isVisible": true,
+          "description": "Fast-care microfiber option for high-turnover hospitality use.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "Microfiber towel placeholder",
+          "sizes": [
+            "Face",
+            "Hand",
+            "Bath",
+            "Bath sheet"
+          ],
+          "colors": [
+            "White",
+            "Sand"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,19 @@
 # LuxeTex Hotel Textiles
 
-A beginner-friendly one-page showcase website for a hotel textile supplier. It is a professional digital showroom/catalog site, not an online shop. There is no cart, checkout, online payment, database, or customer account system.
+A premium one-page digital showroom for a hotel textile supplier. The site presents bed linen, towels, pillowcases, duvet covers, bed runners, mattress protectors, and other hospitality textile products for B2B hotel clients.
 
-The site uses:
+This is not an online shop. There is no cart, checkout, payment system, database, or customer account area.
+
+## Tech Stack
 
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
+- Framer Motion
 - Decap CMS admin panel at `/admin`
-- JSON content files editable by Decap CMS
-- Netlify free hosting with Git Gateway
+- JSON content files
+- GitHub content backend for Decap CMS
+- Netlify free hosting
 
 ## Project Structure
 
@@ -19,10 +23,10 @@ hotel-textile-website/
     admin/
       index.html
       config.yml
+    placeholders/
     uploads/
       images/
       catalog/
-    placeholders/
   src/
     app/
       layout.tsx
@@ -32,34 +36,44 @@ hotel-textile-website/
       Header.tsx
       MobileMenu.tsx
       HeroSection.tsx
-      AboutSection.tsx
-      ProductsSection.tsx
+      InteractiveBedExplorer.tsx
+      BedHotspot.tsx
+      BedProductPanel.tsx
+      ProductCollections.tsx
       ProductCard.tsx
+      WhyChooseUsSection.tsx
+      AboutSection.tsx
       GallerySection.tsx
       CatalogSection.tsx
+      ProcessSection.tsx
       MapSection.tsx
       ContactSection.tsx
       Footer.tsx
       LanguageSwitcher.tsx
       ThemeToggle.tsx
+      SectionWrapper.tsx
     content/
       settings.json
       site.en.json
       site.ge.json
       products.en.json
       products.ge.json
+      interactive-bed.en.json
+      interactive-bed.ge.json
       gallery.json
       contact.json
       catalog.json
       map.json
+      process.en.json
+      process.ge.json
+      footer.json
     lib/
       content.ts
+      icons.ts
       types.ts
 ```
 
-## Install Dependencies
-
-From inside the project folder:
+## Install
 
 ```bash
 npm install
@@ -71,25 +85,19 @@ npm install
 npm run dev
 ```
 
-Expected local website URL:
+Open:
 
 ```text
 http://localhost:3000
 ```
 
-Local admin URL:
+Local admin page:
 
 ```text
 http://localhost:3000/admin
 ```
 
-For local Decap CMS editing, run the Decap local backend in a second terminal:
-
-```bash
-npx decap-server
-```
-
-Then open `/admin`. Local backend is for development only. Production editing should use Netlify Identity and Git Gateway.
+The CMS can open locally, but production editing with the GitHub backend requires GitHub OAuth setup after deployment.
 
 ## Build
 
@@ -97,74 +105,22 @@ Then open `/admin`. Local backend is for development only. Production editing sh
 npm run build
 ```
 
-## Editing Content Manually
+## Deploy to Netlify
 
-All public website content is stored in `src/content`.
-
-- English page text: `src/content/site.en.json`
-- Georgian page text: `src/content/site.ge.json`
-- English products: `src/content/products.en.json`
-- Georgian products: `src/content/products.ge.json`
-- Gallery: `src/content/gallery.json`
-- Contact methods: `src/content/contact.json`
-- Catalog PDF settings: `src/content/catalog.json`
-- Map settings: `src/content/map.json`
-- Global notes and SEO reference: `src/content/settings.json`
-
-After editing JSON manually, run:
-
-```bash
-npm run dev
-```
-
-or rebuild for production:
-
-```bash
-npm run build
-```
-
-## Decap CMS Admin
-
-The admin panel files are:
-
-- `public/admin/index.html`
-- `public/admin/config.yml`
-
-After deployment, the admin panel is available at:
-
-```text
-https://your-netlify-site.netlify.app/admin
-```
-
-Decap CMS collections are set up for:
-
-- Site Settings
-- English Page Content
-- Georgian Page Content
-- English Products
-- Georgian Products
-- Gallery
-- Catalog Settings
-- Contact Settings
-- Map Settings
-
-## Deploy to Netlify Free Hosting
-
-1. Push this project to a GitHub repository.
-2. Log in to Netlify.
-3. Choose **Add new site**.
-4. Choose **Import an existing project**.
-5. Connect the GitHub repository.
-6. Use these build settings:
+1. Push this project to GitHub.
+2. In Netlify, choose **Add new site**.
+3. Choose **Import an existing project**.
+4. Connect the GitHub repository.
+5. Use:
 
 ```text
 Build command: npm run build
 Publish directory: .next
 ```
 
-7. Deploy the site.
+6. Deploy.
 
-Netlify will give you a temporary URL like:
+Netlify will provide a free temporary URL such as:
 
 ```text
 https://your-site-name.netlify.app
@@ -172,90 +128,225 @@ https://your-site-name.netlify.app
 
 The website works without a custom domain.
 
-## Configure Decap CMS With Netlify Git Gateway
+## Connect GitHub Repository
 
-The CMS config already uses:
+The Decap CMS config is:
 
 ```yaml
 backend:
-  name: git-gateway
+  name: github
+  repo: TheGreatMan1/hotel-textile-website
   branch: main
 ```
 
-After the site is deployed:
+If you move the repository, edit `public/admin/config.yml` and replace `repo` with:
 
-1. In Netlify, open the deployed site dashboard.
-2. Go to **Site configuration**.
-3. Enable **Identity**.
-4. Go to **Identity > Services**.
-5. Enable **Git Gateway**.
-6. In **Identity registration**, choose invitation-only if this is for one admin user.
+```text
+your-github-username/your-repository-name
+```
 
-## Add the First Admin User
+## Configure Decap CMS GitHub Login
 
-1. In Netlify, open **Identity**.
-2. Click **Invite users**.
-3. Enter the admin email address.
-4. The admin accepts the invitation by email and creates a password.
-5. The admin visits:
+Because this project uses Decap's GitHub backend, admin login is handled through GitHub OAuth, not Netlify Identity or Git Gateway.
+
+Manual setup:
+
+1. In GitHub, create an OAuth app for the CMS login.
+2. Use your Netlify site URL as the homepage URL.
+3. Use Netlify's Decap/GitHub OAuth callback URL in the OAuth app settings.
+4. In Netlify, add the OAuth client ID and secret according to Netlify/Decap CMS GitHub backend instructions.
+5. Make sure the admin GitHub account has write access to the repository.
+6. Open:
 
 ```text
 https://your-site-name.netlify.app/admin
 ```
 
-6. The admin logs in and edits content.
+7. Log in with GitHub and approve repository access.
 
-## Change Images
+If the CMS shows an authentication error, the site itself can still work. The problem is usually OAuth app setup or repository access, not the website code.
 
-In Decap CMS, image fields upload to:
+## Admin Panel
+
+Admin URL after deployment:
+
+```text
+/admin
+```
+
+Decap CMS edits these files:
+
+- `src/content/settings.json`
+- `src/content/site.en.json`
+- `src/content/site.ge.json`
+- `src/content/products.en.json`
+- `src/content/products.ge.json`
+- `src/content/interactive-bed.en.json`
+- `src/content/interactive-bed.ge.json`
+- `src/content/gallery.json`
+- `src/content/contact.json`
+- `src/content/catalog.json`
+- `src/content/map.json`
+- `src/content/process.en.json`
+- `src/content/process.ge.json`
+- `src/content/footer.json`
+
+## Edit English and Georgian Content
+
+English and Georgian page content are separate:
+
+- English: `site.en.json`, `products.en.json`, `interactive-bed.en.json`, `process.en.json`
+- Georgian: `site.ge.json`, `products.ge.json`, `interactive-bed.ge.json`, `process.ge.json`
+
+Shared sections use English and Georgian fields in the same file:
+
+- Gallery
+- Catalog
+- Contact
+- Map
+- Footer
+
+The language switcher shows `EN / GE`, updates all visible text, and saves the selected language in `localStorage`.
+
+## Hide or Show Sections
+
+Every major section has an `isVisible` toggle:
+
+- Hero
+- Interactive bed explorer
+- Product collections
+- Why hotels choose us
+- About company
+- Gallery
+- Catalog PDF
+- Process / how to order
+- Map
+- Contact
+- Footer
+
+Hidden sections do not render and do not leave empty gaps. Header navigation links are also filtered when their section is hidden.
+
+## Products
+
+Products live in:
+
+- `src/content/products.en.json`
+- `src/content/products.ge.json`
+
+Each product supports:
+
+- slug
+- title
+- category
+- short description
+- image
+- image alt text
+- button text/link
+- material
+- available sizes
+- color options
+- visibility toggle
+- sort order
+
+Only visible products render. Products are sorted by `sortOrder`.
+
+## Interactive Bed Hotspots
+
+Hotspots live in:
+
+- `src/content/interactive-bed.en.json`
+- `src/content/interactive-bed.ge.json`
+
+Each hotspot supports:
+
+- title and label
+- short and long description
+- image and alt text
+- `x` and `y` position percentages
+- visibility toggle
+- linked product slug
+- material variants
+
+Hotspot positions use percentages over the bed image:
+
+```json
+{
+  "x": 42,
+  "y": 28
+}
+```
+
+Increase `x` to move right. Increase `y` to move down.
+
+## Material Variants
+
+Each hotspot can have any number of material variants, for example Silicon and Microfiber.
+
+Each variant supports:
+
+- ID
+- label
+- visibility toggle
+- description
+- image
+- sizes
+- colors
+
+If one variant is visible, the panel shows it cleanly. If multiple variants are visible, the panel shows material filter buttons. If no variant is added, the default hotspot image and text are used.
+
+## Images
+
+CMS image uploads go to:
 
 ```text
 public/uploads/images
 ```
 
-The website references uploaded images as:
+Public paths look like:
 
 ```text
 /uploads/images/file-name.jpg
 ```
 
-You can also manually place images in `public/uploads/images` and reference them with the same path format.
+Placeholder visuals are in:
 
-## Change the PDF Catalog
+```text
+public/placeholders
+```
 
-In Decap CMS, open **Catalog Settings** and replace **Catalog PDF File**.
+Keep uploaded images reasonably compressed for faster mobile loading.
 
-Catalog PDFs upload to:
+## Catalog PDF
+
+Catalog settings live in:
+
+```text
+src/content/catalog.json
+```
+
+PDF uploads go to:
 
 ```text
 public/uploads/catalog
 ```
 
-The website references them as:
+Public PDF paths look like:
 
 ```text
-/uploads/catalog/file-name.pdf
+/uploads/catalog/catalog.pdf
 ```
 
-If the PDF field is empty, the download button is replaced with safe text.
+If no PDF is set, the site shows safe placeholder text instead of a broken download button.
 
-## Hide or Show Sections
+## Contact Methods
 
-Each major section has an `isVisible` toggle in CMS/content:
+Contact settings live in:
 
-- Hero
-- About
-- Products
-- Gallery
-- Catalog PDF
-- Map
-- Contact
+```text
+src/content/contact.json
+```
 
-When a section is hidden, it is not rendered on the public website and does not leave an empty gap.
-
-## Hide or Show Contact Methods
-
-The contact section supports:
+Supported contact methods:
 
 - Phone
 - WhatsApp
@@ -263,75 +354,63 @@ The contact section supports:
 - Instagram
 - Facebook
 
-Each contact method has:
+Each method has a label, value, URL, icon key, and `isVisible`. Only visible methods appear.
 
-- `isVisible`
-- English and Georgian label
-- Display value
-- URL/link
+## Map Section
 
-Only visible methods appear on the website.
-
-## Change Georgian and English Text
-
-English and Georgian content are edited separately.
-
-- English header, hero, about, footer: `site.en.json`
-- Georgian header, hero, about, footer: `site.ge.json`
-- English products: `products.en.json`
-- Georgian products: `products.ge.json`
-
-Shared sections like gallery, catalog, map, and contact contain both English and Georgian fields in the same file.
-
-The public language switcher uses:
+Map settings live in:
 
 ```text
-EN / GE
+src/content/map.json
 ```
 
-The selected language is saved in `localStorage`. If no language has been selected, English is used by default.
+You can edit:
 
-## Dark and Light Mode
+- section visibility
+- title
+- address
+- Google Maps embed URL
+- external Google Maps link
+- button text
 
-The theme switcher is in the header. It uses Tailwind's `dark` class strategy and saves the selected theme in `localStorage`.
+If the embed URL is empty, the site still shows the address and external map button when available.
 
-If the visitor has not selected a theme, the site follows the visitor's system preference.
-
-## Connect a Custom Domain Later
+## Custom Domain Later
 
 A custom domain is optional.
 
 To add one later:
 
-1. Buy a domain from any domain registrar.
+1. Buy a domain from a registrar.
 2. In Netlify, open **Domain management**.
-3. Add the custom domain.
+3. Add the domain.
 4. Follow Netlify's DNS instructions.
-5. Wait for DNS and HTTPS setup to finish.
+5. Wait for DNS and HTTPS setup.
 
-The free Netlify URL continues to work even if no custom domain is connected.
+The free `.netlify.app` URL continues to work.
 
-## Free vs Paid Parts
+## Free vs Paid
 
 Free:
 
 - Next.js
 - Tailwind CSS
+- Framer Motion
 - Decap CMS
-- GitHub repository hosting for the code
-- Netlify free hosting for small/static sites
-- Netlify temporary `.netlify.app` URL
-- Netlify Identity/Git Gateway for basic CMS workflows
+- GitHub repository hosting
+- Netlify free hosting
+- Temporary Netlify URL
 
-May require payment later:
+May cost money later:
 
-- A custom domain name
-- Premium Netlify features if traffic, team, or build needs grow
-- Professional photography or custom design assets
+- Custom domain purchase
+- Premium Netlify features if traffic/team needs grow
+- Professional photography or custom brand assets
+- A paid OAuth/auth hosting option if you choose not to use Netlify's available OAuth flow
 
-## Notes for Beginners
+## Beginner Notes
 
-- This is a mostly static website. Content changes are saved to Git through Decap CMS.
-- Uploaded images and PDFs are committed to the repository.
-- Keep image file sizes reasonable for faster loading.
-- Do not add checkout, cart, payment, or account features unless the business changes from a showroom to an ecommerce site.
+- The site is mostly static and deploys from GitHub.
+- Decap CMS edits JSON files and commits changes back to GitHub.
+- There is no database to manage.
+- Do not add cart, payment, checkout, or accounts unless the business intentionally changes to ecommerce.

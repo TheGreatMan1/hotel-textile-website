@@ -1,12 +1,16 @@
 {
   "isVisible": true,
+  "eyebrow": {
+    "en": "Catalog",
+    "ge": "კატალოგი"
+  },
   "title": {
-    "en": "Download the Textile Catalog",
-    "ge": "ჩამოტვირთეთ ტექსტილის კატალოგი"
+    "en": "Download the Hotel Textile Catalog",
+    "ge": "ჩამოტვირთეთ სასტუმროს ტექსტილის კატალოგი"
   },
   "description": {
-    "en": "Share product ranges, specifications, and project options with your hotel purchasing team.",
-    "ge": "გაუზიარეთ პროდუქციის კატეგორიები, სპეციფიკაციები და პროექტის ვარიანტები თქვენს შესყიდვების გუნდს."
+    "en": "Share product ranges, material options, and project notes with your hotel purchasing team.",
+    "ge": "გაუზიარეთ პროდუქციის კატეგორიები, მასალის ვარიანტები და პროექტის დეტალები თქვენს შესყიდვების გუნდს."
   },
   "buttonText": {
     "en": "Download Catalog",

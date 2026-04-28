@@ -1,50 +1,71 @@
 "use client";
 
 import type { NavLink } from "@/lib/types";
+import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
 type MobileMenuProps = {
   isOpen: boolean;
   onClose: () => void;
   navLinks: NavLink[];
+  brandName: string;
 };
 
 export default function MobileMenu({
   isOpen,
   onClose,
-  navLinks
+  navLinks,
+  brandName
 }: MobileMenuProps) {
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 bg-ink/60 backdrop-blur-sm lg:hidden">
-      <div className="ml-auto flex h-full w-full max-w-sm flex-col bg-ivory p-6 shadow-soft dark:bg-ink">
-        <div className="flex items-center justify-between">
-          <span className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
-            Menu
-          </span>
-          <button
-            type="button"
-            className="icon-button"
-            onClick={onClose}
-            aria-label="Close navigation menu"
+    <AnimatePresence>
+      {isOpen ? (
+        <motion.div
+          className="fixed inset-0 z-50 bg-ink/55 backdrop-blur-sm lg:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <motion.div
+            className="ml-auto flex h-full w-full max-w-sm flex-col bg-ivory p-6 shadow-soft dark:bg-ink"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 28, stiffness: 240 }}
+            onClick={(event) => event.stopPropagation()}
           >
-            <X aria-hidden size={20} />
-          </button>
-        </div>
-        <nav className="mt-10 flex flex-col gap-2" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={onClose}
-              className="rounded-lg px-3 py-4 text-lg font-semibold text-charcoal transition hover:bg-linen dark:text-ivory dark:hover:bg-stone-900"
+            <div className="flex items-center justify-between">
+              <span className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
+                {brandName}
+              </span>
+              <button
+                type="button"
+                className="icon-button"
+                onClick={onClose}
+                aria-label="Close navigation menu"
+              >
+                <X aria-hidden size={20} />
+              </button>
+            </div>
+            <nav
+              className="mt-10 flex flex-col gap-2"
+              aria-label="Mobile navigation"
             >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </div>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  className="rounded-lg px-3 py-4 text-lg font-semibold text-charcoal transition hover:bg-linen dark:text-ivory dark:hover:bg-stone-900"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </motion.div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 }

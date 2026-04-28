@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Luxury hotel bed textile explorer">
+  <defs>
+    <linearGradient id="room" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf8f1"/>
+      <stop offset="1" stop-color="#d7bd7f"/>
+    </linearGradient>
+    <linearGradient id="linen" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#eee4d2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="26" stdDeviation="22" flood-color="#1c1a17" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="900" fill="url(#room)"/>
+  <path d="M120 215c170-100 480-130 690-85 220 47 390 150 470 285 86 145 46 284-126 346-210 76-600 62-845-34-245-97-382-261-309-397 23-43 61-81 120-115z" fill="#fffdf8" opacity=".6"/>
+  <g filter="url(#shadow)">
+    <path d="M250 320c110-80 300-120 485-98 190 22 350 100 430 215l-210 240c-120 68-430 74-610 10L190 465c3-52 22-100 60-145z" fill="#eee4d2"/>
+    <path d="M345 220c120-55 365-58 505 0 52 22 89 53 101 88l-92 116H344l-92-116c12-35 41-66 93-88z" fill="#fff"/>
+    <rect x="375" y="250" width="205" height="126" rx="32" fill="url(#linen)"/>
+    <rect x="618" y="250" width="205" height="126" rx="32" fill="url(#linen)"/>
+    <rect x="810" y="315" width="130" height="118" rx="32" fill="#d7bd7f"/>
+    <path d="M300 410c175-70 333-64 520-20 128 30 228 28 310-18l-175 305c-156 68-440 75-610 10z" fill="#fffaf2"/>
+    <path d="M235 500c180-54 350-35 545 20 110 31 213 26 318-22l-143 179c-160 83-455 86-610 10z" fill="#ffffff"/>
+    <path d="M330 640c200 58 440 56 625-10l70 68c-188 87-508 85-730-6z" fill="#d7bd7f"/>
+    <rect x="340" y="682" width="585" height="36" rx="18" fill="#a47f36" opacity=".7"/>
+    <rect x="1020" y="620" width="185" height="82" rx="41" fill="#fff"/>
+    <rect x="1060" y="575" width="140" height="66" rx="33" fill="#eee4d2"/>
+  </g>
+  <text x="700" y="830" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="42">Layered Hotel Textile Explorer</text>
+</svg>

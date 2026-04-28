@@ -14,7 +14,7 @@ export default function LanguageSwitcher({
   return (
     <div
       aria-label="Select language"
-      className="flex rounded-full border border-stone-300 bg-white/80 p-1 text-xs font-bold dark:border-stone-700 dark:bg-stone-950/75"
+      className="flex rounded-full border border-stone-300/80 bg-white/85 p-1 text-xs font-bold shadow-sm backdrop-blur dark:border-stone-700 dark:bg-stone-950/75"
     >
       {(["en", "ge"] as Language[]).map((item) => (
         <button

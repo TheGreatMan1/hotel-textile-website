@@ -5,20 +5,20 @@
     "ge": "შოურუმის გალერეა"
   },
   "title": {
-    "en": "A Calm, Polished Textile Presentation",
-    "ge": "მშვიდი და დახვეწილი ტექსტილის პრეზენტაცია"
+    "en": "Textile Details for Refined Hospitality Spaces",
+    "ge": "ტექსტილის დეტალები დახვეწილი ჰოსპიტალიტის სივრცეებისთვის"
   },
   "description": {
-    "en": "Use this gallery for hotel room scenes, product details, fabric textures, and completed hospitality projects.",
-    "ge": "გამოიყენეთ ეს გალერეა სასტუმროს ოთახების, პროდუქტის დეტალების, ქსოვილის ტექსტურებისა და დასრულებული პროექტებისთვის."
+    "en": "Use this gallery for room scenes, product details, fabric textures, and completed hospitality projects.",
+    "ge": "გამოიყენეთ გალერეა ნომრების, პროდუქტის დეტალების, ქსოვილის ტექსტურებისა და დასრულებული პროექტებისთვის."
   },
   "images": [
     {
       "image": "/placeholders/gallery-room.svg",
       "alt": "Hotel room with layered bed textiles",
       "caption": {
-        "en": "Guest room textile styling",
-        "ge": "ნომრის ტექსტილის სტილი"
+        "en": "Layered guest room styling",
+        "ge": "ფენოვანი ნომრის სტილი"
       },
       "isVisible": true,
       "sortOrder": 1
@@ -52,6 +52,26 @@
       },
       "isVisible": true,
       "sortOrder": 4
+    },
+    {
+      "image": "/placeholders/gallery-bedrunner.svg",
+      "alt": "Hotel bed runner and decorative cushions",
+      "caption": {
+        "en": "Decorative bed accents",
+        "ge": "დეკორატიული საწოლის აქცენტები"
+      },
+      "isVisible": true,
+      "sortOrder": 5
+    },
+    {
+      "image": "/placeholders/gallery-bath.svg",
+      "alt": "Bath textile presentation",
+      "caption": {
+        "en": "Bath textile presentation",
+        "ge": "აბაზანის ტექსტილის პრეზენტაცია"
+      },
+      "isVisible": true,
+      "sortOrder": 6
     }
   ]
 }

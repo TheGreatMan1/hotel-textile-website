@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-label="Blankets and throws placeholder">
+  <rect width="1000" height="750" fill="#eee4d2"/>
+  <rect x="150" y="230" width="700" height="270" rx="48" fill="#d7bd7f"/>
+  <path d="M150 338c170-55 280-40 420 0 105 30 180 24 280-20v182H150z" fill="#fffaf2" opacity=".8"/>
+  <path d="M250 260v210M380 245v245M510 245v245M640 255v220" stroke="#a47f36" stroke-width="8" opacity=".32"/>
+  <text x="500" y="638" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="44">Blankets / Throws</text>
+</svg>

@@ -1,0 +1,474 @@
+{
+  "isVisible": true,
+  "eyebrow": "ინტერაქტიული ტექსტილის ექსპლორერი",
+  "title": "აღმოაჩინეთ კომფორტის ყოველი ფენა",
+  "subtitle": "დააწკაპუნეთ საწოლის სხვადასხვა ნაწილზე და ნახეთ ტექსტილის პროდუქტები სასტუმროს ნომრებისთვის, ლუქსებისთვის და ჰოსპიტალიტის სივრცეებისთვის.",
+  "bedImage": "/placeholders/interactive-bed.svg",
+  "bedImageAlt": "ლუქს სასტუმროს საწოლის ილუსტრაცია ტექსტილის წერტილებით",
+  "viewProductText": "პროდუქტის ნახვა",
+  "contactText": "დაგვიკავშირდით",
+  "closeText": "დახურვა",
+  "materialsLabel": "მასალები",
+  "sizesLabel": "ზომები",
+  "colorsLabel": "ფერები",
+  "mobileListTitle": "აირჩიეთ ტექსტილის ფენა",
+  "hotspots": [
+    {
+      "id": "pillowcase",
+      "title": "სასტუმროს ბალიშის პირი",
+      "label": "ბალიშის პირი",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "რბილი და გამძლე ბალიშის პირები ყოველდღიური სასტუმრო გამოყენებისთვის.",
+      "longDescription": "დახვეწილი ბალიშის პირების ხაზი ნომრებისა და ლუქსებისთვის, კომფორტის, ხშირი რეცხვისა და სუფთა სასტუმრო პრეზენტაციისთვის.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "სასტუმროს ბალიშის პირის დეტალი",
+      "x": 33,
+      "y": 29,
+      "isVisible": true,
+      "linkedProductSlug": "pillowcases",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი სილიკონის შეგრძნების საფარი პრემიუმ ნომრებისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის მასალის მაგალითი",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მსუბუქი მიკროფიბრი პრაქტიკული მოვლისა და ყოველდღიური გამოყენებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის მასალის მაგალითი",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bed-sheet",
+      "title": "ჩამოსაცმელი ზეწარი",
+      "label": "ზეწარი",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "მყარად მოთავსებული კომფორტული ზეწარი სუფთა სასტუმრო საწოლის საფუძვლისთვის.",
+      "longDescription": "ჩამოსაცმელი ზეწარი ქმნის მოწესრიგებულ საფუძველს housekeeping გუნდისა და სტუმრის კომფორტისთვის.",
+      "image": "/placeholders/bed-sheets.svg",
+      "imageAlt": "სასტუმროს ჩამოსაცმელი ზეწრის დეტალი",
+      "x": 47,
+      "y": 57,
+      "isVisible": true,
+      "linkedProductSlug": "bed-sheets",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი სილიკონის შეგრძნება პრემიუმ სასტუმრო ოთახებისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის ზეწრის მაგალითი",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მარტივად მოსავლელი მიკროფიბრი ყოველდღიური ოთახის მომზადებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის ზეწრის მაგალითი",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flat-sheet",
+      "title": "ზედა ზეწარი",
+      "label": "ზედა ზეწარი",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "გლუვი ზედა ფენა დახვეწილი საწოლის სტილისთვის.",
+      "longDescription": "ზედა ზეწარი ამატებს ჰიგიენურ და ელეგანტურ ფენას სტუმარსა და საბანს შორის.",
+      "image": "/placeholders/flat-sheets.svg",
+      "imageAlt": "სასტუმროს ზედა ზეწრის დეტალი",
+      "x": 52,
+      "y": 46,
+      "isVisible": true,
+      "linkedProductSlug": "flat-sheets",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "გლუვი პრემიუმ საფარი ელეგანტური ფენებისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის ზედა ზეწარი",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "გამძლე მიკროფიბრი ყოველდღიური სასტუმრო ოპერაციებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის ზედა ზეწარი",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duvet-cover",
+      "title": "პრემიუმ საბნის გადასაკრავი",
+      "label": "საბანი",
+      "category": "საწოლის ტექსტილი",
+      "shortDescription": "ელეგანტური საბნის გადასაკრავები სტუმრის კომფორტისა და მარტივი მოვლისთვის.",
+      "longDescription": "საბნის გადასაკრავი განსაზღვრავს საწოლის მთავარ ვიზუალურ ფენას და აერთიანებს სირბილესა და გამძლეობას.",
+      "image": "/placeholders/duvet-covers.svg",
+      "imageAlt": "პრემიუმ საბნის გადასაკრავის დეტალი",
+      "x": 55,
+      "y": 38,
+      "isVisible": true,
+      "linkedProductSlug": "duvet-covers",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "სილიკონის შეგრძნების საბნის გადასაკრავი რბილი სასტუმრო იერით.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის საბნის გადასაკრავი",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი",
+            "შამპანური"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მიკროფიბრის გადასაკრავი მარტივი მოვლისა და სტაბილური გამოყენებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის საბნის გადასაკრავი",
+          "sizes": [
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blanket-throw",
+      "title": "პლედი / გადასაფარებელი",
+      "label": "პლედი",
+      "category": "კომფორტის ფენები",
+      "shortDescription": "რბილი დეკორატიული პლედები ლუქსებისა და სტუმრის კომფორტისთვის.",
+      "longDescription": "პლედები ამატებს სითბოს, ტექსტურას და უფრო მყუდრო ჰოსპიტალიტის შეგრძნებას.",
+      "image": "/placeholders/blankets.svg",
+      "imageAlt": "სასტუმროს პლედის დეტალი",
+      "x": 70,
+      "y": 48,
+      "isVisible": true,
+      "linkedProductSlug": "blankets-throws",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი სილიკონის პლედი პრემიუმ აქცენტისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის პლედი",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "ივორი",
+            "ტაუპი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მსუბუქი მიკროფიბრის პლედი პრაქტიკული მოვლისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის პლედი",
+          "sizes": [
+            "Standard",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "ივორი",
+            "ჩარკოლი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bed-runner",
+      "title": "საწოლის ბილიკი",
+      "label": "ბილიკი",
+      "category": "დეკორატიული ტექსტილი",
+      "shortDescription": "დახვეწილი დეკორატიული აქცენტი დასრულებული სასტუმრო საწოლისთვის.",
+      "longDescription": "საწოლის ბილიკები ქმნის ძლიერ პირველ შთაბეჭდილებას და აერთიანებს ოთახის ფერთა პალიტრას.",
+      "image": "/placeholders/bed-runner.svg",
+      "imageAlt": "სასტუმროს საწოლის ბილიკის დეტალი",
+      "x": 53,
+      "y": 72,
+      "isVisible": true,
+      "linkedProductSlug": "bed-runners",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი აქცენტიანი ბილიკი მშვიდი ლუქს იერისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის ბილიკი",
+          "sizes": [
+            "Twin",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "ოქროსფერი",
+            "ივორი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "პრაქტიკული დეკორატიული ბილიკი მარტივი მოვლის საფარით.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის ბილიკი",
+          "sizes": [
+            "Twin",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "ბეჟი",
+            "ჩარკოლი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cushion-cover",
+      "title": "დეკორატიული ბალიშის გადასაკრავი",
+      "label": "ბალიში",
+      "category": "ინტერიერის ტექსტილი",
+      "shortDescription": "დეკორატიული გადასაკრავები სასტუმროს ოთახებისთვის, ლუქსებისა და ლაუნჯებისთვის.",
+      "longDescription": "ბალიშის გადასაკრავები ამატებს სირბილესა და ვიზუალურ სიღრმეს დასრულებული ოთახის იერისთვის.",
+      "image": "/placeholders/cushions.svg",
+      "imageAlt": "დეკორატიული ბალიშის გადასაკრავის დეტალი",
+      "x": 65,
+      "y": 31,
+      "isVisible": true,
+      "linkedProductSlug": "cushion-covers",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი დეკორატიული გადასაკრავი პრემიუმ ინტერიერისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის ბალიშის გადასაკრავი",
+          "sizes": [
+            "40x40",
+            "45x45",
+            "Custom"
+          ],
+          "colors": [
+            "ივორი",
+            "ოქროსფერი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მიკროფიბრის გადასაკრავი მარტივი მოვლისა და ხშირი გამოყენებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის ბალიშის გადასაკრავი",
+          "sizes": [
+            "40x40",
+            "45x45",
+            "Custom"
+          ],
+          "colors": [
+            "ქვისფერი",
+            "ბეჟი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mattress-protector",
+      "title": "მატრასის დამცავი",
+      "label": "დამცავი",
+      "category": "დამცავი საწოლის ტექსტილი",
+      "shortDescription": "პრაქტიკული ფარული ფენა მატრასის დაცვისა და ჰიგიენისთვის.",
+      "longDescription": "მატრასის დამცავები ეხმარება სასტუმროს სისუფთავის, მატრასის ვადის და ნომრის სტანდარტების შენარჩუნებაში.",
+      "image": "/placeholders/mattress-protector.svg",
+      "imageAlt": "მატრასის დამცავის დეტალი",
+      "x": 34,
+      "y": 67,
+      "isVisible": true,
+      "linkedProductSlug": "mattress-protectors",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი ქვილთიანი დამცავი კომფორტზე ორიენტირებული ოთახებისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის მატრასის დამცავი",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "მსუბუქი დამცავი ფენა ეფექტური ოპერაციებისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის მატრასის დამცავი",
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "Custom"
+          ],
+          "colors": [
+            "თეთრი"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "towel-set",
+      "title": "პირსახოცების ნაკრები",
+      "label": "პირსახოცები",
+      "category": "აბაზანის ტექსტილი",
+      "shortDescription": "რბილი პირსახოცების ნაკრები სასტუმრო პრეზენტაციისთვის.",
+      "longDescription": "შეთანხმებული პირსახოცების ნაკრები ქმნის ერთიან სტუმრის გამოცდილებას ნომრებში, აბაზანებში, სპა სივრცეებსა და ლუქსებში.",
+      "image": "/placeholders/towels.svg",
+      "imageAlt": "სასტუმროს პირსახოცების ნაკრების დეტალი",
+      "x": 82,
+      "y": 73,
+      "isVisible": true,
+      "linkedProductSlug": "towels",
+      "materialVariants": [
+        {
+          "id": "silicon",
+          "label": "სილიკონი",
+          "isVisible": true,
+          "description": "რბილი შეხების ვარიანტი პრემიუმ პირსახოცის პრეზენტაციისთვის.",
+          "image": "/placeholders/material-silicon.svg",
+          "imageAlt": "სილიკონის პირსახოცი",
+          "sizes": [
+            "სახის",
+            "ხელის",
+            "აბაზანის",
+            "დიდი"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ]
+        },
+        {
+          "id": "microfiber",
+          "label": "მიკროფიბრი",
+          "isVisible": true,
+          "description": "სწრაფად მოსავლელი მიკროფიბრის ვარიანტი მაღალი დატვირთვისთვის.",
+          "image": "/placeholders/material-microfiber.svg",
+          "imageAlt": "მიკროფიბრის პირსახოცი",
+          "sizes": [
+            "სახის",
+            "ხელის",
+            "აბაზანის",
+            "დიდი"
+          ],
+          "colors": [
+            "თეთრი",
+            "ქვიშისფერი"
+          ]
+        }
+      ]
+    }
+  ]
+}

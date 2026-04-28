@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Decorative bed runner gallery placeholder">
+  <rect width="900" height="1100" fill="#fbf8f1"/>
+  <rect x="120" y="260" width="660" height="420" rx="50" fill="#fff"/>
+  <rect x="365" y="260" width="170" height="420" rx="30" fill="#d7bd7f"/>
+  <rect x="170" y="190" width="210" height="150" rx="35" fill="#eee4d2"/>
+  <rect x="520" y="190" width="210" height="150" rx="35" fill="#eee4d2"/>
+  <text x="450" y="880" text-anchor="middle" fill="#1c1a17" font-family="Georgia, serif" font-size="48">Bed Accents</text>
+</svg>
