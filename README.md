@@ -260,6 +260,14 @@ form name: quote-inquiry
 
 There is a static hidden form blueprint so Netlify can detect the form during build. The visible form submits with URL-encoded POST and shows success/error text without redirecting.
 
+For Next.js on Netlify, the detection blueprint lives at:
+
+```text
+public/__forms.html
+```
+
+The React form does not use `data-netlify` directly. It posts to `/__forms.html`, which matches the current Netlify Next adapter requirement for Forms.
+
 To test Netlify Forms:
 
 1. Deploy to Netlify.

@@ -99,6 +99,7 @@ export default function QuoteFormSection({
 
     const payload = {
       "form-name": "quote-inquiry",
+      "bot-field": "",
       company_name: formState.companyName,
       contact_person: formState.contactPerson,
       phone: formState.phone,
@@ -110,12 +111,13 @@ export default function QuoteFormSection({
       quantity: formState.quantity,
       message: formState.message,
       selected_product: formState.productInterest,
+      selected_unit: formState.unit,
       quote_source: formState.quoteSource,
       ...utmValues
     };
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeForm(payload)
@@ -140,30 +142,6 @@ export default function QuoteFormSection({
 
   return (
     <SectionWrapper id="quote-form" className="bg-ivory dark:bg-ink">
-      <form
-        name="quote-inquiry"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        hidden
-      >
-        <input type="hidden" name="form-name" value="quote-inquiry" />
-        <input name="company_name" />
-        <input name="contact_person" />
-        <input name="phone" />
-        <input name="email" />
-        <input name="product_interest" />
-        <input name="selected_material" />
-        <input name="selected_price" />
-        <input name="unit" />
-        <input name="quantity" />
-        <textarea name="message" />
-        <input name="selected_product" />
-        <input name="quote_source" />
-        {utmKeys.map((key) => (
-          <input key={key} name={key} />
-        ))}
-      </form>
-
       <div className="container-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className="eyebrow">{localized(content.eyebrow, language)}</p>
@@ -176,8 +154,6 @@ export default function QuoteFormSection({
         <form
           name="quote-inquiry"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="rounded-2xl border border-stone-200 bg-white p-5 shadow-soft dark:border-stone-800 dark:bg-stone-950 sm:p-7"
         >
@@ -197,6 +173,12 @@ export default function QuoteFormSection({
             type="hidden"
             name="quote_source"
             value={formState.quoteSource}
+            readOnly
+          />
+          <input
+            type="hidden"
+            name="selected_unit"
+            value={formState.unit}
             readOnly
           />
           {utmKeys.map((key) => (
