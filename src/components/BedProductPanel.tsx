@@ -1,9 +1,13 @@
 "use client";
 
 import type { BedHotspotContent, InteractiveBedContent } from "@/lib/types";
+import { trackMetaEvent } from "@/lib/metaPixel";
+import { formatPriceDisplay } from "@/lib/pricing";
+import { dispatchQuoteSelection, scrollToQuoteForm } from "@/lib/quoteSelection";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import PriceBlock from "./PriceBlock";
 
 type BedProductPanelProps = {
   hotspot: BedHotspotContent;
@@ -58,6 +62,43 @@ export default function BedProductPanel({
   const description = selectedVariant?.description || hotspot.longDescription;
   const sizes = selectedVariant?.sizes?.filter(Boolean) || [];
   const colors = selectedVariant?.colors?.filter(Boolean) || [];
+  const formattedPrice =
+    formatPriceDisplay(selectedVariant) || formatPriceDisplay(hotspot);
+  const selectedUnit =
+    formattedPrice?.unitText || selectedVariant?.unit || hotspot.unit || "";
+
+  function handleMaterialSelect(variantId: string) {
+    const nextVariant = variants.find((variant) => variant.id === variantId);
+    const nextPrice =
+      formatPriceDisplay(nextVariant) || formatPriceDisplay(hotspot);
+
+    setSelectedVariantId(variantId);
+    trackMetaEvent("MaterialSelected", {
+      content_name: hotspot.title,
+      material: nextVariant?.label,
+      price: nextPrice?.fullText,
+      currency: "GEL",
+      value: nextPrice?.numericValue
+    });
+  }
+
+  function handleQuoteClick() {
+    dispatchQuoteSelection({
+      selectedProduct: hotspot.title,
+      selectedMaterial: selectedVariant?.label || "",
+      selectedPrice: formattedPrice?.fullText || "Price available upon request",
+      selectedUnit,
+      quoteSource: "interactive bed"
+    });
+    trackMetaEvent("QuoteIntent", {
+      content_name: hotspot.title,
+      material: selectedVariant?.label,
+      price: formattedPrice?.fullText,
+      quote_source: "interactive bed"
+    });
+    onClose();
+    window.setTimeout(scrollToQuoteForm, 50);
+  }
 
   return (
     <div
@@ -114,6 +155,8 @@ export default function BedProductPanel({
             {description}
           </p>
 
+          <PriceBlock price={formattedPrice} className="mt-5" />
+
           {variants.length > 1 ? (
             <div className="mt-6">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
@@ -124,7 +167,7 @@ export default function BedProductPanel({
                   <button
                     key={variant.id}
                     type="button"
-                    onClick={() => setSelectedVariantId(variant.id)}
+                    onClick={() => handleMaterialSelect(variant.id)}
                     className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
                       selectedVariant?.id === variant.id
                         ? "border-brass bg-brass text-white dark:border-champagne dark:bg-champagne dark:text-ink"
@@ -183,9 +226,9 @@ export default function BedProductPanel({
                 <ArrowRight aria-hidden className="ml-2" size={16} />
               </a>
             ) : null}
-            <a href="#contact" className="secondary-button" onClick={onClose}>
+            <button type="button" className="secondary-button" onClick={handleQuoteClick}>
               {content.contactText}
-            </a>
+            </button>
           </div>
         </div>
       </motion.aside>

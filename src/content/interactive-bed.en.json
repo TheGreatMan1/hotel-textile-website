@@ -1,370 +1,517 @@
 {
-  "sizesLabel": "Sizes",
-  "colorsLabel": "Colors",
-  "hotspots": [
-    {
-      "shortDescription": "Soft hotel duvets designed to create a comfortable, warm, and premium guest sleep experience.",
-      "longDescription": "A hotel-ready duvet layer for rooms and suites, built around guest comfort, easy styling, and a polished hospitality presentation.",
-      "linkedProductSlug": "duvet",
-      "isVisible": true,
-      "imageAlt": "Premium hotel duvet detail",
-      "label": "Duvet",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Soft silicon filling with a plush, warm feel for premium hotel rooms.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon duvet material placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Ivory"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Lightweight microfiber filling designed for easy care and consistent guest comfort.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber duvet material placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Beige"
-          ]
-        }
-      ],
-      "x": 58,
-      "title": "Duvet",
-      "y": 52,
-      "id": "duvet",
-      "image": "/placeholders/blankets.svg",
-      "category": "Comfort Bedding"
-    },
-    {
-      "shortDescription": "Comfortable pillow filling options for hotel rooms, suites, and daily hospitality use.",
-      "longDescription": "Pillow filling helps define the guest sleep experience with the right balance of support, softness, and practical care.",
-      "linkedProductSlug": "pillow-filling",
-      "isVisible": true,
-      "imageAlt": "Hotel pillow filling detail",
-      "label": "Pillow-filling",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Silicon pillow filling with a soft, resilient feel for premium rooms.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon pillow filling placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Microfiber pillow filling for lightweight comfort and dependable daily use.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber pillow filling placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White"
-          ]
-        }
-      ],
-      "x": 31,
-      "title": "Pillow-filling",
-      "y": 28,
-      "id": "pillow-filling",
-      "image": "/placeholders/pillow-covers.svg",
-      "category": "Pillow Products"
-    },
-    {
-      "shortDescription": "Protective pillow layers that support hygiene, comfort, and longer pillow life in hotel operations.",
-      "longDescription": "Pillow protectors add a clean hidden layer between pillow and pillowcase, helping hotels protect bedding and maintain guest-room standards.",
-      "linkedProductSlug": "pillow-protector",
-      "isVisible": true,
-      "imageAlt": "Hotel pillow protector detail",
-      "label": "Pillow Protector",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Soft protective finish for comfort-focused rooms and suites.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon pillow protector placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Ivory"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Easy-care microfiber protector for practical hotel operations.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber pillow protector placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Beige"
-          ]
-        }
-      ],
-      "x": 44,
-      "title": "Pillow Protector",
-      "y": 27,
-      "id": "pillow-protector",
-      "image": "/placeholders/pillow-covers.svg",
-      "category": "Protective Bedding"
-    },
-    {
-      "shortDescription": "Terry mattress protectors designed for hotel hygiene, mattress care, and comfortable guest rooms.",
-      "longDescription": "A terry mattress protector supports mattress protection while keeping the sleeping surface comfortable and hotel-ready.",
-      "linkedProductSlug": "terry-mattress-protector",
-      "isVisible": true,
-      "imageAlt": "Terry mattress protector detail",
-      "label": "Mattress Protector",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Soft quilted protector option for comfort-focused rooms.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon terry mattress protector placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Lightweight protective option for efficient hotel room turnover.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber terry mattress protector placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White"
-          ]
-        }
-      ],
-      "x": 34,
-      "title": "Mattress Protector",
-      "y": 70,
-      "id": "terry-mattress-protector",
-      "image": "/placeholders/mattress-protector.svg",
-      "category": "Protective Bedding"
-    },
-    {
-      "shortDescription": "Clean, durable hotel bed sheets prepared for repeated use, easy care, and crisp presentation.",
-      "longDescription": "Bed sheets create the clean foundation of the hotel bed, supporting guest comfort and a professionally prepared room.",
-      "linkedProductSlug": "bed-sheet",
-      "isVisible": true,
-      "imageAlt": "Hotel bed sheet detail",
-      "label": "Bed Sheet",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Soft silicon feel with a refined surface for premium hotel rooms.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon bed sheet placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Ivory"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Easy-care microfiber for reliable everyday room turnover.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber bed sheet placeholder",
-          "sizes": [
-            "Single",
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Beige"
-          ]
-        }
-      ],
-      "x": 47,
-      "title": "Bed Sheet",
-      "y": 63,
-      "id": "bed-sheet",
-      "image": "/placeholders/bed-sheets.svg",
-      "category": "Bed Linen"
-    },
-    {
-      "shortDescription": "Premium duvet covers designed for guest comfort, elegant bed styling, and easy maintenance.",
-      "longDescription": "A duvet cover defines the main visible layer of the bed, balancing softness, durability, and a freshly prepared hotel look.",
-      "linkedProductSlug": "duvet-cover",
-      "isVisible": true,
-      "imageAlt": "Premium duvet cover detail",
-      "label": "Duvet Cover",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Silicon-touch duvet cover with a soft, hotel-ready finish.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon duvet cover placeholder",
-          "sizes": [
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Ivory",
-            "Champagne"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Microfiber duvet cover for easy care and operational consistency.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber duvet cover placeholder",
-          "sizes": [
-            "Queen",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Beige"
-          ]
-        }
-      ],
-      "x": 54,
-      "title": "Duvet Cover",
-      "y": 39,
-      "id": "duvet-cover",
-      "image": "/placeholders/duvet-covers.svg",
-      "category": "Bed Linen"
-    },
-    {
-      "shortDescription": "Soft and durable pillowcases designed for daily hospitality use and polished hotel presentation.",
-      "longDescription": "A polished pillowcase range for guest rooms and suites, created for comfort, repeated laundering, and a clean hotel presentation.",
-      "linkedProductSlug": "pillowcase",
-      "isVisible": true,
-      "imageAlt": "Hotel pillowcase textile detail",
-      "label": "Pillowcase",
-      "materialVariants": [
-        {
-          "id": "silicon",
-          "label": "Silicon",
-          "isVisible": true,
-          "description": "Smooth silicon-touch finish with a soft hand feel for premium guest rooms.",
-          "image": "/placeholders/material-silicon.svg",
-          "imageAlt": "Silicon pillowcase material placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Ivory"
-          ]
-        },
-        {
-          "id": "microfiber",
-          "label": "Microfiber",
-          "isVisible": true,
-          "description": "Lightweight microfiber designed for practical care and consistent daily use.",
-          "image": "/placeholders/material-microfiber.svg",
-          "imageAlt": "Microfiber pillowcase material placeholder",
-          "sizes": [
-            "Standard",
-            "King",
-            "Custom"
-          ],
-          "colors": [
-            "White",
-            "Beige"
-          ]
-        }
-      ],
-      "x": 64,
-      "title": "Pillowcase",
-      "y": 29,
-      "id": "pillowcase",
-      "image": "/placeholders/pillow-covers.svg",
-      "category": "Bed Linen"
-    }
-  ],
-  "closeText": "Close",
-  "materialsLabel": "Materials",
-  "isVisible": true,
-  "eyebrow": "Interactive Textile Explorer",
-  "contactText": "Contact Us",
-  "bedImageAlt": "Illustrated luxury hotel bed with clickable textile hotspots",
-  "viewProductText": "View Product",
-  "subtitle": "Click on different parts of the bed to discover textile products designed for hotel rooms, suites, and hospitality spaces.",
-  "mobileListTitle": "Tap a textile layer",
-  "title": "Explore Every Layer of Comfort",
-  "bedImage": "/uploads/images/chatgpt-image-apr-30-2026-02_24_53-pm.png"
+    "isVisible":  true,
+    "eyebrow":  "Interactive Textile Explorer",
+    "title":  "Explore Every Layer of Comfort",
+    "subtitle":  "Click on different parts of the bed to discover textile products designed for hotel rooms, suites, and hospitality spaces.",
+    "bedImage":  "/uploads/images/chatgpt-image-apr-30-2026-02_24_53-pm.png",
+    "bedImageAlt":  "Illustrated luxury hotel bed with clickable textile hotspots",
+    "viewProductText":  "View Product",
+    "contactText":  "Request Quote",
+    "closeText":  "Close",
+    "materialsLabel":  "Materials",
+    "sizesLabel":  "Sizes",
+    "colorsLabel":  "Colors",
+    "mobileListTitle":  "Tap a textile layer",
+    "hotspots":  [
+                     {
+                         "id":  "duvet",
+                         "title":  "Duvet",
+                         "label":  "Duvet",
+                         "category":  "Comfort Bedding",
+                         "shortDescription":  "Soft hotel duvets designed to create a comfortable, warm, and premium guest sleep experience.",
+                         "longDescription":  "A hotel-ready duvet layer for rooms and suites, built around guest comfort, easy styling, and a polished hospitality presentation.",
+                         "image":  "/placeholders/blankets.svg",
+                         "imageAlt":  "Premium hotel duvet detail",
+                         "x":  58,
+                         "y":  52,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "duvet",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Soft silicon filling with a plush, warm feel for premium hotel rooms.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon duvet material placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Ivory"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "88",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Lightweight microfiber filling designed for easy care and consistent guest comfort.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber duvet material placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Beige"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "75",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "75",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "pillow-filling",
+                         "title":  "Pillow-filling",
+                         "label":  "Pillow-filling",
+                         "category":  "Pillow Products",
+                         "shortDescription":  "Comfortable pillow filling options for hotel rooms, suites, and daily hospitality use.",
+                         "longDescription":  "Pillow filling helps define the guest sleep experience with the right balance of support, softness, and practical care.",
+                         "image":  "/placeholders/pillow-covers.svg",
+                         "imageAlt":  "Hotel pillow filling detail",
+                         "x":  31,
+                         "y":  28,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "pillow-filling",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Silicon pillow filling with a soft, resilient feel for premium rooms.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon pillow filling placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "34",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Microfiber pillow filling for lightweight comfort and dependable daily use.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber pillow filling placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "28",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "28",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "pillow-protector",
+                         "title":  "Pillow Protector",
+                         "label":  "Pillow Protector",
+                         "category":  "Protective Bedding",
+                         "shortDescription":  "Protective pillow layers that support hygiene, comfort, and longer pillow life in hotel operations.",
+                         "longDescription":  "Pillow protectors add a clean hidden layer between pillow and pillowcase, helping hotels protect bedding and maintain guest-room standards.",
+                         "image":  "/placeholders/pillow-covers.svg",
+                         "imageAlt":  "Hotel pillow protector detail",
+                         "x":  44,
+                         "y":  27,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "pillow-protector",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Soft protective finish for comfort-focused rooms and suites.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon pillow protector placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Ivory"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "22",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Easy-care microfiber protector for practical hotel operations.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber pillow protector placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Beige"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "18",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "18",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "terry-mattress-protector",
+                         "title":  "Terry Mattress Protector",
+                         "label":  "Terry Protector",
+                         "category":  "Protective Bedding",
+                         "shortDescription":  "Terry mattress protectors designed for hotel hygiene, mattress care, and comfortable guest rooms.",
+                         "longDescription":  "A terry mattress protector supports mattress protection while keeping the sleeping surface comfortable and hotel-ready.",
+                         "image":  "/placeholders/mattress-protector.svg",
+                         "imageAlt":  "Terry mattress protector detail",
+                         "x":  34,
+                         "y":  70,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "terry-mattress-protector",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Soft quilted protector option for comfort-focused rooms.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon terry mattress protector placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "55",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Lightweight protective option for efficient hotel room turnover.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber terry mattress protector placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "45",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "45",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "bed-sheet",
+                         "title":  "Bed Sheet",
+                         "label":  "Bed Sheet",
+                         "category":  "Bed Linen",
+                         "shortDescription":  "Clean, durable hotel bed sheets prepared for repeated use, easy care, and crisp presentation.",
+                         "longDescription":  "Bed sheets create the clean foundation of the hotel bed, supporting guest comfort and a professionally prepared room.",
+                         "image":  "/placeholders/bed-sheets.svg",
+                         "imageAlt":  "Hotel bed sheet detail",
+                         "x":  47,
+                         "y":  63,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "bed-sheet",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Soft silicon feel with a refined surface for premium hotel rooms.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon bed sheet placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Ivory"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "42",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Easy-care microfiber for reliable everyday room turnover.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber bed sheet placeholder",
+                                                      "sizes":  [
+                                                                    "Single",
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Beige"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "35",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "35",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "duvet-cover",
+                         "title":  "Duvet Cover",
+                         "label":  "Duvet Cover",
+                         "category":  "Bed Linen",
+                         "shortDescription":  "Premium duvet covers designed for guest comfort, elegant bed styling, and easy maintenance.",
+                         "longDescription":  "A duvet cover defines the main visible layer of the bed, balancing softness, durability, and a freshly prepared hotel look.",
+                         "image":  "/placeholders/duvet-covers.svg",
+                         "imageAlt":  "Premium duvet cover detail",
+                         "x":  54,
+                         "y":  39,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "duvet-cover",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Silicon-touch duvet cover with a soft, hotel-ready finish.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon duvet cover placeholder",
+                                                      "sizes":  [
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Ivory",
+                                                                     "Champagne"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "65",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Microfiber duvet cover for easy care and operational consistency.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber duvet cover placeholder",
+                                                      "sizes":  [
+                                                                    "Queen",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Beige"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "55",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "55",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     },
+                     {
+                         "id":  "pillowcase",
+                         "title":  "Pillowcase",
+                         "label":  "Pillowcase",
+                         "category":  "Bed Linen",
+                         "shortDescription":  "Soft and durable pillowcases designed for daily hospitality use and polished hotel presentation.",
+                         "longDescription":  "A polished pillowcase range for guest rooms and suites, created for comfort, repeated laundering, and a clean hotel presentation.",
+                         "image":  "/placeholders/pillow-covers.svg",
+                         "imageAlt":  "Hotel pillowcase textile detail",
+                         "x":  64,
+                         "y":  29,
+                         "isVisible":  true,
+                         "linkedProductSlug":  "pillowcase",
+                         "materialVariants":  [
+                                                  {
+                                                      "id":  "silicon",
+                                                      "label":  "Silicon",
+                                                      "isVisible":  true,
+                                                      "description":  "Smooth silicon-touch finish with a soft hand feel for premium guest rooms.",
+                                                      "image":  "/placeholders/material-silicon.svg",
+                                                      "imageAlt":  "Silicon pillowcase material placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Ivory"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "15",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  },
+                                                  {
+                                                      "id":  "microfiber",
+                                                      "label":  "Microfiber",
+                                                      "isVisible":  true,
+                                                      "description":  "Lightweight microfiber designed for practical care and consistent daily use.",
+                                                      "image":  "/placeholders/material-microfiber.svg",
+                                                      "imageAlt":  "Microfiber pillowcase material placeholder",
+                                                      "sizes":  [
+                                                                    "Standard",
+                                                                    "King",
+                                                                    "Custom"
+                                                                ],
+                                                      "colors":  [
+                                                                     "White",
+                                                                     "Beige"
+                                                                 ],
+                                                      "showPrice":  true,
+                                                      "priceType":  "from",
+                                                      "price":  "12",
+                                                      "priceMin":  "",
+                                                      "priceMax":  "",
+                                                      "unit":  "per piece",
+                                                      "priceNote":  ""
+                                                  }
+                                              ],
+                         "showPrice":  true,
+                         "priceType":  "from",
+                         "price":  "12",
+                         "priceMin":  "",
+                         "priceMax":  "",
+                         "unit":  "per piece",
+                         "priceNote":  ""
+                     }
+                 ]
 }

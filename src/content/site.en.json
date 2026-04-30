@@ -13,6 +13,11 @@
       "sectionKey": "products"
     },
     {
+      "label": "Quote",
+      "href": "#quote-form",
+      "sectionKey": "quoteForm"
+    },
+    {
       "label": "Why Us",
       "href": "#why-us",
       "sectionKey": "whyChooseUs"
@@ -41,12 +46,12 @@
   "hero": {
     "isVisible": true,
     "eyebrow": "Hotel Textile Supplier",
-    "title": "Premium Textile Solutions for Hotels",
-    "subtitle": "We supply high-quality bed linen, towels, cushion covers, and hospitality textile products designed for comfort, durability, and timeless elegance.",
-    "primaryButtonText": "Explore Products",
-    "primaryButtonLink": "#products",
-    "secondaryButtonText": "Explore the Bed",
-    "secondaryButtonLink": "#interactive-bed",
+    "title": "Premium Hotel Textiles for Hospitality Businesses",
+    "subtitle": "Bed linen, towels, duvet covers, pillowcases, mattress protectors, and custom textile solutions for hotels, guesthouses, and hospitality projects.",
+    "primaryButtonText": "Request Quote",
+    "primaryButtonLink": "#quote-form",
+    "secondaryButtonText": "Explore Products",
+    "secondaryButtonLink": "#products",
     "image": "/placeholders/hero.svg",
     "imageAlt": "Premium hotel bed prepared with crisp white textile layers",
     "stats": [

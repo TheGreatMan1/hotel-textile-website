@@ -1,6 +1,7 @@
 "use client";
 
 import type { BedHotspotContent, InteractiveBedContent } from "@/lib/types";
+import { trackMetaEvent } from "@/lib/metaPixel";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -25,6 +26,15 @@ export default function InteractiveBedExplorer({
   );
 
   if (!content.isVisible || visibleHotspots.length === 0) return null;
+
+  function handleHotspotSelect(hotspot: BedHotspotContent) {
+    setActiveHotspot(hotspot);
+    trackMetaEvent("BedHotspotClick", {
+      content_name: hotspot.title,
+      content_category: hotspot.category,
+      linked_product_slug: hotspot.linkedProductSlug
+    });
+  }
 
   return (
     <SectionWrapper
@@ -62,7 +72,7 @@ export default function InteractiveBedExplorer({
                   key={hotspot.id}
                   hotspot={hotspot}
                   isActive={activeHotspot?.id === hotspot.id}
-                  onSelect={setActiveHotspot}
+                  onSelect={handleHotspotSelect}
                 />
               ))}
             </div>
@@ -77,7 +87,7 @@ export default function InteractiveBedExplorer({
                 <button
                   key={hotspot.id}
                   type="button"
-                  onClick={() => setActiveHotspot(hotspot)}
+                  onClick={() => handleHotspotSelect(hotspot)}
                   className="group flex items-center justify-between gap-3 rounded-lg border border-stone-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
                 >
                   <span>

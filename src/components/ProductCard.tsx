@@ -1,8 +1,12 @@
 "use client";
 
+import { trackStandardMetaEvent } from "@/lib/metaPixel";
+import { formatPriceDisplay } from "@/lib/pricing";
+import { dispatchQuoteSelection, scrollToQuoteForm } from "@/lib/quoteSelection";
 import type { Product } from "@/lib/types";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import type { MouseEvent } from "react";
 
 type ProductCardProps = {
   product: Product;
@@ -14,9 +18,30 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product, labels }: ProductCardProps) {
-  const href = product.buttonLink?.trim() || "#contact";
+  const href = product.buttonLink?.trim() || "#quote-form";
   const sizes = product.availableSizes?.filter(Boolean) || [];
   const colors = product.colorOptions?.filter(Boolean) || [];
+  const formattedPrice = formatPriceDisplay(product);
+
+  function handleQuoteClick(event: MouseEvent<HTMLAnchorElement>) {
+    if (href.startsWith("#")) event.preventDefault();
+
+    dispatchQuoteSelection({
+      selectedProduct: product.title,
+      selectedPrice: formattedPrice?.fullText || "",
+      selectedUnit: formattedPrice?.unitText || product.unit || "",
+      quoteSource: "product card"
+    });
+    trackStandardMetaEvent("ViewContent", {
+      content_name: product.title,
+      content_category: product.category,
+      content_ids: product.slug,
+      currency: "GEL",
+      value: formattedPrice?.numericValue,
+      price: formattedPrice?.fullText
+    });
+    scrollToQuoteForm();
+  }
 
   return (
     <motion.article
@@ -74,8 +99,22 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
           ) : null}
         </div>
 
+        {formattedPrice ? (
+          <div className="mt-5 rounded-lg border border-champagne/60 bg-champagne/15 px-4 py-3 text-charcoal dark:border-champagne/30 dark:bg-champagne/10 dark:text-ivory">
+            <p className="font-serif text-3xl font-semibold leading-tight">
+              {formattedPrice.displayText}
+            </p>
+            {formattedPrice.unitText ? (
+              <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-brass dark:text-champagne">
+                {formattedPrice.unitText}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
+
         <a
           href={href}
+          onClick={handleQuoteClick}
           className="mt-6 inline-flex items-center text-sm font-bold text-brass transition hover:text-charcoal dark:text-champagne dark:hover:text-ivory"
         >
           {product.buttonText}

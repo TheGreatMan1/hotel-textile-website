@@ -2,6 +2,7 @@
 
 import { localized } from "@/lib/content";
 import { contactIconMap } from "@/lib/icons";
+import { trackStandardMetaEvent } from "@/lib/metaPixel";
 import type { ContactContent, Language } from "@/lib/types";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
@@ -52,6 +53,11 @@ export default function ContactSection({
                 <motion.a
                   key={method.key}
                   href={method.url}
+                  onClick={() =>
+                    trackStandardMetaEvent("Contact", {
+                      contact_method: method.key
+                    })
+                  }
                   className="rounded-lg border border-stone-200 bg-ivory p-5 transition hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-ink dark:hover:border-champagne"
                   whileHover={{ y: -5 }}
                 >

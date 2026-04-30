@@ -6,7 +6,7 @@
   "bedImage": "/placeholders/interactive-bed.svg",
   "bedImageAlt": "ლუქს სასტუმროს საწოლის ილუსტრაცია ტექსტილის წერტილებით",
   "viewProductText": "პროდუქტის ნახვა",
-  "contactText": "დაგვიკავშირდით",
+  "contactText": "??????????? ????????",
   "closeText": "დახურვა",
   "materialsLabel": "მასალები",
   "sizesLabel": "ზომები",
@@ -34,8 +34,23 @@
           "description": "რბილი სილიკონის შიგთავსი თბილი და ფუმფულა შეგრძნებისთვის პრემიუმ სასტუმროს ოთახებში.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის საბნის მასალის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ივორი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "88",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -44,10 +59,32 @@
           "description": "მსუბუქი მიკროფიბრის შიგთავსი მარტივი მოვლისა და სტაბილური კომფორტისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის საბნის მასალის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ბეჟი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "75",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "75",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "pillow-filling",
@@ -70,8 +107,21 @@
           "description": "სილიკონის ბალიშის შიგთავსი რბილი და მდგრადი შეგრძნებისთვის პრემიუმ ოთახებში.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის ბალიშის შიგთავსის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "34",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -80,10 +130,30 @@
           "description": "მიკროფიბრის ბალიშის შიგთავსი მსუბუქი კომფორტისა და ყოველდღიური გამოყენებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის ბალიშის შიგთავსის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "28",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "28",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "pillow-protector",
@@ -106,8 +176,22 @@
           "description": "რბილი დამცავი საფარი კომფორტზე ორიენტირებული ოთახებისა და ლუქსებისთვის.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის ბალიშის დამცავის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ივორი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "22",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -116,10 +200,31 @@
           "description": "მარტივად მოსავლელი მიკროფიბრის დამცავი პრაქტიკული სასტუმროს ოპერაციებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის ბალიშის დამცავის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ბეჟი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "18",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "18",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "terry-mattress-protector",
@@ -142,8 +247,22 @@
           "description": "რბილი ქვილთიანი დამცავი ვარიანტი კომფორტზე ორიენტირებული ოთახებისთვის.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის ტერი მატრასის დამცავის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "55",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -152,10 +271,31 @@
           "description": "მსუბუქი დამცავი ვარიანტი სასტუმროს ოთახების ეფექტური მომზადებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის ტერი მატრასის დამცავის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "45",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "45",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "bed-sheet",
@@ -178,8 +318,23 @@
           "description": "რბილი სილიკონის შეგრძნება დახვეწილი ზედაპირით პრემიუმ სასტუმროს ოთახებისთვის.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის ზეწრის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ივორი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "42",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -188,10 +343,32 @@
           "description": "მარტივად მოსავლელი მიკროფიბრი ყოველდღიური სასტუმროს გამოყენებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის ზეწრის მაგალითი",
-          "sizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ბეჟი"]
+          "sizes": [
+            "Single",
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "35",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "35",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "duvet-cover",
@@ -214,8 +391,23 @@
           "description": "სილიკონის შეხების საბნის გადასაკრავი რბილი, სასტუმროსთვის მზად საფარით.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის საბნის გადასაკრავის მაგალითი",
-          "sizes": ["Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ივორი", "შამპანური"]
+          "sizes": [
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი",
+            "შამპანური"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "65",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -224,10 +416,31 @@
           "description": "მიკროფიბრის საბნის გადასაკრავი მარტივი მოვლისა და სტაბილური გამოყენებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის საბნის გადასაკრავის მაგალითი",
-          "sizes": ["Queen", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ბეჟი"]
+          "sizes": [
+            "Queen",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "55",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "55",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "id": "pillowcase",
@@ -250,8 +463,22 @@
           "description": "გლუვი სილიკონის შეხების საფარი რბილი შეგრძნებით პრემიუმ სასტუმროს ოთახებისთვის.",
           "image": "/placeholders/material-silicon.svg",
           "imageAlt": "სილიკონის ბალიშის პირის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ივორი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ივორი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "15",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         },
         {
           "id": "microfiber",
@@ -260,10 +487,31 @@
           "description": "მსუბუქი მიკროფიბრი პრაქტიკული მოვლისა და ყოველდღიური გამოყენებისთვის.",
           "image": "/placeholders/material-microfiber.svg",
           "imageAlt": "მიკროფიბრის ბალიშის პირის მაგალითი",
-          "sizes": ["Standard", "King", "ინდივიდუალური"],
-          "colors": ["თეთრი", "ბეჟი"]
+          "sizes": [
+            "Standard",
+            "King",
+            "ინდივიდუალური"
+          ],
+          "colors": [
+            "თეთრი",
+            "ბეჟი"
+          ],
+          "showPrice": true,
+          "priceType": "from",
+          "price": "12",
+          "priceMin": "",
+          "priceMax": "",
+          "unit": "????????",
+          "priceNote": ""
         }
-      ]
+      ],
+      "showPrice": true,
+      "priceType": "from",
+      "price": "12",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     }
   ]
 }

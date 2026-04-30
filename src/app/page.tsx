@@ -9,8 +9,10 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import InteractiveBedExplorer from "@/components/InteractiveBedExplorer";
 import MapSection from "@/components/MapSection";
+import MobileQuoteCTA from "@/components/MobileQuoteCTA";
 import ProcessSection from "@/components/ProcessSection";
 import ProductCollections from "@/components/ProductCollections";
+import QuoteFormSection from "@/components/QuoteFormSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import { getSectionVisibility, websiteContent } from "@/lib/content";
 import type { Language } from "@/lib/types";
@@ -61,6 +63,10 @@ export default function Home() {
         <CatalogSection catalog={websiteContent.catalog} language={language} />
         <ProcessSection process={process} />
         <MapSection map={websiteContent.map} language={language} />
+        <QuoteFormSection
+          content={websiteContent.quoteForm}
+          language={language}
+        />
         <ContactSection contact={websiteContent.contact} language={language} />
       </main>
       <Footer
@@ -69,6 +75,7 @@ export default function Home() {
         language={language}
         visibleSections={visibleSections}
       />
+      <MobileQuoteCTA content={websiteContent.quoteForm} language={language} />
     </>
   );
 }

@@ -41,7 +41,7 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "href", widget: "string" }
-              - { label: "Section Key", name: "sectionKey", widget: "select", options: ["hero", "interactiveBed", "products", "whyChooseUs", "about", "gallery", "catalog", "process", "map", "contact"] }
+              - { label: "Section Key", name: "sectionKey", widget: "select", options: ["hero", "interactiveBed", "products", "whyChooseUs", "about", "gallery", "catalog", "process", "map", "quoteForm", "contact"] }
           - label: "Hero Section"
             name: "hero"
             widget: "object"
@@ -140,6 +140,13 @@ collections:
               - { label: "Color Options", name: "colorOptions", widget: "list", required: false, field: { label: "Color", name: "color", widget: "string" } }
               - { label: "Show Product", name: "isVisible", widget: "boolean", default: true }
               - { label: "Sort Order", name: "sortOrder", widget: "number", value_type: "int" }
+              - { label: "Show Price", name: "showPrice", widget: "boolean", default: true }
+              - { label: "Price Type", name: "priceType", widget: "select", options: ["fixed", "from", "range", "custom"] }
+              - { label: "Price", name: "price", widget: "string", required: false }
+              - { label: "Price Min", name: "priceMin", widget: "string", required: false }
+              - { label: "Price Max", name: "priceMax", widget: "string", required: false }
+              - { label: "Unit", name: "unit", widget: "string", required: false }
+              - { label: "Price Note", name: "priceNote", widget: "string", required: false }
 
   - name: "georgian_products"
     label: "Georgian Products"
@@ -189,6 +196,13 @@ collections:
               - { label: "Position Y Percent", name: "y", widget: "number", value_type: "float", min: 0, max: 100 }
               - { label: "Show Hotspot", name: "isVisible", widget: "boolean", default: true }
               - { label: "Linked Product Slug", name: "linkedProductSlug", widget: "string", required: false }
+              - { label: "Show Price", name: "showPrice", widget: "boolean", default: true }
+              - { label: "Price Type", name: "priceType", widget: "select", options: ["fixed", "from", "range", "custom"] }
+              - { label: "Price", name: "price", widget: "string", required: false }
+              - { label: "Price Min", name: "priceMin", widget: "string", required: false }
+              - { label: "Price Max", name: "priceMax", widget: "string", required: false }
+              - { label: "Unit", name: "unit", widget: "string", required: false }
+              - { label: "Price Note", name: "priceNote", widget: "string", required: false }
               - label: "Material Variants"
                 name: "materialVariants"
                 widget: "list"
@@ -201,6 +215,13 @@ collections:
                   - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
                   - { label: "Sizes", name: "sizes", widget: "list", required: false, field: { label: "Size", name: "size", widget: "string" } }
                   - { label: "Colors", name: "colors", widget: "list", required: false, field: { label: "Color", name: "color", widget: "string" } }
+                  - { label: "Show Price", name: "showPrice", widget: "boolean", default: true }
+                  - { label: "Price Type", name: "priceType", widget: "select", options: ["fixed", "from", "range", "custom"] }
+                  - { label: "Price", name: "price", widget: "string", required: false }
+                  - { label: "Price Min", name: "priceMin", widget: "string", required: false }
+                  - { label: "Price Max", name: "priceMax", widget: "string", required: false }
+                  - { label: "Unit", name: "unit", widget: "string", required: false }
+                  - { label: "Price Note", name: "priceNote", widget: "string", required: false }
 
   - name: "georgian_interactive_bed"
     label: "Georgian Interactive Bed"
@@ -296,6 +317,37 @@ collections:
           - { label: "Google Maps Embed URL", name: "embedUrl", widget: "string", required: false }
           - { label: "Button Text", name: "buttonText", widget: "object", fields: *localized_text_fields }
           - { label: "External Google Maps Link", name: "externalLink", widget: "string", required: false }
+
+  - name: "quote_form"
+    label: "Quote Form"
+    files:
+      - name: "quote_form"
+        label: "Quote / Inquiry Form"
+        file: "src/content/quote-form.json"
+        editor:
+          preview: false
+        fields:
+          - { label: "Show Quote Form", name: "isVisible", widget: "boolean", default: true }
+          - { label: "Eyebrow", name: "eyebrow", widget: "object", fields: *localized_text_fields }
+          - { label: "Title", name: "title", widget: "object", fields: *localized_text_fields }
+          - { label: "Description", name: "description", widget: "object", fields: *localized_text_fields }
+          - { label: "Submit Button Text", name: "submitButtonText", widget: "object", fields: *localized_text_fields }
+          - { label: "Success Message", name: "successMessage", widget: "object", fields: *localized_text_fields }
+          - { label: "Error Message", name: "errorMessage", widget: "object", fields: *localized_text_fields }
+          - label: "Fields"
+            name: "fields"
+            widget: "object"
+            fields:
+              - { label: "Company / Hotel Name", name: "companyName", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Contact Person", name: "contactPerson", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Phone", name: "phone", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Email", name: "email", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Product Interest", name: "productInterest", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Selected Material", name: "selectedMaterial", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Selected Price", name: "selectedPrice", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Unit", name: "unit", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Approximate Quantity / Rooms", name: "quantity", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
+              - { label: "Message", name: "message", widget: "object", fields: [{ label: "Label", name: "label", widget: "object", fields: *localized_text_fields }, { label: "Placeholder", name: "placeholder", widget: "object", fields: *localized_text_fields }] }
 
   - name: "process_english"
     label: "Process English"

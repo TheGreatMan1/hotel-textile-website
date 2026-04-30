@@ -14,13 +14,28 @@
       "shortDescription": "Soft hotel duvets designed to create a comfortable, warm, and premium guest sleep experience.",
       "image": "/placeholders/blankets.svg",
       "imageAlt": "Premium hotel duvet layer",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Silicon and microfiber fill options",
-      "availableSizes": ["Single", "Queen", "King", "Custom"],
-      "colorOptions": ["White", "Ivory"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White",
+        "Ivory"
+      ],
       "isVisible": true,
-      "sortOrder": 1
+      "sortOrder": 1,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "75",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "pillow-filling",
@@ -29,13 +44,26 @@
       "shortDescription": "Comfortable pillow filling options for hotel rooms, suites, and daily hospitality use.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "Hotel pillow filling textile placeholder",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Silicon and microfiber",
-      "availableSizes": ["Standard", "King", "Custom"],
-      "colorOptions": ["White"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White"
+      ],
       "isVisible": true,
-      "sortOrder": 2
+      "sortOrder": 2,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "28",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "pillow-protector",
@@ -44,13 +72,27 @@
       "shortDescription": "Protective pillow layers that support hygiene, comfort, and longer pillow life in hotel operations.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "Hotel pillow protector placeholder",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Microfiber and quilted protective options",
-      "availableSizes": ["Standard", "King", "Custom"],
-      "colorOptions": ["White", "Ivory"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White",
+        "Ivory"
+      ],
       "isVisible": true,
-      "sortOrder": 3
+      "sortOrder": 3,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "18",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "terry-mattress-protector",
@@ -59,13 +101,27 @@
       "shortDescription": "Terry mattress protectors designed for hotel hygiene, mattress care, and comfortable guest rooms.",
       "image": "/placeholders/mattress-protector.svg",
       "imageAlt": "Terry mattress protector layer",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Terry, quilted, and waterproof options",
-      "availableSizes": ["Single", "Queen", "King", "Custom"],
-      "colorOptions": ["White"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White"
+      ],
       "isVisible": true,
-      "sortOrder": 4
+      "sortOrder": 4,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "45",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "bed-sheet",
@@ -74,13 +130,29 @@
       "shortDescription": "Clean, durable hotel bed sheets prepared for repeated use, easy care, and crisp presentation.",
       "image": "/placeholders/bed-sheets.svg",
       "imageAlt": "Hotel bed sheet layer",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Cotton blend, silicon, microfiber options",
-      "availableSizes": ["Single", "Queen", "King", "Custom"],
-      "colorOptions": ["White", "Ivory", "Warm beige"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White",
+        "Ivory",
+        "Warm beige"
+      ],
       "isVisible": true,
-      "sortOrder": 5
+      "sortOrder": 5,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "35",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "duvet-cover",
@@ -89,13 +161,28 @@
       "shortDescription": "Premium duvet covers designed for guest comfort, elegant bed styling, and easy maintenance.",
       "image": "/placeholders/duvet-covers.svg",
       "imageAlt": "Soft duvet cover on a premium hotel bed",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Silicon and microfiber",
-      "availableSizes": ["Queen", "King", "Custom"],
-      "colorOptions": ["White", "Ivory", "Champagne"],
+      "availableSizes": [
+        "Queen",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White",
+        "Ivory",
+        "Champagne"
+      ],
       "isVisible": true,
-      "sortOrder": 6
+      "sortOrder": 6,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "55",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     },
     {
       "slug": "pillowcase",
@@ -104,13 +191,27 @@
       "shortDescription": "Soft and durable pillowcases designed for daily hospitality use and polished hotel presentation.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "Crisp white hotel pillowcase",
-      "buttonText": "Contact Us",
-      "buttonLink": "#contact",
+      "buttonText": "Request Offer",
+      "buttonLink": "#quote-form",
       "material": "Silicon and microfiber",
-      "availableSizes": ["Standard", "King", "Custom"],
-      "colorOptions": ["White", "Ivory"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "Custom"
+      ],
+      "colorOptions": [
+        "White",
+        "Ivory"
+      ],
       "isVisible": true,
-      "sortOrder": 7
+      "sortOrder": 7,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "12",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "per piece",
+      "priceNote": ""
     }
   ]
 }

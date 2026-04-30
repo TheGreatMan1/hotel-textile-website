@@ -14,13 +14,28 @@
       "shortDescription": "რბილი სასტუმროს საბნები სტუმრის კომფორტული, თბილი და პრემიუმ ძილის გამოცდილებისთვის.",
       "image": "/placeholders/blankets.svg",
       "imageAlt": "სასტუმროს პრემიუმ საბნის ფენა",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "სილიკონის და მიკროფიბრის შიგთავსის ვარიანტები",
-      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი", "ივორი"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი",
+        "ივორი"
+      ],
       "isVisible": true,
-      "sortOrder": 1
+      "sortOrder": 1,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "75",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "pillow-filling",
@@ -29,13 +44,26 @@
       "shortDescription": "კომფორტული ბალიშის შიგთავსის ვარიანტები სასტუმროს ოთახებისთვის, ლუქსებისთვის და ყოველდღიური გამოყენებისთვის.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "სასტუმროს ბალიშის შიგთავსის მაგალითი",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "სილიკონი და მიკროფიბრი",
-      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი"
+      ],
       "isVisible": true,
-      "sortOrder": 2
+      "sortOrder": 2,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "28",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "pillow-protector",
@@ -44,13 +72,27 @@
       "shortDescription": "ბალიშის დამცავი ფენები ჰიგიენის, კომფორტის და სასტუმროს ოპერაციებში ბალიშის ხანგრძლივი გამოყენებისთვის.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "სასტუმროს ბალიშის დამცავის მაგალითი",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "მიკროფიბრი და ქვილთიანი დამცავი ვარიანტები",
-      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი", "ივორი"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი",
+        "ივორი"
+      ],
       "isVisible": true,
-      "sortOrder": 3
+      "sortOrder": 3,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "18",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "terry-mattress-protector",
@@ -59,13 +101,27 @@
       "shortDescription": "ტერი მატრასის დამცავები სასტუმროს ჰიგიენისთვის, მატრასის მოვლისთვის და სტუმრის კომფორტისთვის.",
       "image": "/placeholders/mattress-protector.svg",
       "imageAlt": "ტერი მატრასის დამცავი ფენა",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "ტერი, ქვილთიანი და წყალგამძლე ვარიანტები",
-      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი"
+      ],
       "isVisible": true,
-      "sortOrder": 4
+      "sortOrder": 4,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "45",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "bed-sheet",
@@ -74,13 +130,29 @@
       "shortDescription": "სუფთა და გამძლე სასტუმროს ზეწრები ხშირი გამოყენებისთვის, მარტივი მოვლისთვის და მოწესრიგებული იერისთვის.",
       "image": "/placeholders/bed-sheets.svg",
       "imageAlt": "სასტუმროს ზეწრის ფენა",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "ბამბის ნაზავი, სილიკონი და მიკროფიბრი",
-      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი", "ივორი", "თბილი ბეჟი"],
+      "availableSizes": [
+        "Single",
+        "Queen",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი",
+        "ივორი",
+        "თბილი ბეჟი"
+      ],
       "isVisible": true,
-      "sortOrder": 5
+      "sortOrder": 5,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "35",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "duvet-cover",
@@ -89,13 +161,28 @@
       "shortDescription": "პრემიუმ საბნის გადასაკრავები სტუმრის კომფორტისთვის, ელეგანტური საწოლის იერისთვის და მარტივი მოვლისთვის.",
       "image": "/placeholders/duvet-covers.svg",
       "imageAlt": "პრემიუმ სასტუმროს საწოლზე საბნის გადასაკრავი",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "სილიკონი და მიკროფიბრი",
-      "availableSizes": ["Queen", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი", "ივორი", "შამპანური"],
+      "availableSizes": [
+        "Queen",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი",
+        "ივორი",
+        "შამპანური"
+      ],
       "isVisible": true,
-      "sortOrder": 6
+      "sortOrder": 6,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "55",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     },
     {
       "slug": "pillowcase",
@@ -104,13 +191,27 @@
       "shortDescription": "რბილი და გამძლე ბალიშის პირები ყოველდღიური სასტუმროს გამოყენებისთვის და მოწესრიგებული პრეზენტაციისთვის.",
       "image": "/placeholders/pillow-covers.svg",
       "imageAlt": "სუფთა თეთრი სასტუმროს ბალიშის პირი",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
+      "buttonText": "??????????? ????????",
+      "buttonLink": "#quote-form",
       "material": "სილიკონი და მიკროფიბრი",
-      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
-      "colorOptions": ["თეთრი", "ივორი"],
+      "availableSizes": [
+        "Standard",
+        "King",
+        "ინდივიდუალური"
+      ],
+      "colorOptions": [
+        "თეთრი",
+        "ივორი"
+      ],
       "isVisible": true,
-      "sortOrder": 7
+      "sortOrder": 7,
+      "showPrice": true,
+      "priceType": "from",
+      "price": "12",
+      "priceMin": "",
+      "priceMax": "",
+      "unit": "????????",
+      "priceNote": ""
     }
   ]
 }

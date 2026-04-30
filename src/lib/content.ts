@@ -9,6 +9,7 @@ import processEn from "@/content/process.en.json";
 import processGe from "@/content/process.ge.json";
 import productsEn from "@/content/products.en.json";
 import productsGe from "@/content/products.ge.json";
+import quoteForm from "@/content/quote-form.json";
 import siteEn from "@/content/site.en.json";
 import siteGe from "@/content/site.ge.json";
 import type {
@@ -21,6 +22,7 @@ import type {
   MapContent,
   ProcessContent,
   ProductsContent,
+  QuoteFormContent,
   SectionKey,
   SiteContent,
   WebsiteContent
@@ -48,6 +50,7 @@ export const websiteContent: WebsiteContent = {
   gallery: gallery as GalleryContent,
   catalog: catalog as CatalogContent,
   map: map as MapContent,
+  quoteForm: quoteForm as QuoteFormContent,
   contact: contact as ContactContent,
   footer: footer as FooterContent
 };
@@ -73,6 +76,7 @@ export function getSectionVisibility(
     catalog: content.catalog.isVisible,
     process: content.process[language].isVisible,
     map: content.map.isVisible,
+    quoteForm: content.quoteForm.isVisible,
     contact: content.contact.isVisible
   };
 }

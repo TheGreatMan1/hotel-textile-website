@@ -1,4 +1,7 @@
+"use client";
+
 import { localized } from "@/lib/content";
+import { trackMetaEvent } from "@/lib/metaPixel";
 import type { CatalogContent, Language } from "@/lib/types";
 import { Download } from "lucide-react";
 
@@ -31,6 +34,12 @@ export default function CatalogSection({
           {hasPdf ? (
             <a
               href={catalog.pdfFile}
+              onClick={() =>
+                trackMetaEvent("DownloadCatalog", {
+                  language,
+                  file: catalog.pdfFile
+                })
+              }
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-champagne px-6 text-sm font-semibold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-linen focus:outline-none focus:ring-2 focus:ring-champagne focus:ring-offset-2 focus:ring-offset-charcoal"
               download
             >

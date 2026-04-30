@@ -21,7 +21,9 @@ export default function Footer({
 }: FooterProps) {
   if (!footer.isVisible) return null;
 
-  const navLinks = site.navLinks.filter((link) => visibleSections[link.sectionKey]);
+  const navLinks = site.navLinks.filter(
+    (link) => visibleSections[link.sectionKey]
+  );
 
   return (
     <footer className="border-t border-stone-200 bg-ivory py-10 dark:border-stone-800 dark:bg-ink">
@@ -45,10 +47,16 @@ export default function Footer({
                 {link.label}
               </a>
             ))}
+            <a
+              href="/privacy"
+              className="transition hover:text-brass dark:hover:text-champagne"
+            >
+              {language === "ge" ? "კონფიდენციალურობა" : "Privacy Policy"}
+            </a>
           </div>
         ) : null}
         <p className="text-sm text-stone-500 dark:text-stone-500">
-          © {new Date().getFullYear()} {site.brandName}.{" "}
+          &copy; {new Date().getFullYear()} {site.brandName}.{" "}
           {localized(footer.copyright, language)}
         </p>
       </div>

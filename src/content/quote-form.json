@@ -1,0 +1,129 @@
+{
+  "isVisible": true,
+  "eyebrow": {
+    "en": "Quote Request",
+    "ge": "შეთავაზების მოთხოვნა"
+  },
+  "title": {
+    "en": "Request a Hotel Textile Quote",
+    "ge": "მოითხოვეთ სასტუმროს ტექსტილის შეთავაზება"
+  },
+  "description": {
+    "en": "Tell us what your hotel needs and we will prepare a suitable offer based on product type, material, quantity, and size.",
+    "ge": "გვითხარით რა სჭირდება თქვენს სასტუმროს და მოვამზადებთ შესაბამის შეთავაზებას პროდუქტის ტიპის, მასალის, რაოდენობისა და ზომის მიხედვით."
+  },
+  "submitButtonText": {
+    "en": "Request Quote",
+    "ge": "შეთავაზების მოთხოვნა"
+  },
+  "successMessage": {
+    "en": "Thank you. Your quote request has been sent successfully.",
+    "ge": "გმადლობთ. თქვენი მოთხოვნა წარმატებით გაიგზავნა."
+  },
+  "errorMessage": {
+    "en": "Something went wrong. Please try again or contact us directly.",
+    "ge": "დაფიქსირდა შეცდომა. სცადეთ თავიდან ან დაგვიკავშირდით პირდაპირ."
+  },
+  "fields": {
+    "companyName": {
+      "label": {
+        "en": "Company / Hotel name",
+        "ge": "კომპანიის / სასტუმროს სახელი"
+      },
+      "placeholder": {
+        "en": "Hotel name",
+        "ge": "სასტუმროს სახელი"
+      }
+    },
+    "contactPerson": {
+      "label": {
+        "en": "Contact person",
+        "ge": "საკონტაქტო პირი"
+      },
+      "placeholder": {
+        "en": "Full name",
+        "ge": "სახელი და გვარი"
+      }
+    },
+    "phone": {
+      "label": {
+        "en": "Phone",
+        "ge": "ტელეფონი"
+      },
+      "placeholder": {
+        "en": "+995 555 12 34 56",
+        "ge": "+995 555 12 34 56"
+      }
+    },
+    "email": {
+      "label": {
+        "en": "Email",
+        "ge": "ელფოსტა"
+      },
+      "placeholder": {
+        "en": "name@hotel.com",
+        "ge": "name@hotel.com"
+      }
+    },
+    "productInterest": {
+      "label": {
+        "en": "Product interest",
+        "ge": "პროდუქტის ინტერესი"
+      },
+      "placeholder": {
+        "en": "Duvet Cover, Bed Sheet, Pillowcase...",
+        "ge": "საბნის გადასაკრავი, ზეწარი, ბალიშის პირი..."
+      }
+    },
+    "selectedMaterial": {
+      "label": {
+        "en": "Selected material",
+        "ge": "არჩეული მასალა"
+      },
+      "placeholder": {
+        "en": "Silicon, Microfiber, custom",
+        "ge": "სილიკონი, მიკროფიბრი, ინდივიდუალური"
+      }
+    },
+    "selectedPrice": {
+      "label": {
+        "en": "Selected price",
+        "ge": "არჩეული ფასი"
+      },
+      "placeholder": {
+        "en": "From 35 GEL / per piece",
+        "ge": "35 GEL-დან / ერთეულზე"
+      }
+    },
+    "unit": {
+      "label": {
+        "en": "Unit",
+        "ge": "ერთეული"
+      },
+      "placeholder": {
+        "en": "per piece, per set",
+        "ge": "ერთეულზე, კომპლექტზე"
+      }
+    },
+    "quantity": {
+      "label": {
+        "en": "Approximate quantity / number of rooms",
+        "ge": "დაახლოებით რაოდენობა / ოთახების რაოდენობა"
+      },
+      "placeholder": {
+        "en": "Example: 40 rooms, 120 pieces",
+        "ge": "მაგალითად: 40 ოთახი, 120 ცალი"
+      }
+    },
+    "message": {
+      "label": {
+        "en": "Message",
+        "ge": "შეტყობინება"
+      },
+      "placeholder": {
+        "en": "Tell us about sizes, materials, timeline, or hotel project needs.",
+        "ge": "მოგვწერეთ ზომების, მასალების, ვადების ან სასტუმროს პროექტის საჭიროებების შესახებ."
+      }
+    }
+  }
+}

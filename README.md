@@ -1,8 +1,8 @@
 # LuxeTex Hotel Textiles
 
-A premium one-page digital showroom for a hotel textile supplier. The site presents bed linen, towels, pillowcases, duvet covers, bed runners, mattress protectors, and other hospitality textile products for B2B hotel clients.
+Premium one-page B2B showroom website for a hotel textile supplier. It presents hotel bed textiles, interactive bed layers, GEL-only display pricing, a quote inquiry form, catalog download, map, and contact options.
 
-This is not an online shop. There is no cart, checkout, payment system, database, or customer account area.
+This is not ecommerce. There is no cart, checkout, online payment, customer account, database, or purchase flow.
 
 ## Tech Stack
 
@@ -10,68 +10,10 @@ This is not an online shop. There is no cart, checkout, payment system, database
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- Decap CMS admin panel at `/admin`
+- Decap CMS at `/admin`
 - JSON content files
-- GitHub content backend for Decap CMS
-- Netlify free hosting
-
-## Project Structure
-
-```text
-hotel-textile-website/
-  public/
-    admin/
-      index.html
-      config.yml
-    placeholders/
-    uploads/
-      images/
-      catalog/
-  src/
-    app/
-      layout.tsx
-      page.tsx
-      globals.css
-    components/
-      Header.tsx
-      MobileMenu.tsx
-      HeroSection.tsx
-      InteractiveBedExplorer.tsx
-      BedHotspot.tsx
-      BedProductPanel.tsx
-      ProductCollections.tsx
-      ProductCard.tsx
-      WhyChooseUsSection.tsx
-      AboutSection.tsx
-      GallerySection.tsx
-      CatalogSection.tsx
-      ProcessSection.tsx
-      MapSection.tsx
-      ContactSection.tsx
-      Footer.tsx
-      LanguageSwitcher.tsx
-      ThemeToggle.tsx
-      SectionWrapper.tsx
-    content/
-      settings.json
-      site.en.json
-      site.ge.json
-      products.en.json
-      products.ge.json
-      interactive-bed.en.json
-      interactive-bed.ge.json
-      gallery.json
-      contact.json
-      catalog.json
-      map.json
-      process.en.json
-      process.ge.json
-      footer.json
-    lib/
-      content.ts
-      icons.ts
-      types.ts
-```
+- GitHub backend for Decap CMS
+- Netlify hosting and Netlify Forms
 
 ## Install
 
@@ -97,7 +39,7 @@ Local admin page:
 http://localhost:3000/admin
 ```
 
-The CMS can open locally, but production editing with the GitHub backend requires GitHub OAuth setup after deployment.
+The CMS interface can load locally, but GitHub-backed editing is intended for the deployed Netlify site.
 
 ## Build
 
@@ -105,32 +47,90 @@ The CMS can open locally, but production editing with the GitHub backend require
 npm run build
 ```
 
+## Project Structure
+
+```text
+public/
+  admin/
+    index.html
+    config.yml
+  placeholders/
+  uploads/
+    images/
+    catalog/
+src/
+  app/
+    layout.tsx
+    page.tsx
+    privacy/page.tsx
+  components/
+    InteractiveBedExplorer.tsx
+    BedProductPanel.tsx
+    ProductCard.tsx
+    QuoteFormSection.tsx
+    MetaPixel.tsx
+    MobileQuoteCTA.tsx
+  content/
+    site.en.json
+    site.ge.json
+    products.en.json
+    products.ge.json
+    interactive-bed.en.json
+    interactive-bed.ge.json
+    quote-form.json
+    gallery.json
+    contact.json
+    catalog.json
+    map.json
+    process.en.json
+    process.ge.json
+    footer.json
+  lib/
+    content.ts
+    types.ts
+    pricing.ts
+    quoteSelection.ts
+    utm.ts
+    metaPixel.ts
+```
+
 ## Deploy to Netlify
 
-1. Push this project to GitHub.
-2. In Netlify, choose **Add new site**.
-3. Choose **Import an existing project**.
-4. Connect the GitHub repository.
-5. Use:
+1. Push the project to GitHub.
+2. In Netlify, choose **Add new site** then **Import an existing project**.
+3. Select the GitHub repository.
+4. Use:
 
 ```text
 Build command: npm run build
 Publish directory: .next
 ```
 
-6. Deploy.
+5. Deploy.
 
-Netlify will provide a free temporary URL such as:
+Netlify gives a free temporary URL such as:
 
 ```text
 https://your-site-name.netlify.app
 ```
 
-The website works without a custom domain.
+A custom domain is optional and can be connected later in Netlify **Domain management**.
 
-## Connect GitHub Repository
+## Decap CMS
 
-The Decap CMS config is:
+Admin URL after deployment:
+
+```text
+/admin
+```
+
+The CMS config is in:
+
+```text
+public/admin/config.yml
+```
+
+This project uses the Decap GitHub backend:
 
 ```yaml
 backend:
@@ -139,50 +139,21 @@ backend:
   branch: main
 ```
 
-If you move the repository, edit `public/admin/config.yml` and replace `repo` with:
+If the repository changes, update `repo` to `your-github-username/your-repo-name`.
 
-```text
-your-github-username/your-repository-name
-```
+To use GitHub login, configure a Decap-compatible GitHub OAuth flow for the deployed Netlify site and make sure the admin GitHub account has write access to the repo. The site itself does not require Netlify Identity or Git Gateway.
 
-## Configure Decap CMS GitHub Login
-
-Because this project uses Decap's GitHub backend, admin login is handled through GitHub OAuth, not Netlify Identity or Git Gateway.
-
-Manual setup:
-
-1. In GitHub, create an OAuth app for the CMS login.
-2. Use your Netlify site URL as the homepage URL.
-3. Use Netlify's Decap/GitHub OAuth callback URL in the OAuth app settings.
-4. In Netlify, add the OAuth client ID and secret according to Netlify/Decap CMS GitHub backend instructions.
-5. Make sure the admin GitHub account has write access to the repository.
-6. Open:
-
-```text
-https://your-site-name.netlify.app/admin
-```
-
-7. Log in with GitHub and approve repository access.
-
-If the CMS shows an authentication error, the site itself can still work. The problem is usually OAuth app setup or repository access, not the website code.
-
-## Admin Panel
-
-Admin URL after deployment:
-
-```text
-/admin
-```
+## Editable Content
 
 Decap CMS edits these files:
 
-- `src/content/settings.json`
 - `src/content/site.en.json`
 - `src/content/site.ge.json`
 - `src/content/products.en.json`
 - `src/content/products.ge.json`
 - `src/content/interactive-bed.en.json`
 - `src/content/interactive-bed.ge.json`
+- `src/content/quote-form.json`
 - `src/content/gallery.json`
 - `src/content/contact.json`
 - `src/content/catalog.json`
@@ -191,83 +162,72 @@ Decap CMS edits these files:
 - `src/content/process.ge.json`
 - `src/content/footer.json`
 
-## Edit English and Georgian Content
+English and Georgian page/product/bed/process content are separate. Shared sections use localized `en` and `ge` fields inside the same JSON file.
 
-English and Georgian page content are separate:
+## Section Visibility
 
-- English: `site.en.json`, `products.en.json`, `interactive-bed.en.json`, `process.en.json`
-- Georgian: `site.ge.json`, `products.ge.json`, `interactive-bed.ge.json`, `process.ge.json`
+Every major section has an `isVisible` toggle in CMS. Hidden sections do not render and do not leave empty gaps. Header and footer navigation links are filtered by visible section keys.
 
-Shared sections use English and Georgian fields in the same file:
+Visible section keys include:
 
-- Gallery
-- Catalog
-- Contact
-- Map
-- Footer
+- `hero`
+- `interactiveBed`
+- `products`
+- `whyChooseUs`
+- `about`
+- `gallery`
+- `catalog`
+- `process`
+- `map`
+- `quoteForm`
+- `contact`
 
-The language switcher shows `EN / GE`, updates all visible text, and saves the selected language in `localStorage`.
+## GEL Pricing
 
-## Hide or Show Sections
+Pricing is display-only and used for lead qualification. All prices are GEL. There is no currency selector, USD, EUR, cart, checkout, or payment.
 
-Every major section has an `isVisible` toggle:
+Products, bed hotspots, and material variants support:
 
-- Hero
-- Interactive bed explorer
-- Product collections
-- Why hotels choose us
-- About company
-- Gallery
-- Catalog PDF
-- Process / how to order
-- Map
-- Contact
-- Footer
+- Show Price
+- Price Type: `fixed`, `from`, `range`, `custom`
+- Price
+- Price Min
+- Price Max
+- Unit
+- Price Note
 
-Hidden sections do not render and do not leave empty gaps. Header navigation links are also filtered when their section is hidden.
+Examples:
+
+- Fixed: `25 GEL / per piece`
+- From: `From 18 GEL / per piece`
+- Range: `18 - 35 GEL / per piece`
+- Custom: `Price available upon request`
+
+If `showPrice` is false, the price block is hidden and the Request Offer / Request Quote CTA remains visible.
 
 ## Products
 
 Products live in:
 
-- `src/content/products.en.json`
-- `src/content/products.ge.json`
+```text
+src/content/products.en.json
+src/content/products.ge.json
+```
 
-Each product supports:
+Each product has a slug, title, category, description, image, optional specs, visibility, sort order, CTA, and GEL pricing fields. Product CTA buttons scroll to the quote form and prefill product, price, unit, and source.
 
-- slug
-- title
-- category
-- short description
-- image
-- image alt text
-- button text/link
-- material
-- available sizes
-- color options
-- visibility toggle
-- sort order
+## Interactive Bed
 
-Only visible products render. Products are sorted by `sortOrder`.
+Interactive bed content lives in:
 
-## Interactive Bed Hotspots
+```text
+src/content/interactive-bed.en.json
+src/content/interactive-bed.ge.json
+```
 
-Hotspots live in:
+Each hotspot supports title, label, descriptions, image, percentage `x` / `y` position, linked product slug, visibility, default pricing, and material variants.
 
-- `src/content/interactive-bed.en.json`
-- `src/content/interactive-bed.ge.json`
-
-Each hotspot supports:
-
-- title and label
-- short and long description
-- image and alt text
-- `x` and `y` position percentages
-- visibility toggle
-- linked product slug
-- material variants
-
-Hotspot positions use percentages over the bed image:
+Hotspot coordinates are percentages over the bed image:
 
 ```json
 {
@@ -278,65 +238,107 @@ Hotspot positions use percentages over the bed image:
 
 Increase `x` to move right. Increase `y` to move down.
 
-## Material Variants
+Material variants such as Silicon and Microfiber can each have their own GEL pricing. The side panel shows selected material pricing first and falls back to the hotspot price when needed.
 
-Each hotspot can have any number of material variants, for example Silicon and Microfiber.
+The side panel Request Quote button prefills product, material, visible price, unit, and source before scrolling to the quote form.
 
-Each variant supports:
+## Quote Form
 
-- ID
-- label
-- visibility toggle
-- description
-- image
-- sizes
-- colors
-
-If one variant is visible, the panel shows it cleanly. If multiple variants are visible, the panel shows material filter buttons. If no variant is added, the default hotspot image and text are used.
-
-## Images
-
-CMS image uploads go to:
+Quote form content lives in:
 
 ```text
-public/uploads/images
+src/content/quote-form.json
 ```
 
-Public paths look like:
+The form appears before Contact and supports English and Georgian labels/placeholders. It collects company/hotel name, contact person, phone, email, product interest, selected material, selected price, unit, approximate quantity/rooms, and message.
+
+The form uses Netlify Forms with:
 
 ```text
-/uploads/images/file-name.jpg
+form name: quote-inquiry
 ```
 
-Placeholder visuals are in:
+There is a static hidden form blueprint so Netlify can detect the form during build. The visible form submits with URL-encoded POST and shows success/error text without redirecting.
+
+To test Netlify Forms:
+
+1. Deploy to Netlify.
+2. Submit the quote form on the deployed site.
+3. Open Netlify dashboard.
+4. Go to **Forms**.
+5. Check submissions under `quote-inquiry`.
+
+If submissions do not appear, redeploy after confirming the form is present in built HTML and Netlify Forms are enabled for the site.
+
+## UTM Tracking
+
+The site reads and stores these URL parameters in `sessionStorage`:
+
+- `utm_source`
+- `utm_medium`
+- `utm_campaign`
+- `utm_content`
+- `utm_term`
+
+The quote form includes them as hidden inputs for ad attribution.
+
+## Meta Pixel
+
+Meta Pixel is optional and no-op safe. If no ID is configured, no tracking script loads and helper calls do not throw.
+
+Set this Netlify environment variable:
 
 ```text
-public/placeholders
+NEXT_PUBLIC_META_PIXEL_ID=your_pixel_id
 ```
 
-Keep uploaded images reasonably compressed for faster mobile loading.
+Tracked events:
+
+- `PageView`
+- `ViewContent`
+- `BedHotspotClick`
+- `MaterialSelected`
+- `Contact`
+- `DownloadCatalog`
+- `Lead`
+
+No ecommerce events are emitted. There are no `Purchase`, `AddToCart`, payment, cart, or checkout events. Pixel pricing metadata uses `currency: "GEL"` only, and numeric value is sent only when the price is clearly fixed/from numeric.
+
+## Contact Tracking
+
+Contact links still behave normally. When Meta Pixel is enabled, clicks on phone, WhatsApp, email, Instagram, and Facebook send a Contact event with the method key.
 
 ## Catalog PDF
 
-Catalog settings live in:
+Catalog content lives in:
 
 ```text
 src/content/catalog.json
 ```
 
-PDF uploads go to:
+PDF uploads should go to:
 
 ```text
 public/uploads/catalog
 ```
 
-Public PDF paths look like:
+If no PDF is set, the download button is replaced with safe placeholder text. Catalog clicks can be tracked as `DownloadCatalog`.
+
+## Images
+
+Image uploads go to:
 
 ```text
-/uploads/catalog/catalog.pdf
+public/uploads/images
 ```
 
-If no PDF is set, the site shows safe placeholder text instead of a broken download button.
+Public image paths look like:
+
+```text
+/uploads/images/file-name.jpg
+```
+
+Keep uploaded images compressed for mobile performance.
 
 ## Contact Methods
 
@@ -346,7 +348,7 @@ Contact settings live in:
 src/content/contact.json
 ```
 
-Supported contact methods:
+Supported methods:
 
 - Phone
 - WhatsApp
@@ -354,63 +356,35 @@ Supported contact methods:
 - Instagram
 - Facebook
 
-Each method has a label, value, URL, icon key, and `isVisible`. Only visible methods appear.
+Each method has a visibility toggle. Only visible methods render.
 
-## Map Section
+## Privacy Policy
 
-Map settings live in:
+Privacy policy route:
 
 ```text
-src/content/map.json
+/privacy
 ```
 
-You can edit:
-
-- section visibility
-- title
-- address
-- Google Maps embed URL
-- external Google Maps link
-- button text
-
-If the embed URL is empty, the site still shows the address and external map button when available.
-
-## Custom Domain Later
-
-A custom domain is optional.
-
-To add one later:
-
-1. Buy a domain from a registrar.
-2. In Netlify, open **Domain management**.
-3. Add the domain.
-4. Follow Netlify's DNS instructions.
-5. Wait for DNS and HTTPS setup.
-
-The free `.netlify.app` URL continues to work.
+It explains quote form data, selected product/material/price data, UTM tracking, Meta Pixel advertising tracking, contact click tracking, and that no online payments are processed.
 
 ## Free vs Paid
 
 Free:
 
-- Next.js
-- Tailwind CSS
-- Framer Motion
+- Next.js, Tailwind CSS, Framer Motion
 - Decap CMS
 - GitHub repository hosting
 - Netlify free hosting
-- Temporary Netlify URL
+- Netlify Forms within free plan limits
+- Temporary `.netlify.app` URL
 
 May cost money later:
 
-- Custom domain purchase
-- Premium Netlify features if traffic/team needs grow
+- Custom domain
+- Premium Netlify features if traffic or team needs grow
 - Professional photography or custom brand assets
-- A paid OAuth/auth hosting option if you choose not to use Netlify's available OAuth flow
 
-## Beginner Notes
+## Important Reminder
 
-- The site is mostly static and deploys from GitHub.
-- Decap CMS edits JSON files and commits changes back to GitHub.
-- There is no database to manage.
-- Do not add cart, payment, checkout, or accounts unless the business intentionally changes to ecommerce.
+This project is a B2B showroom and lead-generation website. Keep product CTAs as Request Offer / Request Quote. Do not add cart, checkout, payments, customer accounts, database logic, USD/EUR pricing, or purchase tracking unless the business intentionally becomes ecommerce later.

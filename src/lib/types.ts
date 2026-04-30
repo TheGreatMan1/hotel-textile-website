@@ -21,7 +21,20 @@ export type SectionKey =
   | "catalog"
   | "process"
   | "map"
+  | "quoteForm"
   | "contact";
+
+export type PriceType = "fixed" | "from" | "range" | "custom";
+
+export type PriceData = {
+  showPrice: boolean;
+  priceType: PriceType;
+  price?: string;
+  priceMin?: string;
+  priceMax?: string;
+  unit?: string;
+  priceNote?: string;
+};
 
 export type Feature = {
   title: string;
@@ -80,7 +93,7 @@ export type Product = {
   colorOptions?: string[];
   isVisible: boolean;
   sortOrder: number;
-};
+} & PriceData;
 
 export type ProductsContent = {
   isVisible: boolean;
@@ -102,7 +115,7 @@ export type MaterialVariant = {
   imageAlt: string;
   sizes?: string[];
   colors?: string[];
-};
+} & PriceData;
 
 export type BedHotspotContent = {
   id: string;
@@ -118,7 +131,7 @@ export type BedHotspotContent = {
   isVisible: boolean;
   linkedProductSlug?: string;
   materialVariants: MaterialVariant[];
-};
+} & PriceData;
 
 export type InteractiveBedContent = {
   isVisible: boolean;
@@ -212,6 +225,33 @@ export type ContactContent = {
   methods: ContactMethod[];
 };
 
+export type QuoteFormFieldContent = {
+  label: LocalizedText;
+  placeholder: LocalizedText;
+};
+
+export type QuoteFormContent = {
+  isVisible: boolean;
+  eyebrow: LocalizedText;
+  title: LocalizedText;
+  description: LocalizedText;
+  submitButtonText: LocalizedText;
+  successMessage: LocalizedText;
+  errorMessage: LocalizedText;
+  fields: {
+    companyName: QuoteFormFieldContent;
+    contactPerson: QuoteFormFieldContent;
+    phone: QuoteFormFieldContent;
+    email: QuoteFormFieldContent;
+    productInterest: QuoteFormFieldContent;
+    selectedMaterial: QuoteFormFieldContent;
+    selectedPrice: QuoteFormFieldContent;
+    unit: QuoteFormFieldContent;
+    quantity: QuoteFormFieldContent;
+    message: QuoteFormFieldContent;
+  };
+};
+
 export type FooterContent = {
   isVisible: boolean;
   tagline: LocalizedText;
@@ -227,6 +267,7 @@ export type WebsiteContent = {
   gallery: GalleryContent;
   catalog: CatalogContent;
   map: MapContent;
+  quoteForm: QuoteFormContent;
   contact: ContactContent;
   footer: FooterContent;
 };

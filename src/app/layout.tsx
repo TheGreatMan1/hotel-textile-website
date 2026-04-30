@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import MetaPixel from "@/components/MetaPixel";
 import settings from "@/content/settings.json";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.URL || "http://localhost:3000"),
   title: settings.seoTitle,
   description: settings.seoDescription,
   openGraph: {
@@ -37,6 +39,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <MetaPixel pixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID} />
       </body>
     </html>
   );
