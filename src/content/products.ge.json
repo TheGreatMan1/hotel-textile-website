@@ -1,219 +1,116 @@
 {
   "isVisible": true,
-  "eyebrow": "პროდუქციის კოლექციები",
-  "title": "სასტუმროს ტექსტილი ყველა ფენისთვის",
-  "description": "რედაქტირებადი პროდუქტის ჩანაწერები საწოლის, აბაზანისა და დეკორატიული ტექსტილისთვის.",
+  "eyebrow": "პროდუქტების კოლექციები",
+  "title": "სასტუმროს ტექსტილი საწოლის ყველა ფენისთვის",
+  "description": "რედაქტირებადი პროდუქტის ჩანაწერები ინტერაქტიულ საწოლში ნაჩვენები ძირითადი სასტუმროს საწოლის ფენებისთვის.",
   "materialLabel": "მასალა",
   "sizesLabel": "ზომები",
   "colorsLabel": "ფერები",
   "items": [
     {
-      "slug": "bed-sheets",
-      "title": "საწოლის თეთრეული",
-      "category": "საწოლის ტექსტილი",
-      "shortDescription": "მაღალი ხარისხის თეთრეული კომფორტისთვის, გამძლეობისთვის და პროფესიონალური სასტუმრო გამოყენებისთვის.",
-      "image": "/placeholders/bed-sheets.svg",
-      "imageAlt": "თეთრი სასტუმროს საწოლის თეთრეულის დასტა",
+      "slug": "duvet",
+      "title": "საბანი",
+      "category": "კომფორტული საწოლი",
+      "shortDescription": "რბილი სასტუმროს საბნები სტუმრის კომფორტული, თბილი და პრემიუმ ძილის გამოცდილებისთვის.",
+      "image": "/placeholders/blankets.svg",
+      "imageAlt": "სასტუმროს პრემიუმ საბნის ფენა",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "ბამბის ნაზავი, სილიკონი, მიკროფიბრი",
-      "availableSizes": [
-        "Single",
-        "Queen",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "თეთრი",
-        "ივორი",
-        "თბილი ბეჟი"
-      ],
+      "material": "სილიკონის და მიკროფიბრის შიგთავსის ვარიანტები",
+      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი", "ივორი"],
       "isVisible": true,
       "sortOrder": 1
     },
     {
-      "slug": "pillowcases",
-      "title": "ბალიშის პირები",
-      "category": "საწოლის ტექსტილი",
-      "shortDescription": "რბილი და გამძლე ბალიშის პირები ყოველდღიური სასტუმრო გამოყენებისთვის.",
+      "slug": "pillow-filling",
+      "title": "ბალიშის შიგთავსი",
+      "category": "ბალიშის პროდუქტები",
+      "shortDescription": "კომფორტული ბალიშის შიგთავსის ვარიანტები სასტუმროს ოთახებისთვის, ლუქსებისთვის და ყოველდღიური გამოყენებისთვის.",
       "image": "/placeholders/pillow-covers.svg",
-      "imageAlt": "სუფთა თეთრი სასტუმროს ბალიშის პირები",
+      "imageAlt": "სასტუმროს ბალიშის შიგთავსის მაგალითი",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
       "material": "სილიკონი და მიკროფიბრი",
-      "availableSizes": [
-        "Standard",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "თეთრი",
-        "ივორი"
-      ],
+      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი"],
       "isVisible": true,
       "sortOrder": 2
     },
     {
-      "slug": "flat-sheets",
-      "title": "ზედა ზეწრები",
-      "category": "საწოლის ტექსტილი",
-      "shortDescription": "გლუვი ზედა ზეწრები სასტუმროს საწოლის ფენოვანი პრეზენტაციისთვის.",
-      "image": "/placeholders/flat-sheets.svg",
-      "imageAlt": "სასტუმროს საწოლზე ფენებად დალაგებული ზეწრები",
+      "slug": "pillow-protector",
+      "title": "ბალიშის დამცავი",
+      "category": "დამცავი საწოლი",
+      "shortDescription": "ბალიშის დამცავი ფენები ჰიგიენის, კომფორტის და სასტუმროს ოპერაციებში ბალიშის ხანგრძლივი გამოყენებისთვის.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "სასტუმროს ბალიშის დამცავის მაგალითი",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "მიკროფიბრი და ბამბის ნაზავი",
-      "availableSizes": [
-        "Single",
-        "Queen",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "თეთრი",
-        "ივორი"
-      ],
+      "material": "მიკროფიბრი და ქვილთიანი დამცავი ვარიანტები",
+      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი", "ივორი"],
       "isVisible": true,
       "sortOrder": 3
     },
     {
-      "slug": "duvet-covers",
-      "title": "საბნის გადასაკრავები",
-      "category": "საწოლის ტექსტილი",
-      "shortDescription": "პრემიუმ საბნის გადასაკრავები სტუმრის კომფორტისა და მარტივი მოვლისთვის.",
-      "image": "/placeholders/duvet-covers.svg",
-      "imageAlt": "რბილი საბნის გადასაკრავი პრემიუმ სასტუმროს საწოლზე",
+      "slug": "terry-mattress-protector",
+      "title": "ტერი მატრასის დამცავი",
+      "category": "დამცავი საწოლი",
+      "shortDescription": "ტერი მატრასის დამცავები სასტუმროს ჰიგიენისთვის, მატრასის მოვლისთვის და სტუმრის კომფორტისთვის.",
+      "image": "/placeholders/mattress-protector.svg",
+      "imageAlt": "ტერი მატრასის დამცავი ფენა",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "სილიკონი და მიკროფიბრი",
-      "availableSizes": [
-        "Queen",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "თეთრი",
-        "ივორი",
-        "შამპანური"
-      ],
+      "material": "ტერი, ქვილთიანი და წყალგამძლე ვარიანტები",
+      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი"],
       "isVisible": true,
       "sortOrder": 4
     },
     {
-      "slug": "blankets-throws",
-      "title": "პლედები / გადასაფარებლები",
-      "category": "კომფორტის ფენები",
-      "shortDescription": "რბილი პლედები და გადასაფარებლები ლუქსებისთვის, ლაუნჯებისთვის და სტუმრის კომფორტისთვის.",
-      "image": "/placeholders/blankets.svg",
-      "imageAlt": "დაკეცილი სასტუმროს პლედი",
+      "slug": "bed-sheet",
+      "title": "ზეწარი",
+      "category": "საწოლის თეთრეული",
+      "shortDescription": "სუფთა და გამძლე სასტუმროს ზეწრები ხშირი გამოყენებისთვის, მარტივი მოვლისთვის და მოწესრიგებული იერისთვის.",
+      "image": "/placeholders/bed-sheets.svg",
+      "imageAlt": "სასტუმროს ზეწრის ფენა",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "მიკროფიბრი და ქსოვილის ნაზავი",
-      "availableSizes": [
-        "Standard",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "ივორი",
-        "ტაუპი",
-        "ჩარკოლი"
-      ],
+      "material": "ბამბის ნაზავი, სილიკონი და მიკროფიბრი",
+      "availableSizes": ["Single", "Queen", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი", "ივორი", "თბილი ბეჟი"],
       "isVisible": true,
       "sortOrder": 5
     },
     {
-      "slug": "bed-runners",
-      "title": "საწოლის დეკორატიული ბილიკები",
-      "category": "დეკორატიული ტექსტილი",
-      "shortDescription": "ელეგანტური საწოლის ბილიკები სასტუმროს საწოლის დასრულებული იერისთვის.",
-      "image": "/placeholders/bed-runner.svg",
-      "imageAlt": "სასტუმროს საწოლზე დეკორატიული ბილიკი",
+      "slug": "duvet-cover",
+      "title": "საბნის გადასაკრავი",
+      "category": "საწოლის თეთრეული",
+      "shortDescription": "პრემიუმ საბნის გადასაკრავები სტუმრის კომფორტისთვის, ელეგანტური საწოლის იერისთვის და მარტივი მოვლისთვის.",
+      "image": "/placeholders/duvet-covers.svg",
+      "imageAlt": "პრემიუმ სასტუმროს საწოლზე საბნის გადასაკრავი",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "დეკორატიული ნაქსოვი ტექსტილი",
-      "availableSizes": [
-        "Twin",
-        "Queen",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "ოქროსფერი",
-        "ბეჟი",
-        "ჩარკოლი"
-      ],
+      "material": "სილიკონი და მიკროფიბრი",
+      "availableSizes": ["Queen", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი", "ივორი", "შამპანური"],
       "isVisible": true,
       "sortOrder": 6
     },
     {
-      "slug": "cushion-covers",
-      "title": "დეკორატიული ბალიშის გადასაკრავები",
-      "category": "ინტერიერის ტექსტილი",
-      "shortDescription": "ელეგანტური გადასაკრავები, რომლებიც სასტუმროს ინტერიერს სტილსა და კომფორტს მატებს.",
-      "image": "/placeholders/cushions.svg",
-      "imageAlt": "დეკორატიული ბალიშის გადასაკრავები სასტუმროს სავარძელზე",
+      "slug": "pillowcase",
+      "title": "ბალიშის პირი",
+      "category": "საწოლის თეთრეული",
+      "shortDescription": "რბილი და გამძლე ბალიშის პირები ყოველდღიური სასტუმროს გამოყენებისთვის და მოწესრიგებული პრეზენტაციისთვის.",
+      "image": "/placeholders/pillow-covers.svg",
+      "imageAlt": "სუფთა თეთრი სასტუმროს ბალიშის პირი",
       "buttonText": "დაგვიკავშირდით",
       "buttonLink": "#contact",
-      "material": "დეკორატიული ნაქსოვი ტექსტილი",
-      "availableSizes": [
-        "40x40",
-        "45x45",
-        "Custom"
-      ],
-      "colorOptions": [
-        "ივორი",
-        "ოქროსფერი",
-        "ქვისფერი"
-      ],
+      "material": "სილიკონი და მიკროფიბრი",
+      "availableSizes": ["Standard", "King", "ინდივიდუალური"],
+      "colorOptions": ["თეთრი", "ივორი"],
       "isVisible": true,
       "sortOrder": 7
-    },
-    {
-      "slug": "mattress-protectors",
-      "title": "მატრასის დამცავები",
-      "category": "დამცავი საწოლის ტექსტილი",
-      "shortDescription": "პრაქტიკული დამცავები მატრასის ჰიგიენისა და გრძელვადიანი სასტუმრო ოპერაციებისთვის.",
-      "image": "/placeholders/mattress-protector.svg",
-      "imageAlt": "სასტუმროს მატრასის დამცავი ფენა",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
-      "material": "ქვილთიანი და წყალგამძლე ვარიანტები",
-      "availableSizes": [
-        "Single",
-        "Queen",
-        "King",
-        "Custom"
-      ],
-      "colorOptions": [
-        "თეთრი"
-      ],
-      "isVisible": true,
-      "sortOrder": 8
-    },
-    {
-      "slug": "towels",
-      "title": "პირსახოცები და ნაკრები",
-      "category": "აბაზანის ტექსტილი",
-      "shortDescription": "რბილი, კარგად შემწოვი და გამძლე პირსახოცები ყოველდღიური სასტუმრო ოპერაციებისთვის.",
-      "image": "/placeholders/towels.svg",
-      "imageAlt": "დაკეცილი სასტუმროს პირსახოცები",
-      "buttonText": "დაგვიკავშირდით",
-      "buttonLink": "#contact",
-      "material": "ბამბა და მიკროფიბრი",
-      "availableSizes": [
-        "სახის",
-        "ხელის",
-        "აბაზანის",
-        "დიდი"
-      ],
-      "colorOptions": [
-        "თეთრი",
-        "ივორი",
-        "ქვიშისფერი"
-      ],
-      "isVisible": true,
-      "sortOrder": 9
     }
   ]
 }
