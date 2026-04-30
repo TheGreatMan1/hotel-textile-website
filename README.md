@@ -103,10 +103,12 @@ src/
 
 ```text
 Build command: npm run build
-Publish directory: .next
+Publish directory: .netlify/output/public
 ```
 
 5. Deploy.
+
+If the Netlify dashboard has the publish directory set to the repository root, change it to `.netlify/output/public` or let the committed `netlify.toml` override the UI setting.
 
 Netlify gives a free temporary URL such as:
 
