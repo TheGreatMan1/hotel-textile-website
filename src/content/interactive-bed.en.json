@@ -1,31 +1,14 @@
 {
-  "isVisible": true,
-  "eyebrow": "Interactive Textile Explorer",
-  "title": "Explore Every Layer of Comfort",
-  "subtitle": "Click on different parts of the bed to discover textile products designed for hotel rooms, suites, and hospitality spaces.",
-  "bedImage": "/placeholders/interactive-bed.svg",
-  "bedImageAlt": "Illustrated luxury hotel bed with clickable textile hotspots",
-  "viewProductText": "View Product",
-  "contactText": "Contact Us",
-  "closeText": "Close",
-  "materialsLabel": "Materials",
   "sizesLabel": "Sizes",
   "colorsLabel": "Colors",
-  "mobileListTitle": "Tap a textile layer",
   "hotspots": [
     {
-      "id": "pillowcase",
-      "title": "Hotel Pillowcase",
-      "label": "Pillowcase",
-      "category": "Bed Linen",
       "shortDescription": "Soft and durable pillowcases designed for daily hospitality use.",
       "longDescription": "A polished pillowcase range for guest rooms and suites, created for comfort, repeated laundering, and a clean hotel presentation.",
-      "image": "/placeholders/pillow-covers.svg",
-      "imageAlt": "Hotel pillowcase textile detail",
-      "x": 33,
-      "y": 29,
-      "isVisible": true,
       "linkedProductSlug": "pillowcases",
+      "isVisible": true,
+      "imageAlt": "Hotel pillowcase textile detail",
+      "label": "Pillowcase",
       "materialVariants": [
         {
           "id": "silicon",
@@ -61,21 +44,21 @@
             "Beige"
           ]
         }
-      ]
+      ],
+      "x": 33,
+      "title": "Hotel Pillowcase",
+      "y": 29,
+      "id": "pillowcase",
+      "image": "/placeholders/pillow-covers.svg",
+      "category": "Bed Linen"
     },
     {
-      "id": "bed-sheet",
-      "title": "Fitted Bed Sheet",
-      "label": "Fitted sheet",
-      "category": "Bed Linen",
       "shortDescription": "Secure, comfortable sheets for a crisp hotel bed base.",
       "longDescription": "Fitted sheets help create a tight, professional foundation for housekeeping teams and guest comfort.",
-      "image": "/placeholders/bed-sheets.svg",
-      "imageAlt": "Hotel fitted sheet detail",
-      "x": 47,
-      "y": 57,
-      "isVisible": true,
       "linkedProductSlug": "bed-sheets",
+      "isVisible": true,
+      "imageAlt": "Hotel fitted sheet detail",
+      "label": "Fitted sheet",
       "materialVariants": [
         {
           "id": "silicon",
@@ -113,21 +96,21 @@
             "Beige"
           ]
         }
-      ]
+      ],
+      "x": 47,
+      "title": "Fitted Bed Sheet",
+      "y": 57,
+      "id": "bed-sheet",
+      "image": "/placeholders/bed-sheets.svg",
+      "category": "Bed Linen"
     },
     {
-      "id": "flat-sheet",
-      "title": "Flat Sheet",
-      "label": "Flat sheet",
-      "category": "Bed Linen",
       "shortDescription": "Smooth top-layer sheets for refined bed styling.",
       "longDescription": "Flat sheets add a hygienic, elegant layer between the guest and duvet while supporting classic hotel bed presentation.",
-      "image": "/placeholders/flat-sheets.svg",
-      "imageAlt": "Hotel flat sheet detail",
-      "x": 52,
-      "y": 46,
-      "isVisible": true,
       "linkedProductSlug": "flat-sheets",
+      "isVisible": true,
+      "imageAlt": "Hotel flat sheet detail",
+      "label": "Flat sheet",
       "materialVariants": [
         {
           "id": "silicon",
@@ -163,21 +146,21 @@
             "Beige"
           ]
         }
-      ]
+      ],
+      "x": 52,
+      "title": "Flat Sheet",
+      "y": 46,
+      "id": "flat-sheet",
+      "image": "/placeholders/flat-sheets.svg",
+      "category": "Bed Linen"
     },
     {
-      "id": "duvet-cover",
-      "title": "Premium Duvet Cover",
-      "label": "Duvet cover",
-      "category": "Bed Linen",
       "shortDescription": "Elegant duvet covers created for guest comfort and easy maintenance.",
       "longDescription": "A duvet cover defines the main visual layer of the bed, balancing softness, durability, and a freshly prepared look.",
-      "image": "/placeholders/duvet-covers.svg",
-      "imageAlt": "Premium duvet cover detail",
-      "x": 55,
-      "y": 38,
-      "isVisible": true,
       "linkedProductSlug": "duvet-covers",
+      "isVisible": true,
+      "imageAlt": "Premium duvet cover detail",
+      "label": "Duvet cover",
       "materialVariants": [
         {
           "id": "silicon",
@@ -214,21 +197,21 @@
             "Beige"
           ]
         }
-      ]
+      ],
+      "x": 55,
+      "title": "Premium Duvet Cover",
+      "y": 38,
+      "id": "duvet-cover",
+      "image": "/placeholders/duvet-covers.svg",
+      "category": "Bed Linen"
     },
     {
-      "id": "blanket-throw",
-      "title": "Blanket / Throw",
-      "label": "Throw",
-      "category": "Comfort Layers",
       "shortDescription": "Soft decorative throws for suites and lounge-style guest comfort.",
       "longDescription": "Throws add warmth, texture, and a more residential sense of hospitality to beds, chairs, and suite spaces.",
-      "image": "/placeholders/blankets.svg",
-      "imageAlt": "Hotel blanket or throw detail",
-      "x": 70,
-      "y": 48,
-      "isVisible": true,
       "linkedProductSlug": "blankets-throws",
+      "isVisible": true,
+      "imageAlt": "Hotel blanket or throw detail",
+      "label": "Throw",
       "materialVariants": [
         {
           "id": "silicon",
@@ -264,21 +247,21 @@
             "Charcoal"
           ]
         }
-      ]
+      ],
+      "x": 70,
+      "title": "Blanket / Throw",
+      "y": 48,
+      "id": "blanket-throw",
+      "image": "/placeholders/blankets.svg",
+      "category": "Comfort Layers"
     },
     {
-      "id": "bed-runner",
-      "title": "Bed Runner",
-      "label": "Bed runner",
-      "category": "Decorative Textiles",
       "shortDescription": "A refined decorative accent for a finished hotel bed.",
       "longDescription": "Bed runners create a strong first impression while protecting the foot of the bed and connecting the room palette.",
-      "image": "/placeholders/bed-runner.svg",
-      "imageAlt": "Hotel bed runner detail",
-      "x": 53,
-      "y": 72,
-      "isVisible": true,
       "linkedProductSlug": "bed-runners",
+      "isVisible": true,
+      "imageAlt": "Hotel bed runner detail",
+      "label": "Bed runner",
       "materialVariants": [
         {
           "id": "silicon",
@@ -316,21 +299,21 @@
             "Charcoal"
           ]
         }
-      ]
+      ],
+      "x": 53,
+      "title": "Bed Runner",
+      "y": 72,
+      "id": "bed-runner",
+      "image": "/placeholders/bed-runner.svg",
+      "category": "Decorative Textiles"
     },
     {
-      "id": "cushion-cover",
-      "title": "Cushion Cover",
-      "label": "Cushion",
-      "category": "Interior Textiles",
       "shortDescription": "Decorative cushion covers for hotel rooms, suites, and lounge settings.",
       "longDescription": "Cushion covers add softness and visual depth while helping rooms feel considered and complete.",
-      "image": "/placeholders/cushions.svg",
-      "imageAlt": "Decorative cushion cover detail",
-      "x": 65,
-      "y": 31,
-      "isVisible": true,
       "linkedProductSlug": "cushion-covers",
+      "isVisible": true,
+      "imageAlt": "Decorative cushion cover detail",
+      "label": "Cushion",
       "materialVariants": [
         {
           "id": "silicon",
@@ -366,21 +349,21 @@
             "Beige"
           ]
         }
-      ]
+      ],
+      "x": 65,
+      "title": "Cushion Cover",
+      "y": 31,
+      "id": "cushion-cover",
+      "image": "/placeholders/cushions.svg",
+      "category": "Interior Textiles"
     },
     {
-      "id": "mattress-protector",
-      "title": "Mattress Protector",
-      "label": "Protector",
-      "category": "Protective Bedding",
       "shortDescription": "A practical hidden layer for mattress protection and hygiene.",
       "longDescription": "Mattress protectors help hotels maintain cleanliness, extend mattress life, and support guest-room standards.",
-      "image": "/placeholders/mattress-protector.svg",
-      "imageAlt": "Mattress protector detail",
-      "x": 34,
-      "y": 67,
-      "isVisible": true,
       "linkedProductSlug": "mattress-protectors",
+      "isVisible": true,
+      "imageAlt": "Mattress protector detail",
+      "label": "Protector",
       "materialVariants": [
         {
           "id": "silicon",
@@ -416,21 +399,21 @@
             "White"
           ]
         }
-      ]
+      ],
+      "x": 34,
+      "title": "Mattress Protector",
+      "y": 67,
+      "id": "mattress-protector",
+      "image": "/placeholders/mattress-protector.svg",
+      "category": "Protective Bedding"
     },
     {
-      "id": "towel-set",
-      "title": "Towel Set",
-      "label": "Towels",
-      "category": "Bath Textiles",
       "shortDescription": "Soft towel sets placed near the bed for hospitality presentation.",
       "longDescription": "Coordinated towel sets support a consistent guest experience across rooms, bathrooms, spa areas, and suites.",
-      "image": "/placeholders/towels.svg",
-      "imageAlt": "Hotel towel set detail",
-      "x": 82,
-      "y": 73,
-      "isVisible": true,
       "linkedProductSlug": "towels",
+      "isVisible": true,
+      "imageAlt": "Hotel towel set detail",
+      "label": "Towels",
       "materialVariants": [
         {
           "id": "silicon",
@@ -468,7 +451,24 @@
             "Sand"
           ]
         }
-      ]
+      ],
+      "x": 82,
+      "title": "Towel Set",
+      "y": 73,
+      "id": "towel-set",
+      "image": "/placeholders/towels.svg",
+      "category": "Bath Textiles"
     }
-  ]
+  ],
+  "closeText": "Close",
+  "materialsLabel": "Materials",
+  "isVisible": true,
+  "eyebrow": "Interactive Textile Explorer",
+  "contactText": "Contact Us",
+  "bedImageAlt": "Illustrated luxury hotel bed with clickable textile hotspots",
+  "viewProductText": "View Product",
+  "subtitle": "Click on different parts of the bed to discover textile products designed for hotel rooms, suites, and hospitality spaces.",
+  "mobileListTitle": "Tap a textile layer",
+  "title": "Explore Every Layer of Comfort",
+  "bedImage": "/uploads/images/chatgpt-image-apr-30-2026-01_56_55-pm.png"
 }
