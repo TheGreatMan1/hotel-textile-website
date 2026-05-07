@@ -17,8 +17,8 @@
 
 body {
   margin: 0;
-  background: #fbf8f1;
-  color: #1c1a17;
+  background: #f8f1e6;
+  color: #18130f;
   overflow-x: hidden;
 }
 
@@ -53,34 +53,38 @@ img {
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-12 sm:py-16 lg:py-20;
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-brass dark:text-champagne;
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-brass dark:text-champagne;
   }
 
   .section-title {
-    @apply mt-3 font-serif text-4xl leading-tight text-charcoal dark:text-ivory sm:text-5xl;
+    @apply mt-2 font-serif text-3xl font-semibold leading-[1.05] text-charcoal dark:text-ivory sm:text-4xl lg:text-5xl;
   }
 
   .section-copy {
-    @apply mt-5 max-w-3xl text-base leading-8 text-stone-700 dark:text-stone-300 sm:text-lg;
+    @apply mt-4 max-w-3xl text-sm leading-7 text-stone-700 dark:text-stone-300 sm:text-base;
   }
 
   .primary-button {
-    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-charcoal px-6 text-sm font-semibold text-ivory shadow-soft transition hover:-translate-y-0.5 hover:bg-ink focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:bg-champagne dark:text-ink dark:hover:bg-linen dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex min-h-11 items-center justify-center rounded-md bg-brass px-5 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-[0_14px_30px_rgba(164,127,54,0.22)] transition hover:-translate-y-0.5 hover:bg-[#8f6c28] focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:bg-champagne dark:text-ink dark:hover:bg-linen dark:focus:ring-champagne dark:focus:ring-offset-ink;
   }
 
   .secondary-button {
-    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-stone-300 px-5 text-sm font-semibold text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex min-h-11 items-center justify-center rounded-md border border-stone-300 bg-white/70 px-5 text-xs font-bold uppercase tracking-[0.08em] text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/60 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
   }
 
   .icon-button {
-    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/75 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/75 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+  }
+
+  .lux-card {
+    @apply rounded-lg border border-stone-200/80 bg-white/90 shadow-[0_18px_50px_rgba(28,26,23,0.08)] backdrop-blur transition-colors dark:border-stone-800 dark:bg-stone-950/80;
   }
 }

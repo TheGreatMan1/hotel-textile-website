@@ -10,7 +10,7 @@ export default function PriceBlock({ price, className = "" }: PriceBlockProps) {
 
   return (
     <div
-      className={`rounded-lg border border-champagne/60 bg-champagne/15 px-4 py-3 text-charcoal dark:border-champagne/30 dark:bg-champagne/10 dark:text-ivory ${className}`}
+      className={`rounded-md border border-champagne/70 bg-champagne/20 px-4 py-3 text-charcoal dark:border-champagne/30 dark:bg-champagne/10 dark:text-ivory ${className}`}
     >
       <p className="font-serif text-3xl font-semibold leading-tight">
         {price.displayText}

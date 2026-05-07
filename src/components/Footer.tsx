@@ -2,9 +2,11 @@ import { localized } from "@/lib/content";
 import type {
   FooterContent,
   Language,
+  NavLink,
   SectionKey,
   SiteContent
 } from "@/lib/types";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 type FooterProps = {
   site: SiteContent;
@@ -24,42 +26,90 @@ export default function Footer({
   const navLinks = site.navLinks.filter(
     (link) => visibleSections[link.sectionKey]
   );
+  const splitIndex = Math.ceil(navLinks.length / 2);
+  const privacyLabel =
+    language === "ge" ? "კონფიდენციალურობა" : "Privacy Policy";
+  const brandMain = site.brandName.replace(/\s*Hotel Textiles$/i, "");
+  const brandSub = brandMain === site.brandName ? site.tagline : "Hotel Textiles";
+  const columnLabels =
+    language === "ge"
+      ? { products: "პროდუქტები", company: "კომპანია", resources: "რესურსები" }
+      : { products: "Products", company: "Company", resources: "Resources" };
 
   return (
-    <footer className="border-t border-stone-200 bg-ivory py-10 dark:border-stone-800 dark:bg-ink">
-      <div className="container-shell flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-md">
-          <p className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
-            {site.brandName}
-          </p>
-          <p className="mt-2 text-sm leading-6 text-stone-600 dark:text-stone-400">
-            {localized(footer.tagline, language)}
-          </p>
-        </div>
-        {navLinks.length > 0 ? (
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-stone-600 dark:text-stone-400">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="transition hover:text-brass dark:hover:text-champagne"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="/privacy"
-              className="transition hover:text-brass dark:hover:text-champagne"
-            >
-              {language === "ge" ? "კონფიდენციალურობა" : "Privacy Policy"}
-            </a>
+    <footer className="overflow-hidden border-t border-stone-800 bg-[linear-gradient(135deg,#11100f,#1c1a17_58%,#0b0f0f)] py-10 text-ivory">
+      <div className="container-shell">
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+          <div className="max-w-md">
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/40 bg-champagne/10 text-champagne">
+                <Sparkles aria-hidden size={22} strokeWidth={1.6} />
+              </span>
+              <div>
+                <p className="font-serif text-3xl font-semibold leading-none">
+                  {brandMain}
+                </p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
+                  {brandSub}
+                </p>
+              </div>
+            </div>
+            <p className="mt-5 text-sm leading-7 text-stone-300">
+              {localized(footer.tagline, language)}
+            </p>
           </div>
-        ) : null}
-        <p className="text-sm text-stone-500 dark:text-stone-500">
+
+          <FooterLinkColumn
+            title={columnLabels.products}
+            links={navLinks.slice(0, splitIndex)}
+          />
+          <FooterLinkColumn
+            title={columnLabels.company}
+            links={navLinks.slice(splitIndex)}
+          />
+
+          <div>
+            <h3 className="font-serif text-xl font-semibold text-ivory">
+              {columnLabels.resources}
+            </h3>
+            <div className="mt-4 flex flex-col gap-3 text-sm font-semibold text-stone-300">
+              <a href="/privacy" className="transition hover:text-champagne">
+                {privacyLabel}
+              </a>
+              <a href="#quote-form" className="inline-flex items-center text-champagne">
+                {site.hero.primaryButtonText}
+                <ArrowRight aria-hidden className="ml-2" size={15} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-9 border-t border-white/10 pt-5 text-xs text-stone-500">
           &copy; {new Date().getFullYear()} {site.brandName}.{" "}
           {localized(footer.copyright, language)}
-        </p>
+        </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLinkColumn({ title, links }: { title: string; links: NavLink[] }) {
+  if (links.length === 0) return null;
+
+  return (
+    <div>
+      <h3 className="font-serif text-xl font-semibold text-ivory">{title}</h3>
+      <div className="mt-4 flex flex-col gap-3 text-sm font-semibold text-stone-300">
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="transition hover:text-champagne"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }

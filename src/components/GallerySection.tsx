@@ -23,21 +23,21 @@ export default function GallerySection({
   if (images.length === 0) return null;
 
   return (
-    <SectionWrapper id="gallery" className="bg-white dark:bg-stone-950">
+    <SectionWrapper id="gallery" className="bg-[#fbf7ef] dark:bg-stone-950">
       <div className="container-shell">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">{localized(gallery.eyebrow, language)}</p>
           <h2 className="section-title">{localized(gallery.title, language)}</h2>
-          <p className="section-copy">
+          <p className="section-copy mx-auto">
             {localized(gallery.description, language)}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {images.map((image, index) => (
             <motion.figure
               key={`${image.image}-${image.sortOrder}`}
-              className="group overflow-hidden rounded-lg border border-stone-200 bg-ivory shadow-sm dark:border-stone-800 dark:bg-ink"
+              className="group overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm dark:border-stone-800 dark:bg-ink"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -50,7 +50,7 @@ export default function GallerySection({
                   className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
                 />
               </div>
-              <figcaption className="px-4 py-3 text-sm font-semibold text-stone-700 dark:text-stone-300">
+              <figcaption className="px-4 py-3 text-xs font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
                 {localized(image.caption, language)}
               </figcaption>
             </motion.figure>

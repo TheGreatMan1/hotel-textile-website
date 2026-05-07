@@ -1,4 +1,5 @@
 import type { ProductsContent } from "@/lib/types";
+import { ArrowRight } from "lucide-react";
 import ProductCard from "./ProductCard";
 import SectionWrapper from "./SectionWrapper";
 
@@ -16,15 +17,15 @@ export default function ProductCollections({ products }: ProductCollectionsProps
   if (visibleProducts.length === 0) return null;
 
   return (
-    <SectionWrapper id="products" className="bg-smoke dark:bg-ink">
+    <SectionWrapper id="products" className="bg-[#fbf7ef] dark:bg-ink">
       <div className="container-shell">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">{products.eyebrow}</p>
           <h2 className="section-title">{products.title}</h2>
-          <p className="section-copy">{products.description}</p>
+          <p className="section-copy mx-auto">{products.description}</p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visibleProducts.map((product) => (
             <ProductCard
               key={product.slug}
@@ -36,6 +37,13 @@ export default function ProductCollections({ products }: ProductCollectionsProps
               }}
             />
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a href="#quote-form" className="primary-button">
+            {visibleProducts[0]?.buttonText || products.title}
+            <ArrowRight aria-hidden className="ml-2" size={15} />
+          </a>
         </div>
       </div>
     </SectionWrapper>

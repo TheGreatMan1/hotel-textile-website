@@ -134,9 +134,9 @@ export default function QuoteFormSection({
   }
 
   return (
-    <SectionWrapper id="quote-form" className="bg-ivory dark:bg-ink">
-      <div className="container-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
+    <SectionWrapper id="quote-form" className="bg-[#fbf7ef] dark:bg-ink">
+      <div className="container-shell grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+        <div className="lux-card p-6">
           <p className="eyebrow">{localized(content.eyebrow, language)}</p>
           <h2 className="section-title">{localized(content.title, language)}</h2>
           <p className="section-copy">
@@ -146,7 +146,7 @@ export default function QuoteFormSection({
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl border border-stone-200 bg-white p-5 shadow-soft dark:border-stone-800 dark:bg-stone-950 sm:p-7"
+          className="rounded-lg border border-stone-200 bg-white p-5 shadow-[0_18px_50px_rgba(28,26,23,0.08)] dark:border-stone-800 dark:bg-stone-950 sm:p-6"
         >
           <input
             type="hidden"
@@ -292,7 +292,7 @@ type FieldProps = {
 };
 
 const fieldClass =
-  "mt-2 min-h-12 w-full rounded-lg border border-stone-300 bg-ivory px-4 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500";
+  "mt-2 min-h-11 w-full rounded-md border border-stone-300 bg-[#fbf7ef] px-3 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500";
 
 const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     {

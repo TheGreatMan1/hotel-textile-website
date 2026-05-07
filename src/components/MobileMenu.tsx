@@ -2,7 +2,7 @@
 
 import type { NavLink } from "@/lib/types";
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 
 type MobileMenuProps = {
   isOpen: boolean;
@@ -17,6 +17,8 @@ export default function MobileMenu({
   navLinks,
   brandName
 }: MobileMenuProps) {
+  const brandMain = brandName.replace(/\s*Hotel Textiles$/i, "");
+
   return (
     <AnimatePresence>
       {isOpen ? (
@@ -36,8 +38,13 @@ export default function MobileMenu({
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <span className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
-                {brandName}
+              <span className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brass/35 bg-champagne/20 text-brass dark:border-champagne/40 dark:bg-champagne/10 dark:text-champagne">
+                  <Sparkles aria-hidden size={20} strokeWidth={1.6} />
+                </span>
+                <span className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
+                  {brandMain}
+                </span>
               </span>
               <button
                 type="button"
@@ -57,7 +64,7 @@ export default function MobileMenu({
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className="rounded-lg px-3 py-4 text-lg font-semibold text-charcoal transition hover:bg-linen dark:text-ivory dark:hover:bg-stone-900"
+                  className="rounded-md px-3 py-4 text-base font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-linen dark:text-ivory dark:hover:bg-stone-900"
                 >
                   {link.label}
                 </a>

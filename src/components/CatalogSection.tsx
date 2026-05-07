@@ -19,15 +19,15 @@ export default function CatalogSection({
   const hasPdf = Boolean(catalog.pdfFile?.trim());
 
   return (
-    <section id="catalog" className="bg-charcoal py-16 text-ivory dark:bg-black sm:py-20">
+    <section id="catalog" className="bg-white py-12 text-charcoal dark:bg-ink dark:text-ivory sm:py-16">
       <div className="container-shell">
-        <div className="grid gap-8 rounded-2xl border border-champagne/25 bg-white/5 p-8 shadow-glow sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-8 rounded-lg border border-stone-200 bg-[#fbf7ef] p-6 shadow-[0_18px_50px_rgba(28,26,23,0.08)] dark:border-stone-800 dark:bg-stone-950 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="eyebrow">{localized(catalog.eyebrow, language)}</p>
-            <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
               {localized(catalog.title, language)}
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-700 dark:text-stone-300 sm:text-base">
               {localized(catalog.description, language)}
             </p>
           </div>
@@ -40,14 +40,14 @@ export default function CatalogSection({
                   file: catalog.pdfFile
                 })
               }
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-champagne px-6 text-sm font-semibold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-linen focus:outline-none focus:ring-2 focus:ring-champagne focus:ring-offset-2 focus:ring-offset-charcoal"
+              className="primary-button"
               download
             >
               <Download aria-hidden className="mr-2" size={18} />
               {localized(catalog.buttonText, language)}
             </a>
           ) : (
-            <p className="rounded-full border border-stone-700 px-5 py-3 text-sm text-stone-300">
+            <p className="rounded-md border border-stone-300 px-5 py-3 text-sm text-stone-600 dark:border-stone-700 dark:text-stone-300">
               {localized(catalog.noFileText, language)}
             </p>
           )}

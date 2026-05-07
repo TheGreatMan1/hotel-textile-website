@@ -43,29 +43,29 @@ export default function InteractiveBedExplorer({
     >
       <motion.div
         aria-hidden
-        className="absolute right-[-14rem] top-20 h-[30rem] w-[30rem] rounded-full bg-champagne/20 blur-3xl dark:bg-champagne/10"
+        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
         animate={
           reduceMotion
             ? undefined
-            : { y: [0, 24, 0], scale: [1, 1.04, 1] }
+            : { opacity: [0.45, 0.75, 0.45] }
         }
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="container-shell relative">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-3xl">
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="section-title">{content.title}</h2>
-          <p className="section-copy mx-auto">{content.subtitle}</p>
+          <p className="section-copy">{content.subtitle}</p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_18rem] lg:items-start">
-          <div className="relative rounded-[1.5rem] border border-stone-200 bg-ivory p-3 shadow-soft dark:border-stone-800 dark:bg-ink">
-            <div className="relative overflow-hidden rounded-[1.1rem]">
+        <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_21rem] lg:items-stretch">
+          <div className="relative rounded-lg border border-stone-200 bg-[#f8f1e6] p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
+            <div className="relative h-full overflow-hidden rounded-md">
               <img
                 src={content.bedImage || "/placeholders/interactive-bed.svg"}
                 alt={content.bedImageAlt}
-                className="aspect-[16/10] w-full object-cover"
+                className="aspect-[16/10] h-full w-full object-cover"
               />
               {visibleHotspots.map((hotspot) => (
                 <BedHotspot
@@ -78,17 +78,20 @@ export default function InteractiveBedExplorer({
             </div>
           </div>
 
-          <div className="rounded-lg border border-stone-200 bg-ivory/80 p-5 shadow-sm dark:border-stone-800 dark:bg-ink/80">
-            <h3 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+          <div className="lux-card p-5">
+            <h3 className="font-serif text-3xl font-semibold leading-tight text-charcoal dark:text-ivory">
               {content.mobileListTitle}
             </h3>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <p className="mt-2 text-sm leading-6 text-stone-600 dark:text-stone-400">
+              {content.subtitle}
+            </p>
+            <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
               {visibleHotspots.map((hotspot) => (
                 <button
                   key={hotspot.id}
                   type="button"
                   onClick={() => handleHotspotSelect(hotspot)}
-                  className="group flex items-center justify-between gap-3 rounded-lg border border-stone-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
+                  className="group flex items-center justify-between gap-3 rounded-md border border-stone-200 bg-white px-3 py-3 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
                 >
                   <span>
                     <span className="block text-sm font-bold text-charcoal dark:text-ivory">

@@ -15,12 +15,12 @@ export default function MapSection({ map, language }: MapSectionProps) {
   const hasExternalLink = Boolean(map.externalLink?.trim());
 
   return (
-    <SectionWrapper id="location" className="bg-smoke dark:bg-ink">
-      <div className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div>
+    <SectionWrapper id="location" className="bg-white dark:bg-ink">
+      <div className="container-shell grid gap-5 lg:grid-cols-[0.65fr_1.35fr] lg:items-stretch">
+        <div className="lux-card p-6">
           <p className="eyebrow">{localized(map.eyebrow, language)}</p>
           <h2 className="section-title">{localized(map.title, language)}</h2>
-          <p className="mt-5 flex gap-3 text-lg leading-8 text-stone-700 dark:text-stone-300">
+          <p className="mt-5 flex gap-3 text-base leading-7 text-stone-700 dark:text-stone-300">
             <MapPin
               aria-hidden
               className="mt-1 shrink-0 text-brass dark:text-champagne"
@@ -40,11 +40,11 @@ export default function MapSection({ map, language }: MapSectionProps) {
         </div>
 
         {hasEmbed ? (
-          <div className="overflow-hidden rounded-2xl border border-stone-200 shadow-soft dark:border-stone-800">
+          <div className="overflow-hidden rounded-lg border border-stone-200 shadow-[0_18px_50px_rgba(28,26,23,0.08)] dark:border-stone-800">
             <iframe
               src={map.embedUrl}
               title={localized(map.title, language)}
-              className="h-[360px] w-full"
+              className="h-[360px] w-full lg:h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

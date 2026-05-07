@@ -102,14 +102,14 @@ export default function BedProductPanel({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-end bg-ink/35 p-3 backdrop-blur-sm md:p-6"
+      className="fixed inset-0 z-50 flex items-end justify-end bg-ink/28 p-3 backdrop-blur-sm md:p-6"
       role="dialog"
       aria-modal="true"
       aria-label={hotspot.title}
       onClick={onClose}
     >
       <motion.aside
-        className="max-h-[92vh] w-full overflow-y-auto rounded-2xl border border-stone-200 bg-ivory shadow-soft dark:border-stone-800 dark:bg-stone-950 md:max-w-xl"
+        className="max-h-[92vh] w-full overflow-y-auto rounded-lg border border-stone-200 bg-[#fbf7ef] shadow-[0_24px_90px_rgba(17,16,15,0.22)] dark:border-stone-800 dark:bg-stone-950 md:max-w-[30rem]"
         initial={
           reduceMotion
             ? false
@@ -124,10 +124,10 @@ export default function BedProductPanel({
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-stone-200 p-5 dark:border-stone-800 sm:p-6">
+        <div className="flex items-start justify-between gap-4 border-b border-stone-200 p-5 dark:border-stone-800">
           <div>
             <p className="eyebrow">{hotspot.category}</p>
-            <h3 className="mt-2 font-serif text-4xl font-semibold leading-tight text-charcoal dark:text-ivory">
+            <h3 className="mt-2 font-serif text-3xl font-semibold leading-tight text-charcoal dark:text-ivory">
               {hotspot.title}
             </h3>
           </div>
@@ -141,11 +141,11 @@ export default function BedProductPanel({
           </button>
         </div>
 
-        <div className="p-5 sm:p-6">
+        <div className="p-5">
           <img
             src={image}
             alt={imageAlt}
-            className="aspect-[4/3] w-full rounded-lg object-cover shadow-sm"
+            className="aspect-[4/3] w-full rounded-md object-cover shadow-sm"
           />
 
           <p className="mt-5 text-base leading-8 text-stone-700 dark:text-stone-300">
@@ -168,7 +168,7 @@ export default function BedProductPanel({
                     key={variant.id}
                     type="button"
                     onClick={() => handleMaterialSelect(variant.id)}
-                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                    className={`rounded-md border px-4 py-2 text-sm font-semibold transition ${
                       selectedVariant?.id === variant.id
                         ? "border-brass bg-brass text-white dark:border-champagne dark:bg-champagne dark:text-ink"
                         : "border-stone-300 text-charcoal hover:border-brass dark:border-stone-700 dark:text-ivory dark:hover:border-champagne"
@@ -180,14 +180,14 @@ export default function BedProductPanel({
               </div>
             </div>
           ) : variants.length === 1 ? (
-            <p className="mt-5 inline-flex rounded-full border border-champagne/70 px-4 py-2 text-sm font-semibold text-brass dark:text-champagne">
+            <p className="mt-5 inline-flex rounded-md border border-champagne/70 px-4 py-2 text-sm font-semibold text-brass dark:text-champagne">
               {variants[0].label}
             </p>
           ) : null}
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {sizes.length > 0 ? (
-              <div className="rounded-lg border border-stone-200 p-4 dark:border-stone-800">
+              <div className="rounded-md border border-stone-200 bg-white/65 p-4 dark:border-stone-800 dark:bg-ink/70">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                   {content.sizesLabel}
                 </p>
@@ -197,7 +197,7 @@ export default function BedProductPanel({
               </div>
             ) : null}
             {colors.length > 0 ? (
-              <div className="rounded-lg border border-stone-200 p-4 dark:border-stone-800">
+              <div className="rounded-md border border-stone-200 bg-white/65 p-4 dark:border-stone-800 dark:bg-ink/70">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                   {content.colorsLabel}
                 </p>
