@@ -45,10 +45,6 @@ const initialFormState: FormState = {
   quoteSource: ""
 };
 
-function encodeForm(values: Record<string, string>) {
-  return new URLSearchParams(values).toString();
-}
-
 export default function QuoteFormSection({
   content,
   language
@@ -98,8 +94,6 @@ export default function QuoteFormSection({
     setIsSubmitting(true);
 
     const payload = {
-      "form-name": "quote-inquiry",
-      "bot-field": "",
       company_name: formState.companyName,
       contact_person: formState.contactPerson,
       phone: formState.phone,
@@ -107,20 +101,19 @@ export default function QuoteFormSection({
       product_interest: formState.productInterest,
       selected_material: formState.selectedMaterial,
       selected_price: formState.selectedPrice,
-      unit: formState.unit,
+      selected_unit: formState.unit,
       quantity: formState.quantity,
       message: formState.message,
       selected_product: formState.productInterest,
-      selected_unit: formState.unit,
       quote_source: formState.quoteSource,
       ...utmValues
     };
 
     try {
-      const response = await fetch("/__forms.html", {
+      const response = await fetch("/api/quotes", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeForm(payload)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       });
 
       if (!response.ok) throw new Error("Form submission failed");
@@ -152,17 +145,9 @@ export default function QuoteFormSection({
         </div>
 
         <form
-          name="quote-inquiry"
-          method="POST"
           onSubmit={handleSubmit}
           className="rounded-2xl border border-stone-200 bg-white p-5 shadow-soft dark:border-stone-800 dark:bg-stone-950 sm:p-7"
         >
-          <input type="hidden" name="form-name" value="quote-inquiry" />
-          <p className="hidden">
-            <label>
-              Do not fill this out: <input name="bot-field" />
-            </label>
-          </p>
           <input
             type="hidden"
             name="selected_product"
