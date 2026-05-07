@@ -65,6 +65,11 @@ export default function InteractiveBedExplorer({
               <img
                 src={content.bedImage || "/placeholders/interactive-bed.svg"}
                 alt={content.bedImageAlt}
+                onError={(event) => {
+                  if (!event.currentTarget.src.endsWith("/placeholders/interactive-bed.svg")) {
+                    event.currentTarget.src = "/placeholders/interactive-bed.svg";
+                  }
+                }}
                 className="aspect-[16/10] h-full w-full object-cover"
               />
               {visibleHotspots.map((hotspot) => (

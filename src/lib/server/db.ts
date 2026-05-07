@@ -96,6 +96,60 @@ function seedContent(db: Database) {
   statement.free();
 }
 
+function readContentDocument(db: Database, key: ContentDocumentKey) {
+  const statement = db.prepare("SELECT json FROM content_documents WHERE key = ?");
+  statement.bind([key]);
+  const json = statement.step()
+    ? (statement.getAsObject().json as string | undefined)
+    : undefined;
+  statement.free();
+
+  if (!json) return null;
+
+  try {
+    return JSON.parse(json) as Record<string, unknown>;
+  } catch {
+    return null;
+  }
+}
+
+function updateContentDocument(
+  db: Database,
+  key: ContentDocumentKey,
+  value: unknown
+) {
+  db.run(
+    "UPDATE content_documents SET json = ?, updated_at = ? WHERE key = ?",
+    [JSON.stringify(value, null, 2), new Date().toISOString(), key]
+  );
+}
+
+function hasVisibleHotspots(document: Record<string, unknown> | null) {
+  const hotspots = Array.isArray(document?.hotspots) ? document.hotspots : [];
+
+  return hotspots.some(
+    (hotspot) =>
+      hotspot &&
+      typeof hotspot === "object" &&
+      (hotspot as { isVisible?: unknown }).isVisible === true
+  );
+}
+
+function repairInteractiveBedContent(db: Database) {
+  (["interactive-bed.en", "interactive-bed.ge"] as const).forEach((key) => {
+    const document = readContentDocument(db, key);
+
+    if (!document || !Array.isArray(document.hotspots) || !hasVisibleHotspots(document)) {
+      updateContentDocument(db, key, defaultContentDocuments[key]);
+      return;
+    }
+
+    if (document.isVisible !== true) {
+      updateContentDocument(db, key, { ...document, isVisible: true });
+    }
+  });
+}
+
 export async function getDb() {
   if (!dbStatePromise) {
     dbStatePromise = (async () => {
@@ -108,6 +162,7 @@ export async function getDb() {
 
       runMigrations(db);
       seedContent(db);
+      repairInteractiveBedContent(db);
       persistDb(db, filePath);
 
       return { db, filePath };
