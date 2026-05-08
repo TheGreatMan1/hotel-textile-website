@@ -123,4 +123,68 @@ img {
   .admin-table td {
     @apply border-b border-stone-100 px-3 py-3 align-middle;
   }
+
+  .admin-dashboard.admin-dark {
+    background: #11100f;
+    color: #f7f0e4;
+  }
+
+  .admin-dashboard.admin-dark header {
+    border-color: #292524;
+    background: rgba(17, 16, 15, 0.92);
+  }
+
+  .admin-dashboard.admin-dark section,
+  .admin-dashboard.admin-dark .rounded-xl,
+  .admin-dashboard.admin-dark .rounded-lg {
+    border-color: #292524;
+  }
+
+  .admin-dashboard.admin-dark section,
+  .admin-dashboard.admin-dark .bg-white {
+    background-color: #1c1a17;
+    color: #f7f0e4;
+  }
+
+  .admin-dashboard.admin-dark .bg-\[\#fbf7ef\],
+  .admin-dashboard.admin-dark .bg-\[\#f7f1e8\] {
+    background-color: #11100f;
+  }
+
+  .admin-dashboard.admin-dark .text-charcoal,
+  .admin-dashboard.admin-dark .text-\[\#19130e\] {
+    color: #f7f0e4;
+  }
+
+  .admin-dashboard.admin-dark .text-stone-500,
+  .admin-dashboard.admin-dark .text-stone-600 {
+    color: #b8ada1;
+  }
+
+  .admin-dashboard.admin-dark .admin-input,
+  .admin-dashboard.admin-dark .admin-mini-input,
+  .admin-dashboard.admin-dark textarea,
+  .admin-dashboard.admin-dark select,
+  .admin-dashboard.admin-dark input {
+    border-color: #3b332b;
+    background-color: #11100f;
+    color: #f7f0e4;
+  }
+
+  .admin-dashboard.admin-dark .admin-table th {
+    border-color: #292524;
+    background-color: #11100f;
+    color: #d7bd7f;
+  }
+
+  .admin-dashboard.admin-dark .admin-table td {
+    border-color: #292524;
+  }
+
+  .admin-dashboard.admin-dark .admin-secondary,
+  .admin-dashboard.admin-dark .admin-icon-button {
+    border-color: #3b332b;
+    background-color: #1c1a17;
+    color: #d7bd7f;
+  }
 }

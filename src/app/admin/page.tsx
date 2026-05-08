@@ -22,7 +22,6 @@ import {
   Package,
   Plus,
   Save,
-  Search,
   Settings,
   Sparkles,
   Sun,
@@ -127,12 +126,18 @@ export default function AdminPage() {
   const [selectedJsonKey, setSelectedJsonKey] = useState<ContentKey>("site.en");
   const [jsonText, setJsonText] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [adminTheme, setAdminTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     fetch("/api/admin/me")
       .then((response) => response.json())
       .then((data) => setAuthenticated(Boolean(data.authenticated)))
       .finally(() => setChecking(false));
+
+    const savedTheme = window.localStorage.getItem("admin-theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      setAdminTheme(savedTheme);
+    }
   }, []);
 
   useEffect(() => {
@@ -210,6 +215,14 @@ export default function AdminPage() {
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" });
     setAuthenticated(false);
+  }
+
+  function toggleAdminTheme() {
+    setAdminTheme((current) => {
+      const next = current === "dark" ? "light" : "dark";
+      window.localStorage.setItem("admin-theme", next);
+      return next;
+    });
   }
 
   function patchDoc(key: ContentKey, updater: (current: any) => any) {
@@ -380,7 +393,11 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f1e8] text-[#19130e]">
+    <div
+      className={`admin-dashboard min-h-screen bg-[#f7f1e8] text-[#19130e] ${
+        adminTheme === "dark" ? "admin-dark" : ""
+      }`}
+    >
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-72 transform bg-[linear-gradient(180deg,#111918,#0b1111)] px-4 py-5 text-white shadow-2xl transition lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -447,27 +464,26 @@ export default function AdminPage() {
               </div>
             </div>
 
-            <div className="hidden flex-1 justify-center xl:flex">
-              <label className="flex w-full max-w-xl items-center gap-3 rounded-lg border border-stone-200 bg-white px-4 py-3 text-sm text-stone-500">
-                <Search size={17} />
-                <input
-                  className="w-full bg-transparent outline-none"
-                  placeholder="Search anything..."
-                  onChange={(event) => {
-                    const target = document.getElementById(event.target.value.toLowerCase());
-                    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                />
-              </label>
-            </div>
-
             <div className="flex items-center gap-2">
               <span className="hidden rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm font-semibold sm:inline-flex">
                 🇬🇧 EN / 🇬🇪 GE
               </span>
-              <span className="hidden items-center gap-2 rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm font-semibold sm:inline-flex">
-                <Sun size={15} className="text-brass" /> Light <ChevronDown size={14} />
-              </span>
+              <button
+                type="button"
+                onClick={toggleAdminTheme}
+                className="hidden items-center gap-2 rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm font-semibold sm:inline-flex"
+                aria-label={`Switch admin dashboard to ${
+                  adminTheme === "dark" ? "light" : "dark"
+                } mode`}
+              >
+                {adminTheme === "dark" ? (
+                  <Moon size={15} className="text-champagne" />
+                ) : (
+                  <Sun size={15} className="text-brass" />
+                )}
+                {adminTheme === "dark" ? "Dark" : "Light"}
+                <ChevronDown size={14} />
+              </button>
               <div className="hidden items-center gap-3 rounded-lg bg-white px-3 py-2 shadow-sm md:flex">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-champagne/30 font-bold text-brass">
                   A
