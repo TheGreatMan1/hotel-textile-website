@@ -657,6 +657,8 @@ export default function AdminPage() {
                         const variantPrice = formatPriceDisplay(variant);
                         const fallbackPrice = formatPriceDisplay(activeHotspotEn);
                         const effectivePrice = variantPrice || fallbackPrice;
+                        const variantSizes = toStringList(variant.sizes);
+                        const variantColors = toStringList(variant.colors);
 
                         return (
                           <div key={variant.id || index} className="rounded-lg border border-champagne/40 bg-[#fbf7ef] p-3 text-xs">
@@ -693,6 +695,33 @@ export default function AdminPage() {
                               }}
                               compact
                             />
+                            <div className="mt-3 grid gap-2">
+                              <CommaListEditor
+                                label="Sizes"
+                                value={variantSizes}
+                                placeholder="Standard, King, Custom"
+                                onChange={(values) => {
+                                  updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "materialVariants", index, "sizes"], values);
+                                  updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "materialVariants", index, "sizes"], values);
+                                }}
+                              />
+                              <CommaListEditor
+                                label="Colors"
+                                value={variantColors}
+                                placeholder="White, Ivory, Beige"
+                                onChange={(values) => {
+                                  updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "materialVariants", index, "colors"], values);
+                                  updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "materialVariants", index, "colors"], values);
+                                }}
+                              />
+                              <div className="rounded-md border border-stone-200 bg-white p-2">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-stone-500">
+                                  Public Card Preview
+                                </p>
+                                <VariantListPreview label="Sizes" values={variantSizes} />
+                                <VariantListPreview label="Colors" values={variantColors} />
+                              </div>
+                            </div>
                           </div>
                         );
                       })}
@@ -1105,6 +1134,46 @@ function PriceEditor({
   );
 }
 
+function CommaListEditor({
+  label,
+  value,
+  placeholder,
+  onChange
+}: {
+  label: string;
+  value: string[];
+  placeholder: string;
+  onChange: (values: string[]) => void;
+}) {
+  return (
+    <label className="block">
+      <span className="admin-label">{label}</span>
+      <input
+        className="admin-mini-input mt-1"
+        value={value.join(", ")}
+        placeholder={placeholder}
+        onChange={(event) => onChange(parseCommaList(event.target.value))}
+      />
+      <span className="mt-1 block text-[11px] leading-4 text-stone-500">
+        Separate values with commas. Empty values are hidden on the website.
+      </span>
+    </label>
+  );
+}
+
+function VariantListPreview({ label, values }: { label: string; values: string[] }) {
+  return (
+    <div className="mt-2">
+      <span className="font-semibold text-charcoal">{label}: </span>
+      {values.length > 0 ? (
+        <span className="text-stone-600">{values.join(", ")}</span>
+      ) : (
+        <span className="text-stone-400">Hidden on website</span>
+      )}
+    </div>
+  );
+}
+
 function ImageUploadPanel({ image, label, compact = false, onUploaded, uploadFile }: { image: string; label: string; compact?: boolean; onUploaded: (path: string) => void; uploadFile: (event: ChangeEvent<HTMLInputElement>, kind: "images" | "catalog", onUploaded: (path: string) => void) => Promise<void> }) {
   return (
     <div className={compact ? "mt-3" : ""}>
@@ -1147,4 +1216,18 @@ function setPath(target: any, path: Array<string | number>, value: any) {
 
     current = current[part];
   });
+}
+
+function toStringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => String(item || "").trim())
+    .filter(Boolean);
+}
+
+function parseCommaList(value: string): string[] {
+  return value
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
 }
