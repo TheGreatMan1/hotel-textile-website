@@ -135,8 +135,8 @@ export default function QuoteFormSection({
 
   return (
     <SectionWrapper id="quote-form" className="bg-white dark:bg-ink">
-      <div className="container-shell grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
-        <div className="lux-card p-4">
+      <div className="container-shell grid gap-4 lg:grid-cols-[0.68fr_1.32fr] lg:items-start">
+        <div className="lux-card p-3.5">
           <p className="eyebrow">{localized(content.eyebrow, language)}</p>
           <h2 className="section-title">{localized(content.title, language)}</h2>
           <p className="section-copy">
@@ -146,7 +146,7 @@ export default function QuoteFormSection({
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg border border-stone-200 bg-white p-4 shadow-[0_14px_34px_rgba(28,26,23,0.07)] dark:border-stone-800 dark:bg-stone-950 sm:p-5"
+          className="rounded-lg border border-stone-200 bg-white p-3.5 shadow-[0_12px_30px_rgba(28,26,23,0.06)] dark:border-stone-800 dark:bg-stone-950 sm:p-4"
         >
           <input
             type="hidden"
@@ -176,7 +176,7 @@ export default function QuoteFormSection({
             />
           ))}
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-2.5 sm:grid-cols-2">
             <TextField
               label={localized(fields.companyName.label, language)}
               placeholder={localized(fields.companyName.placeholder, language)}
@@ -259,8 +259,8 @@ export default function QuoteFormSection({
             />
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="primary-button mt-5">
-            <Send aria-hidden className="mr-2" size={17} />
+          <button type="submit" disabled={isSubmitting} className="primary-button mt-4">
+            <Send aria-hidden className="mr-2" size={15} />
             {localized(content.submitButtonText, language)}
           </button>
 
@@ -292,7 +292,7 @@ type FieldProps = {
 };
 
 const fieldClass =
-  "mt-1.5 min-h-10 w-full rounded-md border border-stone-300 bg-white px-3 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500";
+  "mt-1.5 min-h-9 w-full rounded-md border border-stone-300 bg-white px-2.5 text-xs text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500 sm:text-sm";
 
 const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     {
@@ -308,7 +308,7 @@ const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     ref
   ) {
     return (
-      <label className={`block text-sm font-semibold text-charcoal dark:text-ivory ${className}`}>
+      <label className={`block text-xs font-semibold text-charcoal dark:text-ivory sm:text-sm ${className}`}>
         {label}
         <input
           ref={ref}
@@ -333,10 +333,10 @@ function TextAreaField({
   onChange
 }: FieldProps) {
   return (
-    <label className="block text-sm font-semibold text-charcoal dark:text-ivory sm:col-span-2">
+    <label className="block text-xs font-semibold text-charcoal dark:text-ivory sm:col-span-2 sm:text-sm">
       {label}
       <textarea
-        className={`${fieldClass} min-h-24 py-3`}
+        className={`${fieldClass} min-h-20 py-2.5`}
         name={name}
         value={value}
         placeholder={placeholder}

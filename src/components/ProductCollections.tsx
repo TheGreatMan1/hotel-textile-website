@@ -19,13 +19,13 @@ export default function ProductCollections({ products }: ProductCollectionsProps
   return (
     <SectionWrapper id="products" className="bg-white dark:bg-ink">
       <div className="container-shell">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{products.eyebrow}</p>
           <h2 className="section-title">{products.title}</h2>
           <p className="section-copy mx-auto">{products.description}</p>
         </div>
 
-        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visibleProducts.map((product) => (
             <ProductCard
               key={product.slug}
@@ -39,7 +39,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
           ))}
         </div>
 
-        <div className="mt-6 flex justify-center">
+        <div className="mt-5 flex justify-center">
           <a href="#quote-form" className="primary-button">
             {visibleProducts[0]?.buttonText || products.title}
             <ArrowRight aria-hidden className="ml-2" size={15} />

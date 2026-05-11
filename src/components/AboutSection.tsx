@@ -18,7 +18,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
 
   return (
     <SectionWrapper id="about" className="bg-white dark:bg-ink">
-      <div className="container-shell grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div className="container-shell grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <motion.img
           src={about.image || "/placeholders/towels.svg"}
           alt={about.imageAlt}
@@ -32,7 +32,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
           <p className="section-copy">{about.description}</p>
 
           {features.length > 0 ? (
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-3">
               {features.map((feature) => {
                 const Icon =
                   iconMap[feature.icon as keyof typeof iconMap] ||
@@ -41,15 +41,15 @@ export default function AboutSection({ about }: AboutSectionProps) {
                 return (
                   <article
                     key={feature.title}
-                    className="rounded-lg border border-stone-200 bg-white p-3 dark:border-stone-800 dark:bg-stone-950"
+                    className="rounded-lg border border-stone-200 bg-white p-2.5 dark:border-stone-800 dark:bg-stone-950"
                   >
-                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-champagne/25 text-brass dark:text-champagne">
-                      <Icon aria-hidden size={16} />
+                    <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-champagne/25 text-brass dark:text-champagne">
+                      <Icon aria-hidden size={15} />
                     </div>
-                    <h3 className="font-serif text-lg font-semibold text-charcoal dark:text-ivory">
+                    <h3 className="font-serif text-base font-semibold text-charcoal dark:text-ivory">
                       {feature.title}
                     </h3>
-                    <p className="mt-2 text-xs leading-5 text-stone-600 dark:text-stone-300">
+                    <p className="mt-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
                       {feature.description}
                     </p>
                   </article>

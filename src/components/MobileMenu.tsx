@@ -30,7 +30,7 @@ export default function MobileMenu({
           onClick={onClose}
         >
           <motion.div
-            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-6 shadow-soft dark:bg-ink"
+            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-5 shadow-soft dark:bg-ink"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -56,7 +56,7 @@ export default function MobileMenu({
               </button>
             </div>
             <nav
-              className="mt-10 flex flex-col gap-2"
+              className="mt-8 flex flex-col gap-2"
               aria-label="Mobile navigation"
             >
               {navLinks.map((link) => (

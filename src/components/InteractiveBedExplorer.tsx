@@ -43,7 +43,7 @@ export default function InteractiveBedExplorer({
     >
       <motion.div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
+        className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
         animate={
           reduceMotion
             ? undefined
@@ -53,13 +53,13 @@ export default function InteractiveBedExplorer({
       />
 
       <div className="container-shell relative">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl">
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="section-title">{content.title}</h2>
           <p className="section-copy">{content.subtitle}</p>
         </div>
 
-        <div className="mt-7 grid gap-4 lg:grid-cols-[1fr_19rem] lg:items-stretch">
+        <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_17.5rem] lg:items-stretch">
           <div className="relative rounded-lg border border-stone-200 bg-white p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
             <div className="relative h-full overflow-hidden rounded-md">
               <img
@@ -83,33 +83,33 @@ export default function InteractiveBedExplorer({
             </div>
           </div>
 
-          <div className="lux-card p-4">
-            <h3 className="font-serif text-2xl font-semibold leading-tight text-charcoal dark:text-ivory">
+          <div className="lux-card p-3.5">
+            <h3 className="font-serif text-xl font-semibold leading-tight text-charcoal dark:text-ivory">
               {content.mobileListTitle}
             </h3>
-            <p className="mt-2 text-xs leading-5 text-stone-600 dark:text-stone-400">
+            <p className="mt-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-400">
               {content.subtitle}
             </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="mt-3 grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
               {visibleHotspots.map((hotspot) => (
                 <button
                   key={hotspot.id}
                   type="button"
                   onClick={() => handleHotspotSelect(hotspot)}
-                  className="group flex items-center justify-between gap-3 rounded-md border border-stone-200 bg-white px-3 py-2.5 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
+                  className="group flex items-center justify-between gap-2.5 rounded-md border border-stone-200 bg-white px-2.5 py-2 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
                 >
                   <span>
-                    <span className="block text-xs font-bold text-charcoal dark:text-ivory">
+                    <span className="block text-[11px] font-bold text-charcoal dark:text-ivory">
                       {hotspot.label}
                     </span>
-                    <span className="mt-0.5 block text-[11px] leading-4 text-stone-500 dark:text-stone-400">
+                    <span className="mt-0.5 block text-[10px] leading-4 text-stone-500 dark:text-stone-400">
                       {hotspot.category}
                     </span>
                   </span>
                   <ArrowRight
                     aria-hidden
                     className="text-brass transition group-hover:translate-x-1 dark:text-champagne"
-                    size={16}
+                    size={14}
                   />
                 </button>
               ))}

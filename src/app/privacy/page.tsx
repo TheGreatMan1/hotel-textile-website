@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white py-16 text-charcoal dark:bg-ink dark:text-ivory">
+    <main className="min-h-screen bg-white py-12 text-charcoal dark:bg-ink dark:text-ivory">
       <div className="container-shell max-w-4xl">
         <Link
           href="/"
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         >
           Back to website
         </Link>
-        <h1 className="mt-8 font-serif text-5xl font-semibold">
+        <h1 className="mt-6 font-serif text-4xl font-semibold">
           Privacy Policy
         </h1>
         <p className="mt-5 text-lg leading-8 text-stone-700 dark:text-stone-300">
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           accounts.
         </p>
 
-        <div className="mt-10 space-y-8 text-base leading-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-8 space-y-6 text-sm leading-7 text-stone-700 dark:text-stone-300">
           <section>
             <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
               Quote Inquiry Data

@@ -34,17 +34,17 @@ export default function WhyChooseUsSection({
         }}
       />
       <div className="container-shell">
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto max-w-2xl text-center">
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold leading-[1.05] text-ivory sm:text-4xl lg:text-[2.65rem]">
+          <h2 className="mt-2 font-serif text-3xl font-semibold leading-[1.05] text-ivory sm:text-[2.15rem] lg:text-[2.35rem]">
             {content.title}
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-stone-300">
+          <p className="mx-auto mt-2.5 max-w-2xl text-[13px] leading-5 text-stone-300 sm:text-sm sm:leading-6">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="relative mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="relative mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {features.map((feature, index) => {
             const Icon =
               iconMap[feature.icon as keyof typeof iconMap] || iconMap.Sparkles;
@@ -64,13 +64,13 @@ export default function WhyChooseUsSection({
                   damping: 24
                 }}
               >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-champagne/45 bg-champagne/5 text-champagne">
-                  <Icon aria-hidden size={20} strokeWidth={1.55} />
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-champagne/45 bg-champagne/5 text-champagne">
+                  <Icon aria-hidden size={18} strokeWidth={1.55} />
                 </div>
-                <h3 className="mt-3 font-serif text-lg font-semibold text-ivory">
+                <h3 className="mt-2.5 font-serif text-base font-semibold text-ivory">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-xs leading-5 text-stone-300">
+                <p className="mt-1.5 text-[11px] leading-4 text-stone-300">
                   {feature.description}
                 </p>
               </motion.article>

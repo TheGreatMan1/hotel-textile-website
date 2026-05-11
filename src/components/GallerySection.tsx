@@ -25,7 +25,7 @@ export default function GallerySection({
   return (
     <SectionWrapper id="gallery" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{localized(gallery.eyebrow, language)}</p>
           <h2 className="section-title">{localized(gallery.title, language)}</h2>
           <p className="section-copy mx-auto">
@@ -33,7 +33,7 @@ export default function GallerySection({
           </p>
         </div>
 
-        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
           {images.map((image, index) => (
             <motion.figure
               key={`${image.image}-${image.sortOrder}`}
@@ -50,7 +50,7 @@ export default function GallerySection({
                   className="aspect-[5/6] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
                 />
               </div>
-              <figcaption className="px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
+              <figcaption className="px-2.5 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
                 {localized(image.caption, language)}
               </figcaption>
             </motion.figure>

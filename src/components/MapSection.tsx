@@ -16,11 +16,11 @@ export default function MapSection({ map, language }: MapSectionProps) {
 
   return (
     <SectionWrapper id="location" className="bg-white dark:bg-ink">
-      <div className="container-shell grid gap-5 lg:grid-cols-[0.65fr_1.35fr] lg:items-stretch">
-        <div className="lux-card p-4 sm:p-5">
+      <div className="container-shell grid gap-4 lg:grid-cols-[0.65fr_1.35fr] lg:items-stretch">
+        <div className="lux-card p-3.5 sm:p-4">
           <p className="eyebrow">{localized(map.eyebrow, language)}</p>
           <h2 className="section-title">{localized(map.title, language)}</h2>
-          <p className="mt-4 flex gap-3 text-sm leading-6 text-stone-700 dark:text-stone-300">
+          <p className="mt-3 flex gap-2.5 text-xs leading-5 text-stone-700 dark:text-stone-300 sm:text-sm">
             <MapPin
               aria-hidden
               className="mt-1 shrink-0 text-brass dark:text-champagne"
@@ -32,7 +32,7 @@ export default function MapSection({ map, language }: MapSectionProps) {
               href={map.externalLink}
               target="_blank"
               rel="noreferrer"
-              className="secondary-button mt-5"
+              className="secondary-button mt-4"
             >
               {localized(map.buttonText, language)}
             </a>
@@ -44,7 +44,7 @@ export default function MapSection({ map, language }: MapSectionProps) {
             <iframe
               src={map.embedUrl}
               title={localized(map.title, language)}
-              className="h-[300px] w-full lg:h-full"
+              className="h-[260px] w-full lg:h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

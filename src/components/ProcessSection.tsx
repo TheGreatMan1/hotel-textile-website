@@ -21,13 +21,13 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
   return (
     <SectionWrapper id="process" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{process.eyebrow}</p>
           <h2 className="section-title">{process.title}</h2>
           <p className="section-copy mx-auto">{process.description}</p>
         </div>
 
-        <div className="mt-7 grid gap-3 md:grid-cols-5">
+        <div className="mt-6 grid gap-2.5 md:grid-cols-5">
           {steps.map((step, index) => {
             const Icon =
               iconMap[step.icon as keyof typeof iconMap] || iconMap.BadgeCheck;
@@ -35,22 +35,22 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
             return (
               <motion.article
                 key={step.title}
-                className="relative rounded-lg border border-stone-200 bg-white p-3 text-center shadow-sm dark:border-stone-800 dark:bg-ink"
+                className="relative rounded-lg border border-stone-200 bg-white p-2.5 text-center shadow-sm dark:border-stone-800 dark:bg-ink"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
               >
-                <span className="absolute right-3 top-3 font-serif text-3xl leading-none text-champagne/40">
+                <span className="absolute right-2.5 top-2.5 font-serif text-2xl leading-none text-champagne/40">
                   {index + 1}
                 </span>
-                <div className="relative mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-brass/35 bg-champagne/15 text-brass dark:border-champagne/35 dark:bg-champagne/10 dark:text-champagne">
-                  <Icon aria-hidden size={17} />
+                <div className="relative mx-auto flex h-9 w-9 items-center justify-center rounded-full border border-brass/35 bg-champagne/15 text-brass dark:border-champagne/35 dark:bg-champagne/10 dark:text-champagne">
+                  <Icon aria-hidden size={15} />
                 </div>
-                <h3 className="relative mt-3 font-serif text-lg font-semibold text-charcoal dark:text-ivory">
+                <h3 className="relative mt-2.5 font-serif text-base font-semibold text-charcoal dark:text-ivory">
                   {step.title}
                 </h3>
-                <p className="relative mt-2 text-xs leading-6 text-stone-600 dark:text-stone-300">
+                <p className="relative mt-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
                   {step.description}
                 </p>
               </motion.article>

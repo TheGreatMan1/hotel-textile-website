@@ -46,7 +46,7 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
   return (
     <motion.article
       id={`product-${product.slug}`}
-      className="group overflow-hidden rounded-lg border border-stone-200/90 bg-white shadow-[0_14px_42px_rgba(28,26,23,0.06)] transition-colors dark:border-stone-800 dark:bg-stone-950"
+      className="group overflow-hidden rounded-lg border border-stone-200/90 bg-white shadow-[0_12px_34px_rgba(28,26,23,0.055)] transition-colors dark:border-stone-800 dark:bg-stone-950"
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 260, damping: 24 }}
     >
@@ -54,35 +54,35 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
         <img
           src={product.image || "/placeholders/textile-sets.svg"}
           alt={product.imageAlt || product.title}
-          className="aspect-[1.35/1] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+          className="aspect-[1.45/1] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
         />
       </div>
-      <div className="p-3.5">
-        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-brass dark:text-champagne">
+      <div className="p-3">
+        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-brass dark:text-champagne">
           {product.category}
         </p>
-        <h3 className="mt-1.5 font-serif text-xl font-semibold leading-tight text-charcoal dark:text-ivory">
+        <h3 className="mt-1.5 font-serif text-lg font-semibold leading-tight text-charcoal dark:text-ivory">
           {product.title}
         </h3>
 
         {formattedPrice ? (
           <div className="mt-1.5 flex items-end gap-2 text-charcoal dark:text-ivory">
-            <p className="font-serif text-xl font-semibold leading-none">
+            <p className="font-serif text-lg font-semibold leading-none">
               {formattedPrice.displayText}
             </p>
             {formattedPrice.unitText ? (
-              <p className="pb-0.5 text-[11px] font-semibold text-stone-500 dark:text-stone-400">
+              <p className="pb-0.5 text-[10px] font-semibold text-stone-500 dark:text-stone-400">
                 / {formattedPrice.unitText}
               </p>
             ) : null}
           </div>
         ) : null}
 
-        <p className="mt-2 text-xs leading-5 text-stone-600 dark:text-stone-300">
+        <p className="mt-2 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
           {product.shortDescription}
         </p>
 
-        <div className="mt-3 space-y-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-400">
+        <div className="mt-2.5 space-y-1.5 text-[10px] leading-4 text-stone-600 dark:text-stone-400">
           {product.material ? (
             <p>
               <span className="font-semibold text-charcoal dark:text-ivory">
@@ -116,7 +116,7 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
         <a
           href={href}
           onClick={handleQuoteClick}
-          className="mt-4 inline-flex items-center text-[11px] font-bold uppercase tracking-[0.08em] text-brass transition hover:text-charcoal dark:text-champagne dark:hover:text-ivory"
+          className="mt-3.5 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.08em] text-brass transition hover:text-charcoal dark:text-champagne dark:hover:text-ivory"
         >
           {product.buttonText}
           <ArrowRight aria-hidden className="ml-2" size={16} />
