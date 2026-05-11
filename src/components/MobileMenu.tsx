@@ -30,7 +30,7 @@ export default function MobileMenu({
           onClick={onClose}
         >
           <motion.div
-            className="ml-auto flex h-full w-full max-w-sm flex-col bg-ivory p-6 shadow-soft dark:bg-ink"
+            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-6 shadow-soft dark:bg-ink"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -64,7 +64,7 @@ export default function MobileMenu({
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className="rounded-md px-3 py-4 text-base font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-linen dark:text-ivory dark:hover:bg-stone-900"
+                  className="rounded-md px-3 py-4 text-base font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-stone-50 dark:text-ivory dark:hover:bg-stone-900"
                 >
                   {link.label}
                 </a>

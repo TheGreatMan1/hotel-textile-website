@@ -60,7 +60,7 @@ export default function InteractiveBedExplorer({
         </div>
 
         <div className="mt-7 grid gap-4 lg:grid-cols-[1fr_19rem] lg:items-stretch">
-          <div className="relative rounded-lg border border-stone-200 bg-[#f8f1e6] p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
+          <div className="relative rounded-lg border border-stone-200 bg-white p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
             <div className="relative h-full overflow-hidden rounded-md">
               <img
                 src={content.bedImage || "/placeholders/interactive-bed.svg"}

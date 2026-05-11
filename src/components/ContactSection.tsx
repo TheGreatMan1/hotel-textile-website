@@ -58,7 +58,7 @@ export default function ContactSection({
                       contact_method: method.key
                     })
                   }
-                  className="rounded-lg border border-stone-200 bg-[#fbf7ef] p-4 transition hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-ink dark:hover:border-champagne"
+                  className="rounded-lg border border-stone-200 bg-white p-4 transition hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-ink dark:hover:border-champagne"
                   whileHover={{ y: -5 }}
                 >
                   {content}
@@ -66,7 +66,7 @@ export default function ContactSection({
               ) : (
                 <motion.div
                   key={method.key}
-                  className="rounded-lg border border-stone-200 bg-[#fbf7ef] p-4 dark:border-stone-800 dark:bg-ink"
+                  className="rounded-lg border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-ink"
                   whileHover={{ y: -5 }}
                 >
                   {content}

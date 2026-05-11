@@ -134,7 +134,7 @@ export default function QuoteFormSection({
   }
 
   return (
-    <SectionWrapper id="quote-form" className="bg-[#fbf7ef] dark:bg-ink">
+    <SectionWrapper id="quote-form" className="bg-white dark:bg-ink">
       <div className="container-shell grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
         <div className="lux-card p-4">
           <p className="eyebrow">{localized(content.eyebrow, language)}</p>
@@ -292,7 +292,7 @@ type FieldProps = {
 };
 
 const fieldClass =
-  "mt-1.5 min-h-10 w-full rounded-md border border-stone-300 bg-[#fbf7ef] px-3 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500";
+  "mt-1.5 min-h-10 w-full rounded-md border border-stone-300 bg-white px-3 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500";
 
 const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     {

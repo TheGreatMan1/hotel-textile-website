@@ -34,7 +34,7 @@ export default function Header({
     brandMain === content.brandName ? content.tagline : "Hotel Textiles";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-[#fbf7ef]/92 shadow-[0_8px_28px_rgba(28,26,23,0.05)] backdrop-blur-xl transition-colors dark:border-stone-800 dark:bg-ink/90">
+    <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-white/92 shadow-[0_8px_28px_rgba(28,26,23,0.05)] backdrop-blur-xl transition-colors dark:border-stone-800 dark:bg-ink/90">
       <div className="container-shell flex min-h-14 items-center justify-between gap-3">
         <a
           href="#top"

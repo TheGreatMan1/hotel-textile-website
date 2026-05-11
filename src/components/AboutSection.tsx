@@ -41,7 +41,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
                 return (
                   <article
                     key={feature.title}
-                    className="rounded-lg border border-stone-200 bg-[#fbf7ef] p-3 dark:border-stone-800 dark:bg-stone-950"
+                    className="rounded-lg border border-stone-200 bg-white p-3 dark:border-stone-800 dark:bg-stone-950"
                   >
                     <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-champagne/25 text-brass dark:text-champagne">
                       <Icon aria-hidden size={16} />

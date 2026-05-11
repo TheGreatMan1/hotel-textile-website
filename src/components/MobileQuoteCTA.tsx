@@ -32,7 +32,7 @@ export default function MobileQuoteCTA({
   if (!content.isVisible || isQuoteVisible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-stone-200 bg-ivory/95 p-3 shadow-soft backdrop-blur md:hidden dark:border-stone-800 dark:bg-ink/95">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-stone-200 bg-white/95 p-3 shadow-soft backdrop-blur md:hidden dark:border-stone-800 dark:bg-ink/95">
       <button type="button" className="primary-button w-full" onClick={scrollToQuoteForm}>
         {localized(content.submitButtonText, language)}
       </button>

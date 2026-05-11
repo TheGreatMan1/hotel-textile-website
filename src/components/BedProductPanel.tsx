@@ -109,7 +109,7 @@ export default function BedProductPanel({
       onClick={onClose}
     >
       <motion.aside
-        className="max-h-[92vh] w-full overflow-y-auto rounded-lg border border-stone-200 bg-[#fbf7ef] shadow-[0_22px_70px_rgba(17,16,15,0.2)] dark:border-stone-800 dark:bg-stone-950 md:max-w-[27rem]"
+        className="max-h-[92vh] w-full overflow-y-auto rounded-lg border border-stone-200 bg-white shadow-[0_22px_70px_rgba(17,16,15,0.2)] dark:border-stone-800 dark:bg-stone-950 md:max-w-[27rem]"
         initial={
           reduceMotion
             ? false

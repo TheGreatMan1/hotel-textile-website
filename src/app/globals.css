@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  background: #f8f1e6;
+  background: #ffffff;
   color: #18130f;
   overflow-x: hidden;
 }
@@ -73,15 +73,15 @@ img {
   }
 
   .primary-button {
-    @apply inline-flex min-h-10 items-center justify-center rounded-md bg-brass px-4 text-[11px] font-bold uppercase tracking-[0.08em] text-white shadow-[0_12px_24px_rgba(164,127,54,0.20)] transition hover:-translate-y-0.5 hover:bg-[#8f6c28] focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:bg-champagne dark:text-ink dark:hover:bg-linen dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex min-h-10 items-center justify-center rounded-md bg-brass px-4 text-[11px] font-bold uppercase tracking-[0.08em] text-white shadow-[0_12px_24px_rgba(164,127,54,0.20)] transition hover:-translate-y-0.5 hover:bg-[#8f6c28] focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-white dark:bg-champagne dark:text-ink dark:hover:bg-linen dark:focus:ring-champagne dark:focus:ring-offset-ink;
   }
 
   .secondary-button {
-    @apply inline-flex min-h-10 items-center justify-center rounded-md border border-stone-300 bg-white/70 px-4 text-[11px] font-bold uppercase tracking-[0.08em] text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/60 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex min-h-10 items-center justify-center rounded-md border border-stone-300 bg-white/80 px-4 text-[11px] font-bold uppercase tracking-[0.08em] text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-white dark:border-stone-700 dark:bg-stone-950/60 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
   }
 
   .icon-button {
-    @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white/80 text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-ivory dark:border-stone-700 dark:bg-stone-950/75 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 bg-white/90 text-charcoal transition hover:border-brass hover:text-brass focus:outline-none focus:ring-2 focus:ring-brass focus:ring-offset-2 focus:ring-offset-white dark:border-stone-700 dark:bg-stone-950/75 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne dark:focus:ring-champagne dark:focus:ring-offset-ink;
   }
 
   .lux-card {

@@ -23,7 +23,7 @@ export default function GallerySection({
   if (images.length === 0) return null;
 
   return (
-    <SectionWrapper id="gallery" className="bg-[#fbf7ef] dark:bg-stone-950">
+    <SectionWrapper id="gallery" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">{localized(gallery.eyebrow, language)}</p>

@@ -26,7 +26,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-[#f8f1e6] transition-colors dark:bg-ink"
+      className="relative overflow-hidden bg-white transition-colors dark:bg-ink"
     >
       <motion.div
         aria-hidden

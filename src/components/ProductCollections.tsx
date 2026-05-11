@@ -17,7 +17,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
   if (visibleProducts.length === 0) return null;
 
   return (
-    <SectionWrapper id="products" className="bg-[#fbf7ef] dark:bg-ink">
+    <SectionWrapper id="products" className="bg-white dark:bg-ink">
       <div className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">{products.eyebrow}</p>

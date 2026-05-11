@@ -19,7 +19,7 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
   if (steps.length === 0) return null;
 
   return (
-    <SectionWrapper id="process" className="bg-[#fbf7ef] dark:bg-stone-950">
+    <SectionWrapper id="process" className="bg-white dark:bg-stone-950">
       <div className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">{process.eyebrow}</p>
