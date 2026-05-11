@@ -27,7 +27,7 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
           <p className="section-copy mx-auto">{process.description}</p>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-5">
+        <div className="mt-7 grid gap-3 md:grid-cols-5">
           {steps.map((step, index) => {
             const Icon =
               iconMap[step.icon as keyof typeof iconMap] || iconMap.BadgeCheck;
@@ -35,19 +35,19 @@ export default function ProcessSection({ process }: ProcessSectionProps) {
             return (
               <motion.article
                 key={step.title}
-                className="relative rounded-lg border border-stone-200 bg-white p-4 text-center shadow-sm dark:border-stone-800 dark:bg-ink"
+                className="relative rounded-lg border border-stone-200 bg-white p-3 text-center shadow-sm dark:border-stone-800 dark:bg-ink"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
               >
-                <span className="absolute right-3 top-3 font-serif text-4xl leading-none text-champagne/40">
+                <span className="absolute right-3 top-3 font-serif text-3xl leading-none text-champagne/40">
                   {index + 1}
                 </span>
-                <div className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-brass/35 bg-champagne/15 text-brass dark:border-champagne/35 dark:bg-champagne/10 dark:text-champagne">
-                  <Icon aria-hidden size={19} />
+                <div className="relative mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-brass/35 bg-champagne/15 text-brass dark:border-champagne/35 dark:bg-champagne/10 dark:text-champagne">
+                  <Icon aria-hidden size={17} />
                 </div>
-                <h3 className="relative mt-4 font-serif text-xl font-semibold text-charcoal dark:text-ivory">
+                <h3 className="relative mt-3 font-serif text-lg font-semibold text-charcoal dark:text-ivory">
                   {step.title}
                 </h3>
                 <p className="relative mt-2 text-xs leading-6 text-stone-600 dark:text-stone-300">

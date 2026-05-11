@@ -43,7 +43,7 @@ export default function InteractiveBedExplorer({
     >
       <motion.div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
+        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
         animate={
           reduceMotion
             ? undefined
@@ -59,7 +59,7 @@ export default function InteractiveBedExplorer({
           <p className="section-copy">{content.subtitle}</p>
         </div>
 
-        <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_21rem] lg:items-stretch">
+        <div className="mt-7 grid gap-4 lg:grid-cols-[1fr_19rem] lg:items-stretch">
           <div className="relative rounded-lg border border-stone-200 bg-[#f8f1e6] p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
             <div className="relative h-full overflow-hidden rounded-md">
               <img
@@ -83,26 +83,26 @@ export default function InteractiveBedExplorer({
             </div>
           </div>
 
-          <div className="lux-card p-5">
-            <h3 className="font-serif text-3xl font-semibold leading-tight text-charcoal dark:text-ivory">
+          <div className="lux-card p-4">
+            <h3 className="font-serif text-2xl font-semibold leading-tight text-charcoal dark:text-ivory">
               {content.mobileListTitle}
             </h3>
-            <p className="mt-2 text-sm leading-6 text-stone-600 dark:text-stone-400">
+            <p className="mt-2 text-xs leading-5 text-stone-600 dark:text-stone-400">
               {content.subtitle}
             </p>
-            <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
               {visibleHotspots.map((hotspot) => (
                 <button
                   key={hotspot.id}
                   type="button"
                   onClick={() => handleHotspotSelect(hotspot)}
-                  className="group flex items-center justify-between gap-3 rounded-md border border-stone-200 bg-white px-3 py-3 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
+                  className="group flex items-center justify-between gap-3 rounded-md border border-stone-200 bg-white px-3 py-2.5 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
                 >
                   <span>
-                    <span className="block text-sm font-bold text-charcoal dark:text-ivory">
+                    <span className="block text-xs font-bold text-charcoal dark:text-ivory">
                       {hotspot.label}
                     </span>
-                    <span className="mt-1 block text-xs leading-5 text-stone-500 dark:text-stone-400">
+                    <span className="mt-0.5 block text-[11px] leading-4 text-stone-500 dark:text-stone-400">
                       {hotspot.category}
                     </span>
                   </span>

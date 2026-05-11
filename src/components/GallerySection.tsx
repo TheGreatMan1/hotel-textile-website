@@ -33,7 +33,7 @@ export default function GallerySection({
           </p>
         </div>
 
-        <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {images.map((image, index) => (
             <motion.figure
               key={`${image.image}-${image.sortOrder}`}
@@ -47,10 +47,10 @@ export default function GallerySection({
                 <img
                   src={image.image || "/placeholders/hero.svg"}
                   alt={image.alt}
-                  className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
+                  className="aspect-[5/6] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
                 />
               </div>
-              <figcaption className="px-4 py-3 text-xs font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
+              <figcaption className="px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
                 {localized(image.caption, language)}
               </figcaption>
             </motion.figure>

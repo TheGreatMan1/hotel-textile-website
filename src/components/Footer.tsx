@@ -33,20 +33,24 @@ export default function Footer({
   const brandSub = brandMain === site.brandName ? site.tagline : "Hotel Textiles";
   const columnLabels =
     language === "ge"
-      ? { products: "პროდუქტები", company: "კომპანია", resources: "რესურსები" }
+      ? {
+          products: "პროდუქტები",
+          company: "კომპანია",
+          resources: "რესურსები"
+        }
       : { products: "Products", company: "Company", resources: "Resources" };
 
   return (
-    <footer className="overflow-hidden border-t border-stone-800 bg-[linear-gradient(135deg,#11100f,#1c1a17_58%,#0b0f0f)] py-10 text-ivory">
+    <footer className="overflow-hidden border-t border-stone-800 bg-[linear-gradient(135deg,#11100f,#1c1a17_58%,#0b0f0f)] py-8 text-ivory">
       <div className="container-shell">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div className="max-w-md">
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/40 bg-champagne/10 text-champagne">
-                <Sparkles aria-hidden size={22} strokeWidth={1.6} />
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-champagne/40 bg-champagne/10 text-champagne">
+                <Sparkles aria-hidden size={20} strokeWidth={1.6} />
               </span>
               <div>
-                <p className="font-serif text-3xl font-semibold leading-none">
+                <p className="font-serif text-2xl font-semibold leading-none">
                   {brandMain}
                 </p>
                 <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
@@ -54,7 +58,7 @@ export default function Footer({
                 </p>
               </div>
             </div>
-            <p className="mt-5 text-sm leading-7 text-stone-300">
+            <p className="mt-4 text-sm leading-6 text-stone-300">
               {localized(footer.tagline, language)}
             </p>
           </div>
@@ -69,10 +73,10 @@ export default function Footer({
           />
 
           <div>
-            <h3 className="font-serif text-xl font-semibold text-ivory">
+            <h3 className="font-serif text-lg font-semibold text-ivory">
               {columnLabels.resources}
             </h3>
-            <div className="mt-4 flex flex-col gap-3 text-sm font-semibold text-stone-300">
+            <div className="mt-3 flex flex-col gap-2 text-sm font-semibold text-stone-300">
               <a href="/privacy" className="transition hover:text-champagne">
                 {privacyLabel}
               </a>
@@ -84,7 +88,7 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-9 border-t border-white/10 pt-5 text-xs text-stone-500">
+        <div className="mt-7 border-t border-white/10 pt-4 text-xs text-stone-500">
           &copy; {new Date().getFullYear()} {site.brandName}.{" "}
           {localized(footer.copyright, language)}
         </div>
@@ -98,8 +102,8 @@ function FooterLinkColumn({ title, links }: { title: string; links: NavLink[] })
 
   return (
     <div>
-      <h3 className="font-serif text-xl font-semibold text-ivory">{title}</h3>
-      <div className="mt-4 flex flex-col gap-3 text-sm font-semibold text-stone-300">
+      <h3 className="font-serif text-lg font-semibold text-ivory">{title}</h3>
+      <div className="mt-3 flex flex-col gap-2 text-sm font-semibold text-stone-300">
         {links.map((link) => (
           <a
             key={link.href}

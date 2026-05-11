@@ -19,15 +19,15 @@ export default function CatalogSection({
   const hasPdf = Boolean(catalog.pdfFile?.trim());
 
   return (
-    <section id="catalog" className="bg-white py-12 text-charcoal dark:bg-ink dark:text-ivory sm:py-16">
+    <section id="catalog" className="bg-white py-9 text-charcoal dark:bg-ink dark:text-ivory sm:py-12 lg:py-14">
       <div className="container-shell">
-        <div className="grid gap-8 rounded-lg border border-stone-200 bg-[#fbf7ef] p-6 shadow-[0_18px_50px_rgba(28,26,23,0.08)] dark:border-stone-800 dark:bg-stone-950 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-5 rounded-lg border border-stone-200 bg-[#fbf7ef] p-5 shadow-[0_14px_34px_rgba(28,26,23,0.07)] dark:border-stone-800 dark:bg-stone-950 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="eyebrow">{localized(catalog.eyebrow, language)}</p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
+            <h2 className="mt-2 font-serif text-3xl font-semibold leading-tight sm:text-[2rem]">
               {localized(catalog.title, language)}
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-700 dark:text-stone-300 sm:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-700 dark:text-stone-300">
               {localized(catalog.description, language)}
             </p>
           </div>

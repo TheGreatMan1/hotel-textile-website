@@ -25,7 +25,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
           <p className="section-copy mx-auto">{products.description}</p>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visibleProducts.map((product) => (
             <ProductCard
               key={product.slug}
@@ -39,7 +39,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
           ))}
         </div>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <a href="#quote-form" className="primary-button">
             {visibleProducts[0]?.buttonText || products.title}
             <ArrowRight aria-hidden className="ml-2" size={15} />

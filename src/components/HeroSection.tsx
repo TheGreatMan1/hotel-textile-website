@@ -39,7 +39,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="container-shell relative grid min-h-[calc(100vh-4rem)] items-center gap-8 py-8 lg:grid-cols-[0.68fr_1.32fr] lg:py-10">
+      <div className="container-shell relative grid min-h-[560px] items-center gap-6 py-7 sm:min-h-[620px] lg:min-h-[650px] lg:grid-cols-[0.68fr_1.32fr] lg:py-8">
         <motion.div
           className="relative z-10 max-w-2xl lg:pr-2"
           initial={reduceMotion ? false : { opacity: 0, y: 34 }}
@@ -47,7 +47,7 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="eyebrow">{hero.eyebrow}</p>
-          <h1 className="mt-4 font-serif text-5xl font-semibold leading-[0.98] text-charcoal dark:text-ivory sm:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="mt-3 font-serif text-4xl font-semibold leading-[1] text-charcoal dark:text-ivory sm:text-5xl lg:text-6xl xl:text-7xl">
             {titleParts ? (
               <>
                 {titleParts[0]}
@@ -60,10 +60,10 @@ export default function HeroSection({ hero }: HeroSectionProps) {
               hero.title
             )}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-stone-700 dark:text-stone-300 sm:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-6 text-stone-700 dark:text-stone-300 sm:text-base">
             {hero.subtitle}
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
             <a href={hero.primaryButtonLink || "#products"} className="primary-button">
               {hero.primaryButtonText}
               <ArrowRight aria-hidden className="ml-2" size={17} />
@@ -73,19 +73,19 @@ export default function HeroSection({ hero }: HeroSectionProps) {
             </a>
           </div>
           {stats.length > 0 ? (
-            <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:hidden">
+            <div className="mt-6 grid gap-2.5 sm:grid-cols-3 lg:hidden">
               {stats.map((stat) => {
                 const Icon = iconMap[stat.icon as keyof typeof iconMap] || iconMap.Sparkles;
                 return (
                   <div
                     key={stat.title}
-                    className="lux-card p-4"
+                    className="lux-card p-3"
                   >
-                    <Icon className="mb-3 text-brass dark:text-champagne" size={20} />
-                    <p className="font-serif text-lg font-semibold text-charcoal dark:text-ivory">
+                    <Icon className="mb-2 text-brass dark:text-champagne" size={18} />
+                    <p className="font-serif text-base font-semibold text-charcoal dark:text-ivory">
                       {stat.title}
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-400">
+                    <p className="mt-1 text-xs leading-4 text-stone-600 dark:text-stone-400">
                       {stat.description}
                     </p>
                   </div>
@@ -104,24 +104,24 @@ export default function HeroSection({ hero }: HeroSectionProps) {
           <img
             src={hero.image || "/placeholders/hero.svg"}
             alt={hero.imageAlt}
-            className="relative aspect-[4/3] w-full rounded-lg border border-stone-200/70 object-cover shadow-[0_25px_80px_rgba(28,26,23,0.16)] dark:border-stone-800 dark:shadow-glow lg:min-h-[620px]"
+            className="relative aspect-[4/3] w-full rounded-lg border border-stone-200/70 object-cover shadow-[0_20px_60px_rgba(28,26,23,0.14)] dark:border-stone-800 dark:shadow-glow lg:min-h-[500px] xl:min-h-[560px]"
           />
           {stats.length > 0 ? (
-            <div className="absolute bottom-6 left-6 right-6 hidden grid-cols-3 gap-3 lg:grid">
+            <div className="absolute bottom-4 left-4 right-4 hidden grid-cols-3 gap-2.5 lg:grid">
               {stats.map((stat) => {
                 const Icon = iconMap[stat.icon as keyof typeof iconMap] || iconMap.Sparkles;
                 return (
                   <div
                     key={stat.title}
-                    className="rounded-lg border border-white/80 bg-white/88 p-4 shadow-[0_16px_40px_rgba(28,26,23,0.12)] backdrop-blur-md dark:border-stone-700 dark:bg-ink/82"
+                    className="rounded-lg border border-white/80 bg-white/88 p-3 shadow-[0_12px_30px_rgba(28,26,23,0.10)] backdrop-blur-md dark:border-stone-700 dark:bg-ink/82"
                   >
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-brass/35 text-brass dark:border-champagne/35 dark:text-champagne">
-                      <Icon aria-hidden size={19} />
+                    <div className="mb-2 flex h-9 w-9 items-center justify-center rounded-full border border-brass/35 text-brass dark:border-champagne/35 dark:text-champagne">
+                      <Icon aria-hidden size={17} />
                     </div>
-                    <p className="font-serif text-lg font-semibold leading-tight text-charcoal dark:text-ivory">
+                    <p className="font-serif text-base font-semibold leading-tight text-charcoal dark:text-ivory">
                       {stat.title}
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-300">
+                    <p className="mt-1 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
                       {stat.description}
                     </p>
                   </div>

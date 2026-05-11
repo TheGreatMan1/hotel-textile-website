@@ -22,7 +22,7 @@ export default function LanguageSwitcher({
           type="button"
           aria-pressed={language === item}
           onClick={() => onChange(item)}
-          className={`h-8 rounded px-3 transition focus:outline-none focus:ring-2 focus:ring-brass dark:focus:ring-champagne ${
+          className={`h-7 rounded px-2.5 transition focus:outline-none focus:ring-2 focus:ring-brass dark:focus:ring-champagne ${
             language === item
               ? "bg-charcoal text-ivory dark:bg-champagne dark:text-ink"
               : "text-stone-600 hover:text-brass dark:text-stone-300 dark:hover:text-champagne"

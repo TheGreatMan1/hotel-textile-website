@@ -36,15 +36,15 @@ export default function WhyChooseUsSection({
       <div className="container-shell">
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold leading-[1.05] text-ivory sm:text-4xl lg:text-5xl">
+          <h2 className="mt-2 font-serif text-3xl font-semibold leading-[1.05] text-ivory sm:text-4xl lg:text-[2.65rem]">
             {content.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-stone-300 sm:text-base">
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-stone-300">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="relative mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="relative mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {features.map((feature, index) => {
             const Icon =
               iconMap[feature.icon as keyof typeof iconMap] || iconMap.Sparkles;
@@ -64,13 +64,13 @@ export default function WhyChooseUsSection({
                   damping: 24
                 }}
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-champagne/45 bg-champagne/5 text-champagne">
-                  <Icon aria-hidden size={23} strokeWidth={1.55} />
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-champagne/45 bg-champagne/5 text-champagne">
+                  <Icon aria-hidden size={20} strokeWidth={1.55} />
                 </div>
-                <h3 className="mt-4 font-serif text-xl font-semibold text-ivory">
+                <h3 className="mt-3 font-serif text-lg font-semibold text-ivory">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-xs leading-6 text-stone-300">
+                <p className="mt-2 text-xs leading-5 text-stone-300">
                   {feature.description}
                 </p>
               </motion.article>
