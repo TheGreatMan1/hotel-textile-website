@@ -37,6 +37,7 @@ import {
   useMemo,
   useState
 } from "react";
+import { formatPriceDisplay } from "@/lib/pricing";
 
 type ContentKey =
   | "settings"
@@ -633,20 +634,72 @@ export default function AdminPage() {
                       updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "y"], Number(value));
                     }} />
                   </div>
-                  <PriceEditor item={activeHotspotEn} onChange={(field, value) => {
-                    updateNested("interactive-bed.en", ["hotspots", selectedHotspot, field], value);
-                    updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, field], value);
-                  }} />
-                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                    {(activeHotspotEn.materialVariants || []).slice(0, 2).map((variant: any, index: number) => (
-                      <div key={variant.id || index} className="rounded-lg border border-champagne/40 bg-white p-3 text-xs">
-                        <div className="flex items-center justify-between">
-                          <strong>{variant.label}</strong>
-                          <Toggle checked={Boolean(variant.isVisible)} onChange={(value) => updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "materialVariants", index, "isVisible"], value)} />
-                        </div>
-                        <p className="mt-2 text-brass">From {variant.price || "-"} GEL / {variant.unit || "unit"}</p>
+                  <PriceEditor
+                    title="Fallback Hotspot Price"
+                    helper="The website shows selected material pricing first. This fallback appears only when the active material has no visible price."
+                    item={activeHotspotEn}
+                    onChange={(field, value) => {
+                      updateNested("interactive-bed.en", ["hotspots", selectedHotspot, field], value);
+                      updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, field], value);
+                    }}
+                  />
+                  <div className="mt-3 rounded-lg border border-stone-200 bg-white p-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="admin-label">Material Variant Pricing</p>
+                        <p className="mt-1 text-xs leading-5 text-stone-600">
+                          These are the Silicon/Microfiber prices shown in the public bed panel.
+                        </p>
                       </div>
-                    ))}
+                    </div>
+                    <div className="mt-3 grid gap-3">
+                      {(activeHotspotEn.materialVariants || []).map((variant: any, index: number) => {
+                        const variantPrice = formatPriceDisplay(variant);
+                        const fallbackPrice = formatPriceDisplay(activeHotspotEn);
+                        const effectivePrice = variantPrice || fallbackPrice;
+
+                        return (
+                          <div key={variant.id || index} className="rounded-lg border border-champagne/40 bg-[#fbf7ef] p-3 text-xs">
+                            <div className="flex items-start justify-between gap-3">
+                              <div>
+                                <strong className="text-sm text-charcoal">{variant.label || `Variant ${index + 1}`}</strong>
+                                <p className="mt-1 text-stone-600">
+                                  Website price:{" "}
+                                  <span className="font-semibold text-brass">
+                                    {effectivePrice?.fullText || "No price shown"}
+                                  </span>
+                                </p>
+                                {!variantPrice && fallbackPrice ? (
+                                  <p className="mt-1 text-stone-500">Using fallback hotspot price.</p>
+                                ) : null}
+                              </div>
+                              <div className="text-right">
+                                <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.12em] text-stone-500">
+                                  Visible
+                                </span>
+                                <Toggle checked={Boolean(variant.isVisible)} onChange={(value) => {
+                                  updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "materialVariants", index, "isVisible"], value);
+                                  updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "materialVariants", index, "isVisible"], value);
+                                }} />
+                              </div>
+                            </div>
+                            <PriceEditor
+                              title={`${variant.label || `Variant ${index + 1}`} Price`}
+                              helper="Edit this material price to change what appears when this material is selected on the website."
+                              item={variant}
+                              onChange={(field, value) => {
+                                updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "materialVariants", index, field], value);
+                                updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "materialVariants", index, field], value);
+                              }}
+                              compact
+                            />
+                          </div>
+                        );
+                      })}
+                      {(activeHotspotEn.materialVariants || []).length === 0 ? (
+                        <p className="text-xs text-stone-500">No material variants are configured for this hotspot.</p>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1013,13 +1066,28 @@ function InlineInput({ value, onChange, placeholder = "" }: { value: string | nu
   );
 }
 
-function PriceEditor({ item, onChange }: { item: any; onChange: (field: string, value: any) => void }) {
+function PriceEditor({
+  item,
+  onChange,
+  title = "Pricing",
+  helper,
+  compact = false
+}: {
+  item: any;
+  onChange: (field: string, value: any) => void;
+  title?: string;
+  helper?: string;
+  compact?: boolean;
+}) {
   return (
-    <div className="mt-3 rounded-lg border border-stone-200 bg-white p-3">
+    <div className={`${compact ? "mt-2" : "mt-3"} rounded-lg border border-stone-200 bg-white p-3`}>
       <div className="mb-2 flex items-center justify-between">
-        <span className="admin-label">Pricing</span>
+        <span className="admin-label">{title}</span>
         <Toggle checked={Boolean(item.showPrice)} onChange={(value) => onChange("showPrice", value)} />
       </div>
+      {helper ? (
+        <p className="mb-2 text-xs leading-5 text-stone-600">{helper}</p>
+      ) : null}
       <div className="grid grid-cols-2 gap-2">
         <select className="admin-mini-input" value={item.priceType || "from"} onChange={(event) => onChange("priceType", event.target.value)}>
           <option value="fixed">Fixed</option>
