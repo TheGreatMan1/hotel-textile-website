@@ -93,27 +93,27 @@ img {
   }
 
   .admin-primary {
-    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-brass px-4 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-[0_12px_28px_rgba(164,127,54,0.22)] transition hover:bg-[#8f6c28] disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-sm bg-peach px-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#c98365] focus:outline-none focus:ring-2 focus:ring-peach/40 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .admin-secondary {
-    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-stone-200 bg-white px-4 text-xs font-bold uppercase tracking-[0.08em] text-charcoal transition hover:border-brass hover:text-brass;
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-sm border border-stone-300 bg-white px-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-graphite transition hover:border-peach hover:text-peach focus:outline-none focus:ring-2 focus:ring-peach/30;
   }
 
   .admin-icon-button {
-    @apply inline-flex h-9 w-9 items-center justify-center rounded-md border border-stone-200 bg-white text-brass transition hover:border-brass hover:bg-champagne/10;
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-sm border border-stone-200 bg-white text-peach transition hover:border-peach hover:bg-peach-soft/30 focus:outline-none focus:ring-2 focus:ring-peach/30;
   }
 
   .admin-label {
-    @apply text-xs font-bold uppercase tracking-[0.12em] text-stone-500;
+    @apply text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500;
   }
 
   .admin-input {
-    @apply mt-2 min-h-11 w-full rounded-md border border-stone-300 bg-white px-3 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40;
+    @apply mt-2 min-h-10 w-full rounded-sm border border-stone-300 bg-white px-3 text-sm text-graphite outline-none transition placeholder:text-stone-400 focus:border-peach focus:ring-2 focus:ring-peach/20;
   }
 
   .admin-mini-input {
-    @apply min-h-9 w-full rounded-md border border-stone-200 bg-white px-2 text-sm text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/30;
+    @apply min-h-9 w-full rounded-sm border border-stone-200 bg-white px-2 text-xs text-graphite outline-none transition placeholder:text-stone-400 focus:border-peach focus:ring-2 focus:ring-peach/20;
   }
 
   .admin-table {
@@ -121,43 +121,47 @@ img {
   }
 
   .admin-table th {
-    @apply border-b border-stone-200 bg-[#fbf7ef] px-3 py-3 text-xs font-bold uppercase tracking-[0.12em] text-stone-500;
+    @apply border-b border-stone-200 bg-mist px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500;
   }
 
   .admin-table td {
-    @apply border-b border-stone-100 px-3 py-3 align-middle;
+    @apply border-b border-stone-100 px-3 py-2.5 align-middle;
   }
 
   .admin-dashboard.admin-dark {
-    background: #11100f;
-    color: #f7f0e4;
+    background: #161616;
+    color: #f5f5f4;
   }
 
   .admin-dashboard.admin-dark header {
-    border-color: #292524;
-    background: rgba(17, 16, 15, 0.92);
+    border-color: #33302e;
+    background: rgba(22, 22, 22, 0.95);
   }
 
   .admin-dashboard.admin-dark section,
   .admin-dashboard.admin-dark .rounded-xl,
-  .admin-dashboard.admin-dark .rounded-lg {
-    border-color: #292524;
+  .admin-dashboard.admin-dark .rounded-lg,
+  .admin-dashboard.admin-dark .rounded-sm {
+    border-color: #373331;
   }
 
   .admin-dashboard.admin-dark section,
   .admin-dashboard.admin-dark .bg-white {
-    background-color: #1c1a17;
-    color: #f7f0e4;
+    background-color: #1d1d1d;
+    color: #f5f5f4;
   }
 
   .admin-dashboard.admin-dark .bg-\[\#fbf7ef\],
-  .admin-dashboard.admin-dark .bg-\[\#f7f1e8\] {
-    background-color: #11100f;
+  .admin-dashboard.admin-dark .bg-\[\#f7f1e8\],
+  .admin-dashboard.admin-dark .bg-mist,
+  .admin-dashboard.admin-dark .bg-cloud {
+    background-color: #242321;
   }
 
   .admin-dashboard.admin-dark .text-charcoal,
-  .admin-dashboard.admin-dark .text-\[\#19130e\] {
-    color: #f7f0e4;
+  .admin-dashboard.admin-dark .text-\[\#19130e\],
+  .admin-dashboard.admin-dark .text-graphite {
+    color: #f5f5f4;
   }
 
   .admin-dashboard.admin-dark .text-stone-500,
@@ -170,25 +174,25 @@ img {
   .admin-dashboard.admin-dark textarea,
   .admin-dashboard.admin-dark select,
   .admin-dashboard.admin-dark input {
-    border-color: #3b332b;
-    background-color: #11100f;
-    color: #f7f0e4;
+    border-color: #47413e;
+    background-color: #181818;
+    color: #f5f5f4;
   }
 
   .admin-dashboard.admin-dark .admin-table th {
-    border-color: #292524;
-    background-color: #11100f;
-    color: #d7bd7f;
+    border-color: #373331;
+    background-color: #242321;
+    color: #ebb49a;
   }
 
   .admin-dashboard.admin-dark .admin-table td {
-    border-color: #292524;
+    border-color: #373331;
   }
 
   .admin-dashboard.admin-dark .admin-secondary,
   .admin-dashboard.admin-dark .admin-icon-button {
-    border-color: #3b332b;
-    background-color: #1c1a17;
-    color: #d7bd7f;
+    border-color: #47413e;
+    background-color: #1d1d1d;
+    color: #ebb49a;
   }
 }

@@ -559,12 +559,12 @@ export default function AdminPage() {
       <AdminShell>
         <form
           onSubmit={login}
-          className="mx-auto mt-20 max-w-md rounded-2xl border border-stone-200 bg-white p-7 shadow-[0_24px_90px_rgba(17,16,15,0.12)]"
+          className="mx-auto mt-20 max-w-md border border-stone-200 bg-white p-7 shadow-[0_18px_50px_rgba(41,40,39,0.07)]"
         >
           <div className="flex items-center gap-3">
             <LogoMark />
             <div>
-              <h1 className="font-serif text-3xl font-semibold text-charcoal">
+              <h1 className="font-editorial text-3xl font-light uppercase tracking-[0.08em] text-graphite">
                 Website Admin
               </h1>
               <p className="text-sm text-stone-500">Visual content dashboard</p>
@@ -588,24 +588,24 @@ export default function AdminPage() {
 
   return (
     <div
-      className={`admin-dashboard min-h-screen bg-[#f7f1e8] text-[#19130e] ${
+      className={`admin-dashboard min-h-screen bg-cloud font-sans text-graphite ${
         adminTheme === "dark" ? "admin-dark" : ""
       }`}
     >
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 transform flex-col bg-[linear-gradient(180deg,#111918,#0b1111)] px-4 py-5 text-white shadow-2xl transition lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 transform flex-col border-r border-stone-700 bg-graphite px-4 py-5 text-white shadow-[8px_0_30px_rgba(41,40,39,0.08)] transition lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <LogoMark />
-            <div>
-              <p className="max-w-[11rem] truncate font-serif text-3xl font-semibold leading-none">
+            <div className="min-w-0">
+              <p className="max-w-[11rem] break-words font-editorial text-xl font-light uppercase leading-tight tracking-[0.1em]">
                 {adminBrandName}
               </p>
               {adminBrandDescriptor ? (
-                <p className="max-w-[11rem] truncate text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
+                <p className="mt-1 max-w-[11rem] break-words text-[9px] font-medium uppercase leading-tight tracking-[0.2em] text-stone-400">
                   {adminBrandDescriptor}
                 </p>
               ) : null}
@@ -622,13 +622,13 @@ export default function AdminPage() {
               key={item.id}
               href={getPanelHref(item.id)}
               onClick={() => setSidebarOpen(false)}
-              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold transition ${
+              className={`flex items-center gap-3 border-l-2 px-4 py-2.5 text-[13px] font-medium transition ${
                 activePanel === item.id
-                  ? "bg-champagne text-[#17100b] shadow-[0_10px_28px_rgba(190,133,46,0.28)]"
-                  : "text-stone-200 hover:bg-white/10 hover:text-champagne"
+                  ? "border-peach bg-white/10 text-white"
+                  : "border-transparent text-stone-300 hover:border-stone-500 hover:bg-white/5 hover:text-white"
               }`}
             >
-              <span className={activePanel === item.id ? "text-[#17100b]" : "text-champagne"}>
+              <span className={activePanel === item.id ? "text-peach" : "text-stone-400"}>
                 {item.icon}
               </span>
               {item.label}
@@ -636,12 +636,12 @@ export default function AdminPage() {
           ))}
         </nav>
 
-        <div className="mt-5 rounded-xl border border-champagne/25 bg-white/5 p-4">
-          <p className="font-serif text-xl font-semibold">{currentBranding.siteName}</p>
+        <div className="mt-5 border border-stone-600 bg-white/5 p-4">
+          <p className="break-words font-editorial text-base font-light uppercase tracking-[0.08em]">{currentBranding.siteName}</p>
           <p className="mt-2 text-sm leading-6 text-stone-300">
             Manage showroom content, pricing, leads, and uploads.
           </p>
-          <a href="/" className="admin-secondary mt-4 w-full border-champagne/30 text-champagne">
+          <a href="/" className="admin-secondary mt-4 w-full border-stone-500 bg-transparent text-peach">
             View Site
             <Eye size={15} />
           </a>
@@ -649,53 +649,53 @@ export default function AdminPage() {
       </aside>
 
       <main className="lg:pl-72">
-        <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-[#fbf7ef]/90 backdrop-blur">
-          <div className="flex min-h-20 items-center justify-between gap-4 px-4 sm:px-6 xl:px-8">
+        <header className="sticky top-0 z-30 border-b border-stone-200 bg-white/95 backdrop-blur">
+          <div className="flex min-h-16 items-center justify-between gap-4 px-4 sm:px-6 xl:px-8">
             <div className="flex items-center gap-4">
               <button
                 type="button"
-                className="rounded-lg border border-stone-200 bg-white p-2 lg:hidden"
+                className="border border-stone-300 bg-white p-2 lg:hidden"
                 onClick={() => setSidebarOpen(true)}
                 aria-label="Open menu"
               >
                 <Menu size={20} />
               </button>
               <div>
-                <h1 className="text-2xl font-bold">{pageTitle}</h1>
-                <p className="text-sm text-stone-500">{pageDescription}</p>
+                <h1 className="font-editorial text-xl font-light uppercase tracking-[0.08em]">{pageTitle}</h1>
+                <p className="mt-0.5 text-xs text-stone-500">{pageDescription}</p>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="hidden rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm font-semibold sm:inline-flex">
-                🇬🇧 EN / 🇬🇪 GE
+              <span className="hidden border border-stone-200 bg-white px-3 py-2 text-xs font-medium uppercase tracking-[0.12em] sm:inline-flex">
+                EN / GE
               </span>
               <button
                 type="button"
                 onClick={toggleAdminTheme}
-                className="hidden items-center gap-2 rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm font-semibold sm:inline-flex"
+                className="hidden items-center gap-2 border border-stone-200 bg-white px-3 py-2 text-xs font-medium sm:inline-flex"
                 aria-label={`Switch admin dashboard to ${
                   adminTheme === "dark" ? "light" : "dark"
                 } mode`}
               >
                 {adminTheme === "dark" ? (
-                  <Moon size={15} className="text-champagne" />
+                  <Moon size={15} className="text-peach" />
                 ) : (
-                  <Sun size={15} className="text-brass" />
+                  <Sun size={15} className="text-peach" />
                 )}
                 {adminTheme === "dark" ? "Dark" : "Light"}
                 <ChevronDown size={14} />
               </button>
-              <div className="hidden items-center gap-3 rounded-lg bg-white px-3 py-2 shadow-sm md:flex">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-champagne/30 font-bold text-brass">
+              <div className="hidden items-center gap-3 border-l border-stone-200 px-3 py-1 md:flex">
+                <span className="flex h-8 w-8 items-center justify-center bg-peach-soft text-sm font-semibold text-peach">
                   A
                 </span>
                 <div>
-                  <p className="text-sm font-bold">Admin User</p>
+                  <p className="text-xs font-semibold">Admin User</p>
                   <p className="text-xs text-stone-500">Super Admin</p>
                 </div>
               </div>
-              <button type="button" onClick={logout} className="rounded-lg border border-stone-200 bg-white p-3">
+              <button type="button" onClick={logout} className="border border-stone-200 bg-white p-2.5 transition hover:border-peach hover:text-peach">
                 <LogOut size={18} />
               </button>
             </div>
@@ -704,7 +704,7 @@ export default function AdminPage() {
 
         <div className="space-y-5 px-4 py-5 sm:px-6 xl:px-8">
           {message ? (
-            <div className="rounded-lg border border-champagne/50 bg-champagne/15 px-4 py-3 text-sm font-semibold">
+            <div className="border border-peach/40 bg-peach-soft/50 px-4 py-3 text-sm font-medium text-graphite">
               {message}
             </div>
           ) : null}
@@ -723,13 +723,13 @@ export default function AdminPage() {
                   <Link
                     key={item.id}
                     href={getPanelHref(item.id)}
-                    className="group rounded-xl border border-stone-200 bg-white p-5 shadow-[0_18px_55px_rgba(28,26,23,0.06)] transition hover:-translate-y-0.5 hover:border-champagne hover:shadow-[0_22px_70px_rgba(28,26,23,0.1)]"
+                    className="group border border-stone-200 bg-white p-4 transition hover:border-peach hover:bg-peach-soft/20"
                   >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-champagne/25 text-brass transition group-hover:bg-brass group-hover:text-white">
+                    <span className="flex h-9 w-9 items-center justify-center border border-peach/35 bg-peach-soft/40 text-peach transition group-hover:bg-peach group-hover:text-white">
                       {item.icon}
                     </span>
-                    <span className="mt-4 block text-base font-bold">{item.label}</span>
-                    <span className="mt-1 block text-sm text-stone-500">Open editor page</span>
+                    <span className="mt-4 block text-sm font-semibold uppercase tracking-[0.06em]">{item.label}</span>
+                    <span className="mt-1 block text-xs text-stone-500">Open editor page</span>
                   </Link>
                 ))}
               </section>
@@ -815,7 +815,7 @@ export default function AdminPage() {
                   </label>
                 </div>
 
-                <div className="border border-stone-200 bg-[#fbf7ef] p-5 text-center">
+                <div className="border border-stone-200 bg-mist p-5 text-center">
                   <p className="admin-label text-left">Brand Preview</p>
                   <div className="mt-8 border-y border-stone-200 bg-white px-4 py-7">
                     <p className="break-words text-2xl font-light uppercase tracking-[0.14em] text-graphite">
@@ -845,7 +845,7 @@ export default function AdminPage() {
             >
               <div className="grid gap-4 lg:grid-cols-[1fr_13rem]">
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between rounded-lg border border-stone-200 bg-[#fbf7ef] px-3 py-2">
+                  <div className="flex items-center justify-between border border-stone-200 bg-mist px-3 py-2">
                     <div>
                       <p className="admin-label">Announcement Bar</p>
                       <p className="mt-1 text-xs text-stone-500">
@@ -900,13 +900,13 @@ export default function AdminPage() {
               <div className="grid gap-4 xl:grid-cols-[18rem_1fr_16rem]">
                 <div>
                   <p className="admin-label">Bed Preview</p>
-                  <div className="relative mt-2 overflow-hidden rounded-lg border border-stone-200">
+                  <div className="relative mt-2 overflow-hidden rounded-sm border border-stone-200">
                     <img src={bedEn.bedImage || "/placeholders/interactive-bed.svg"} alt="" className="aspect-[4/5] w-full object-cover" />
                     {hotspotsEn.map((hotspot: any, index: number) => (
                       <button
                         key={hotspot.id || index}
                         type="button"
-                        className={`absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-brass text-xs font-bold text-white shadow ${selectedHotspot === index ? "ring-4 ring-champagne/50" : ""}`}
+                        className={`absolute flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-peach text-xs font-bold text-white shadow ${selectedHotspot === index ? "ring-4 ring-peach/30" : ""}`}
                         style={{ left: `${hotspot.x || 50}%`, top: `${hotspot.y || 50}%` }}
                         onClick={() => setSelectedHotspot(index)}
                       >
@@ -962,7 +962,7 @@ export default function AdminPage() {
                   </table>
                 </div>
 
-                <div className="rounded-lg border border-stone-200 bg-[#fbf7ef] p-3">
+                <div className="border border-stone-200 bg-mist p-3">
                   <p className="admin-label">Edit Hotspot #{selectedHotspot + 1}</p>
                   <PairedField label="Title" en={activeHotspotEn.title} ge={activeHotspotGe.title} onEn={(value) => updateNested("interactive-bed.en", ["hotspots", selectedHotspot, "title"], value)} onGe={(value) => updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "title"], value)} />
                   <Field label="Category" value={activeHotspotEn.category || ""} onChange={(value) => {
@@ -988,7 +988,7 @@ export default function AdminPage() {
                       updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, field], value);
                     }}
                   />
-                  <div className="mt-3 rounded-lg border border-stone-200 bg-white p-3">
+                  <div className="mt-3 rounded-sm border border-stone-200 bg-white p-3">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="admin-label">Material Variant Pricing</p>
@@ -1006,13 +1006,13 @@ export default function AdminPage() {
                         const variantColors = toStringList(variant.colors);
 
                         return (
-                          <div key={variant.id || index} className="rounded-lg border border-champagne/40 bg-[#fbf7ef] p-3 text-xs">
+                          <div key={variant.id || index} className="border border-peach/35 bg-mist p-3 text-xs">
                             <div className="flex items-start justify-between gap-3">
                               <div>
                                 <strong className="text-sm text-charcoal">{variant.label || `Variant ${index + 1}`}</strong>
                                 <p className="mt-1 text-stone-600">
                                   Website price:{" "}
-                                  <span className="font-semibold text-brass">
+                                  <span className="font-semibold text-peach">
                                     {effectivePrice?.fullText || "No price shown"}
                                   </span>
                                 </p>
@@ -1059,7 +1059,7 @@ export default function AdminPage() {
                                   updateNested("interactive-bed.ge", ["hotspots", selectedHotspot, "materialVariants", index, "colors"], values);
                                 }}
                               />
-                              <div className="rounded-md border border-stone-200 bg-white p-2">
+                              <div className="rounded-sm border border-stone-200 bg-white p-2">
                                 <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-stone-500">
                                   Public Card Preview
                                 </p>
@@ -1152,7 +1152,7 @@ export default function AdminPage() {
             <DashboardCard id="pricing" title="4. Product Pricing (GEL)">
               <div className="space-y-3">
                 {(productsEn.slice(0, 5) || []).map((product: any, index: number) => (
-                  <div key={product.slug || index} className="grid grid-cols-[1fr_6rem_6rem] items-center gap-3 rounded-lg border border-stone-200 p-3">
+                  <div key={product.slug || index} className="grid grid-cols-[1fr_6rem_6rem] items-center gap-3 rounded-sm border border-stone-200 p-3">
                     <span className="font-semibold">{product.title}</span>
                     <InlineInput value={product.price || ""} onChange={(value) => {
                       updateNested("products.en", ["items", index, "price"], value);
@@ -1170,7 +1170,7 @@ export default function AdminPage() {
               <PairedArea label="Description" en={docs["quote-form"]?.description?.en} ge={docs["quote-form"]?.description?.ge} onEn={(value) => updateNested("quote-form", ["description", "en"], value)} onGe={(value) => updateNested("quote-form", ["description", "ge"], value)} />
               <div className="mt-4 grid gap-3 md:grid-cols-2">
                 {Object.entries(docs["quote-form"]?.fields || {}).map(([key, field]: [string, any]) => (
-                  <div key={key} className="rounded-lg border border-stone-200 p-3">
+                  <div key={key} className="rounded-sm border border-stone-200 p-3">
                     <p className="admin-label">{key}</p>
                     <InlineInput value={field.label?.en || ""} onChange={(value) => updateNested("quote-form", ["fields", key, "label", "en"], value)} />
                     <InlineInput value={field.label?.ge || ""} onChange={(value) => updateNested("quote-form", ["fields", key, "label", "ge"], value)} />
@@ -1197,7 +1197,7 @@ export default function AdminPage() {
           <div className="contents">
             <DashboardCard id="catalog" title="7. Catalog PDF">
               <p className="admin-label">Current Catalog</p>
-              <div className="mt-2 rounded-lg border border-stone-200 bg-[#fbf7ef] p-4">
+              <div className="mt-2 border border-stone-200 bg-mist p-4">
                 <p className="font-semibold">{docs.catalog?.pdfFile || "No PDF uploaded"}</p>
                 <p className="text-xs text-stone-500">Upload a replacement PDF and save.</p>
               </div>
@@ -1212,7 +1212,7 @@ export default function AdminPage() {
             <DashboardCard id="gallery" title="8. Gallery Manager" action={<label className="admin-primary cursor-pointer"><Upload size={15} /> Upload Images<input type="file" accept="image/*" className="hidden" onChange={(event) => uploadFile(event, "images", (path) => patchDoc("gallery", (draft) => ({ ...draft, images: [...(draft.images || []), { image: path, alt: "Uploaded gallery image", caption: { en: "New gallery image", ge: "ახალი სურათი" }, isVisible: true, sortOrder: (draft.images || []).length + 1 }] })))} /></label>}>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {(docs.gallery?.images || []).map((image: any, index: number) => (
-                  <div key={`${image.image}-${index}`} className="rounded-lg border border-stone-200 p-2">
+                  <div key={`${image.image}-${index}`} className="rounded-sm border border-stone-200 p-2">
                     <img src={image.image || "/placeholders/gallery-room.svg"} alt="" className="aspect-[4/3] w-full rounded object-cover" />
                     <InlineInput value={image.caption?.en || ""} onChange={(value) => updateNested("gallery", ["images", index, "caption", "en"], value)} />
                     <InlineInput value={image.caption?.ge || ""} onChange={(value) => updateNested("gallery", ["images", index, "caption", "ge"], value)} />
@@ -1239,7 +1239,7 @@ export default function AdminPage() {
                     ? Boolean(docs[key]?.[nested]?.isVisible)
                     : Boolean(docs[key]?.isVisible);
                   return (
-                    <div key={`${key}-${nested || "root"}`} className="flex items-center justify-between rounded-lg border border-stone-200 px-3 py-2">
+                    <div key={`${key}-${nested || "root"}`} className="flex items-center justify-between rounded-sm border border-stone-200 px-3 py-2">
                       <span className="text-sm font-semibold">{label}</span>
                       <Toggle checked={checked} onChange={(value) => {
                         if (nested) {
@@ -1313,13 +1313,13 @@ export default function AdminPage() {
             <textarea
               value={jsonText}
               onChange={(event) => setJsonText(event.target.value)}
-              className="mt-4 min-h-[28rem] w-full rounded-lg border border-stone-300 bg-stone-950 p-4 font-mono text-sm text-stone-100"
+              className="mt-4 min-h-[28rem] w-full rounded-sm border border-stone-300 bg-stone-950 p-4 font-mono text-sm text-stone-100"
               spellCheck={false}
             />
           </DashboardCard>
 
           {!isKnownPanel ? (
-            <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-[0_18px_55px_rgba(28,26,23,0.06)]">
+            <section className="border border-stone-200 bg-white p-6">
               <h2 className="text-xl font-bold">Panel not found</h2>
               <p className="mt-2 text-sm text-stone-600">
                 This admin page does not exist. Choose a panel from the sidebar or return to the dashboard overview.
@@ -1341,7 +1341,7 @@ export default function AdminPage() {
 
 function AdminShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#f7f1e8] px-4 py-8 text-charcoal sm:px-6 lg:px-10">
+    <div className="min-h-screen bg-cloud px-4 py-8 font-sans text-graphite sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">{children}</div>
     </div>
   );
@@ -1362,9 +1362,9 @@ function DashboardCard({
   if (activePanel !== id) return null;
 
   return (
-    <section id={id} className="rounded-xl border border-stone-200 bg-white p-5 shadow-[0_18px_55px_rgba(28,26,23,0.06)]">
+    <section id={id} className="border border-stone-200 bg-white p-5 shadow-[0_12px_35px_rgba(41,40,39,0.04)]">
       <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-        <h2 className="text-lg font-bold">{title}</h2>
+        <h2 className="font-editorial text-lg font-light uppercase tracking-[0.06em]">{title}</h2>
         {action}
       </div>
       {children}
@@ -1374,13 +1374,13 @@ function DashboardCard({
 
 function MetricCard({ title, value, helper, icon }: { title: string; value: ReactNode; helper: string; icon: ReactNode }) {
   return (
-    <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm">
+    <div className="border border-stone-200 bg-white p-4">
       <div className="flex items-center justify-between">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-champagne/25 text-brass">{icon}</span>
-        <span className="text-xs font-bold uppercase tracking-[0.14em] text-green-700">Live</span>
+        <span className="flex h-9 w-9 items-center justify-center border border-peach/35 bg-peach-soft/40 text-peach">{icon}</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-peach">Live</span>
       </div>
-      <p className="mt-5 text-sm font-semibold text-stone-500">{title}</p>
-      <p className="mt-1 truncate text-3xl font-bold">{value}</p>
+      <p className="mt-4 text-xs font-medium uppercase tracking-[0.08em] text-stone-500">{title}</p>
+      <p className="mt-1 break-words text-2xl font-light">{value}</p>
       <p className="mt-1 text-xs text-stone-500">{helper}</p>
     </div>
   );
@@ -1388,7 +1388,7 @@ function MetricCard({ title, value, helper, icon }: { title: string; value: Reac
 
 function SmallStat({ label, value }: { label: string; value: ReactNode }) {
   return (
-    <div className="rounded-lg border border-stone-200 bg-[#fbf7ef] p-4">
+    <div className="border border-stone-200 bg-mist p-4">
       <p className="text-xs font-semibold text-stone-500">{label}</p>
       <p className="mt-1 text-3xl font-bold">{value}</p>
     </div>
@@ -1397,7 +1397,7 @@ function SmallStat({ label, value }: { label: string; value: ReactNode }) {
 
 function LogoMark() {
   return (
-    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-champagne/40 bg-champagne/10 text-champagne">
+    <span className="flex h-10 w-10 flex-none items-center justify-center border border-peach/45 bg-peach/10 text-peach">
       <Sparkles size={23} strokeWidth={1.6} />
     </span>
   );
@@ -1409,7 +1409,7 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (value: boo
       type="button"
       aria-pressed={checked}
       onClick={() => onChange(!checked)}
-      className={`relative h-6 w-11 rounded-full transition ${checked ? "bg-brass" : "bg-stone-300"}`}
+      className={`relative h-6 w-11 rounded-full transition ${checked ? "bg-peach" : "bg-stone-300"}`}
     >
       <span className={`absolute top-1 h-4 w-4 rounded-full bg-white transition ${checked ? "left-6" : "left-1"}`} />
     </button>
@@ -1469,7 +1469,7 @@ function PriceEditor({
   compact?: boolean;
 }) {
   return (
-    <div className={`${compact ? "mt-2" : "mt-3"} rounded-lg border border-stone-200 bg-white p-3`}>
+    <div className={`${compact ? "mt-2" : "mt-3"} rounded-sm border border-stone-200 bg-white p-3`}>
       <div className="mb-2 flex items-center justify-between">
         <span className="admin-label">{title}</span>
         <Toggle checked={Boolean(item.showPrice)} onChange={(value) => onChange("showPrice", value)} />
@@ -1538,7 +1538,7 @@ function ImageUploadPanel({ image, label, compact = false, onUploaded, uploadFil
   return (
     <div className={compact ? "mt-3" : ""}>
       <p className="admin-label">{label}</p>
-      {!compact ? <img src={image || "/placeholders/hero.svg"} alt="" className="mt-2 aspect-[4/5] w-full rounded-lg border border-stone-200 object-cover" /> : null}
+      {!compact ? <img src={image || "/placeholders/hero.svg"} alt="" className="mt-2 aspect-[4/5] w-full rounded-sm border border-stone-200 object-cover" /> : null}
       <label className="admin-secondary mt-2 w-full cursor-pointer">
         <Upload size={15} /> Change Image
         <input type="file" accept="image/*" className="hidden" onChange={(event) => uploadFile(event, "images", onUploaded)} />
