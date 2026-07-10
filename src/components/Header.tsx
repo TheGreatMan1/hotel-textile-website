@@ -74,7 +74,7 @@ export default function Header({
             className="group min-w-0 px-1 text-center"
             aria-label="Back to top"
           >
-            <span className="block break-words text-[1.05rem] font-light uppercase leading-tight tracking-[0.1em] transition group-hover:text-peach sm:text-[1.3rem] lg:whitespace-nowrap lg:text-[1.45rem]">
+            <span className="block break-words text-[1.05rem] font-light uppercase leading-tight tracking-[0.1em] transition group-hover:text-peach sm:text-[1.3rem] lg:text-[1.45rem]">
               {brandMain}
             </span>
             {brandSub ? (
