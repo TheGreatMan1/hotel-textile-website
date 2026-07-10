@@ -53,8 +53,8 @@ export default function Header({
       ) : null}
 
       <div className="border-b border-stone-200 dark:border-stone-800">
-        <div className="container-shell grid min-h-14 grid-cols-[1fr_auto_1fr] items-center">
-          <div className="flex items-center">
+        <div className="container-shell grid min-h-14 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+          <div className="flex min-w-0 items-center">
             <button
               type="button"
               className="icon-button lg:hidden"
@@ -69,12 +69,16 @@ export default function Header({
             </span>
           </div>
 
-          <a href="#top" className="group text-center" aria-label="Back to top">
-            <span className="block max-w-[10rem] truncate text-[1.35rem] font-light uppercase leading-none tracking-[0.14em] transition group-hover:text-peach sm:max-w-[18rem] sm:text-[1.55rem]">
+          <a
+            href="#top"
+            className="group min-w-0 px-1 text-center"
+            aria-label="Back to top"
+          >
+            <span className="block break-words text-[1.05rem] font-light uppercase leading-tight tracking-[0.1em] transition group-hover:text-peach sm:text-[1.3rem] lg:whitespace-nowrap lg:text-[1.45rem]">
               {brandMain}
             </span>
             {brandSub ? (
-              <span className="mt-1 block max-w-[10rem] truncate text-[8px] font-medium uppercase tracking-[0.32em] text-stone-500 dark:text-stone-400 sm:max-w-[18rem]">
+              <span className="mt-1 block break-words text-[7px] font-medium uppercase leading-tight tracking-[0.22em] text-stone-500 dark:text-stone-400 sm:text-[8px] sm:tracking-[0.28em]">
                 {brandSub}
               </span>
             ) : null}
