@@ -13,13 +13,19 @@ const config: Config = {
         linen: "#eee4d2",
         champagne: "#d7bd7f",
         brass: "#a47f36",
+        peach: "#dc9b7d",
+        "peach-soft": "#f4dfd4",
+        graphite: "#292827",
+        mist: "#f3f3f1",
+        cloud: "#fafaf8",
         charcoal: "#1c1a17",
         ink: "#11100f",
         smoke: "#f5f0e7"
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ["Cormorant Garamond", "Georgia", "serif"]
+        serif: ["Cormorant Garamond", "Georgia", "serif"],
+        editorial: ["Helvetica Neue", "Arial", "ui-sans-serif", "sans-serif"]
       },
       boxShadow: {
         soft: "0 18px 60px rgba(28, 26, 23, 0.10)",

@@ -39,11 +39,11 @@ export default function InteractiveBedExplorer({
   return (
     <SectionWrapper
       id="interactive-bed"
-      className="relative overflow-hidden bg-white dark:bg-stone-950"
+      className="relative overflow-hidden border-b border-stone-200 bg-white dark:border-stone-800 dark:bg-[#161616]"
     >
       <motion.div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-champagne/20 to-transparent dark:from-champagne/8"
+        className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-peach-soft/45 to-transparent dark:from-[#3b2b25]/40"
         animate={
           reduceMotion
             ? undefined
@@ -53,15 +53,15 @@ export default function InteractiveBedExplorer({
       />
 
       <div className="container-shell relative">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="section-title">{content.title}</h2>
-          <p className="section-copy">{content.subtitle}</p>
+          <p className="section-copy mx-auto">{content.subtitle}</p>
         </div>
 
-        <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_17.5rem] lg:items-stretch">
-          <div className="relative rounded-lg border border-stone-200 bg-white p-2 shadow-[0_18px_55px_rgba(28,26,23,0.10)] dark:border-stone-800 dark:bg-ink">
-            <div className="relative h-full overflow-hidden rounded-md">
+        <div className="mt-8 grid border border-stone-200 bg-white dark:border-stone-800 dark:bg-[#1b1b1b] lg:grid-cols-[1fr_18rem] lg:items-stretch">
+          <div className="relative min-h-0 border-b border-stone-200 dark:border-stone-800 lg:border-b-0 lg:border-r">
+            <div className="relative h-full overflow-hidden">
               <img
                 src={content.bedImage || "/placeholders/interactive-bed.svg"}
                 alt={content.bedImageAlt}
@@ -83,32 +83,33 @@ export default function InteractiveBedExplorer({
             </div>
           </div>
 
-          <div className="lux-card p-3.5">
-            <h3 className="font-serif text-xl font-semibold leading-tight text-charcoal dark:text-ivory">
+          <div className="p-5 sm:p-6">
+            <p className="eyebrow">{content.eyebrow}</p>
+            <h3 className="mt-2 text-xl font-light leading-tight text-graphite dark:text-white">
               {content.mobileListTitle}
             </h3>
-            <p className="mt-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-400">
+            <p className="mt-3 text-xs font-light leading-5 text-stone-500 dark:text-stone-400">
               {content.subtitle}
             </p>
-            <div className="mt-3 grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="mt-5 divide-y divide-stone-200 border-y border-stone-200 dark:divide-stone-800 dark:border-stone-800">
               {visibleHotspots.map((hotspot) => (
                 <button
                   key={hotspot.id}
                   type="button"
                   onClick={() => handleHotspotSelect(hotspot)}
-                  className="group flex items-center justify-between gap-2.5 rounded-md border border-stone-200 bg-white px-2.5 py-2 text-left transition hover:-translate-y-0.5 hover:border-brass hover:shadow-soft dark:border-stone-800 dark:bg-stone-950 dark:hover:border-champagne"
+                  className="group flex w-full items-center justify-between gap-3 py-3 text-left transition hover:pl-1"
                 >
                   <span>
-                    <span className="block text-[11px] font-bold text-charcoal dark:text-ivory">
+                    <span className="block text-[11px] font-semibold uppercase tracking-[0.09em] text-graphite transition group-hover:text-peach dark:text-white dark:group-hover:text-[#ebb49a]">
                       {hotspot.label}
                     </span>
-                    <span className="mt-0.5 block text-[10px] leading-4 text-stone-500 dark:text-stone-400">
+                    <span className="mt-1 block text-[10px] font-light leading-4 text-stone-500 dark:text-stone-400">
                       {hotspot.category}
                     </span>
                   </span>
                   <ArrowRight
                     aria-hidden
-                    className="text-brass transition group-hover:translate-x-1 dark:text-champagne"
+                    className="text-peach transition group-hover:translate-x-1 dark:text-[#ebb49a]"
                     size={14}
                   />
                 </button>

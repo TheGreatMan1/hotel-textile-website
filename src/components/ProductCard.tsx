@@ -2,9 +2,12 @@
 
 import { trackStandardMetaEvent } from "@/lib/metaPixel";
 import { formatPriceDisplay } from "@/lib/pricing";
-import { dispatchQuoteSelection, scrollToQuoteForm } from "@/lib/quoteSelection";
+import {
+  dispatchQuoteSelection,
+  scrollToQuoteForm
+} from "@/lib/quoteSelection";
 import type { Product } from "@/lib/types";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { MouseEvent } from "react";
 
@@ -18,6 +21,7 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product, labels }: ProductCardProps) {
+  const reduceMotion = useReducedMotion();
   const href = product.buttonLink?.trim() || "#quote-form";
   const sizes = product.availableSizes?.filter(Boolean) || [];
   const colors = product.colorOptions?.filter(Boolean) || [];
@@ -46,46 +50,47 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
   return (
     <motion.article
       id={`product-${product.slug}`}
-      className="group overflow-hidden rounded-lg border border-stone-200/90 bg-white shadow-[0_12px_34px_rgba(28,26,23,0.055)] transition-colors dark:border-stone-800 dark:bg-stone-950"
-      whileHover={{ y: -4 }}
+      className="group min-w-0"
+      whileHover={reduceMotion ? undefined : { y: -3 }}
       transition={{ type: "spring", stiffness: 260, damping: 24 }}
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden bg-mist dark:bg-[#202020]">
         <img
           src={product.image || "/placeholders/textile-sets.svg"}
           alt={product.imageAlt || product.title}
-          className="aspect-[1.45/1] w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+          className="aspect-[4/4.65] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
         />
       </div>
-      <div className="p-3">
-        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-brass dark:text-champagne">
+
+      <div className="border-b border-stone-200 py-4 dark:border-stone-800">
+        <p className="text-[9px] font-medium uppercase tracking-[0.18em] text-peach dark:text-[#ebb49a]">
           {product.category}
         </p>
-        <h3 className="mt-1.5 font-serif text-lg font-semibold leading-tight text-charcoal dark:text-ivory">
+        <h3 className="mt-2 text-base font-normal leading-tight text-graphite dark:text-white">
           {product.title}
         </h3>
 
         {formattedPrice ? (
-          <div className="mt-1.5 flex items-end gap-2 text-charcoal dark:text-ivory">
-            <p className="font-serif text-lg font-semibold leading-none">
+          <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <p className="text-sm font-medium text-graphite dark:text-white">
               {formattedPrice.displayText}
             </p>
             {formattedPrice.unitText ? (
-              <p className="pb-0.5 text-[10px] font-semibold text-stone-500 dark:text-stone-400">
+              <p className="text-[10px] text-stone-500 dark:text-stone-400">
                 / {formattedPrice.unitText}
               </p>
             ) : null}
           </div>
         ) : null}
 
-        <p className="mt-2 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
+        <p className="mt-2 text-xs font-light leading-5 text-stone-500 dark:text-stone-400">
           {product.shortDescription}
         </p>
 
-        <div className="mt-2.5 space-y-1.5 text-[10px] leading-4 text-stone-600 dark:text-stone-400">
+        <div className="mt-3 space-y-1 text-[10px] leading-4 text-stone-500 dark:text-stone-400">
           {product.material ? (
             <p>
-              <span className="font-semibold text-charcoal dark:text-ivory">
+              <span className="font-medium text-graphite dark:text-white">
                 {labels.material}:
               </span>{" "}
               {product.material}
@@ -93,33 +98,29 @@ export default function ProductCard({ product, labels }: ProductCardProps) {
           ) : null}
           {sizes.length > 0 ? (
             <p>
-              <span className="font-semibold text-charcoal dark:text-ivory">
+              <span className="font-medium text-graphite dark:text-white">
                 {labels.sizes}:
               </span>{" "}
               {sizes.join(", ")}
             </p>
           ) : null}
           {colors.length > 0 ? (
-            <div className="flex flex-wrap gap-1.5 pt-1" aria-label={labels.colors}>
-              {colors.map((color) => (
-                <span
-                  key={color}
-                  className="rounded-full border border-stone-200 px-2 py-0.5 text-[10px] dark:border-stone-700"
-                >
-                  {color}
-                </span>
-              ))}
-            </div>
+            <p>
+              <span className="font-medium text-graphite dark:text-white">
+                {labels.colors}:
+              </span>{" "}
+              {colors.join(", ")}
+            </p>
           ) : null}
         </div>
 
         <a
           href={href}
           onClick={handleQuoteClick}
-          className="mt-3.5 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.08em] text-brass transition hover:text-charcoal dark:text-champagne dark:hover:text-ivory"
+          className="mt-4 inline-flex items-center text-[10px] font-semibold uppercase tracking-[0.15em] text-peach transition hover:text-graphite dark:text-[#ebb49a] dark:hover:text-white"
         >
           {product.buttonText}
-          <ArrowRight aria-hidden className="ml-2" size={16} />
+          <ArrowRight aria-hidden className="ml-2" size={14} />
         </a>
       </div>
     </motion.article>

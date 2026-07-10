@@ -17,7 +17,10 @@ export default function ProductCollections({ products }: ProductCollectionsProps
   if (visibleProducts.length === 0) return null;
 
   return (
-    <SectionWrapper id="products" className="bg-white dark:bg-ink">
+    <SectionWrapper
+      id="products"
+      className="border-b border-stone-200 bg-cloud dark:border-stone-800 dark:bg-[#181818]"
+    >
       <div className="container-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{products.eyebrow}</p>
@@ -25,7 +28,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
           <p className="section-copy mx-auto">{products.description}</p>
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-9 grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visibleProducts.map((product) => (
             <ProductCard
               key={product.slug}
@@ -39,7 +42,7 @@ export default function ProductCollections({ products }: ProductCollectionsProps
           ))}
         </div>
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-9 flex justify-center">
           <a href="#quote-form" className="primary-button">
             {visibleProducts[0]?.buttonText || products.title}
             <ArrowRight aria-hidden className="ml-2" size={15} />

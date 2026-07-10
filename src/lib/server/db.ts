@@ -150,6 +150,158 @@ function repairInteractiveBedContent(db: Database) {
   });
 }
 
+const knownDemoImages = new Set([
+  "/uploads/images/chatgpt-image-apr-30-2026-01_56_55-pm.png",
+  "/uploads/images/chatgpt-image-apr-30-2026-02_24_53-pm.png"
+]);
+
+function isReplaceableDemoImage(value: unknown) {
+  return (
+    typeof value === "string" &&
+    (value.startsWith("/placeholders/") || knownDemoImages.has(value))
+  );
+}
+
+function defaultDocument(key: ContentDocumentKey) {
+  return defaultContentDocuments[key] as Record<string, any>;
+}
+
+function repairSiteDocument(
+  db: Database,
+  key: "site.en" | "site.ge"
+) {
+  const document = readContentDocument(db, key);
+  const fallback = defaultDocument(key);
+  if (!document) return;
+
+  let changed = false;
+  const next = { ...document } as Record<string, any>;
+
+  if (!next.announcementBar || typeof next.announcementBar !== "object") {
+    next.announcementBar = fallback.announcementBar;
+    changed = true;
+  }
+
+  if (next.hero && isReplaceableDemoImage(next.hero.image)) {
+    next.hero = { ...next.hero, image: fallback.hero.image };
+    changed = true;
+  }
+
+  if (next.about && isReplaceableDemoImage(next.about.image)) {
+    next.about = { ...next.about, image: fallback.about.image };
+    changed = true;
+  }
+
+  if (changed) updateContentDocument(db, key, next);
+}
+
+function repairProductDocument(
+  db: Database,
+  key: "products.en" | "products.ge"
+) {
+  const document = readContentDocument(db, key);
+  const fallback = defaultDocument(key);
+  if (!document || !Array.isArray(document.items)) return;
+
+  const defaultBySlug = new Map<string, Record<string, any>>(
+    (fallback.items || []).map((item: Record<string, any>) => [item.slug, item])
+  );
+  let changed = false;
+  const items = document.items.map((item: Record<string, any>) => {
+    const replacement = defaultBySlug.get(item.slug);
+    if (!replacement || !isReplaceableDemoImage(item.image)) return item;
+    changed = true;
+    return { ...item, image: replacement.image };
+  });
+
+  if (changed) updateContentDocument(db, key, { ...document, items });
+}
+
+function repairInteractiveBedImages(
+  db: Database,
+  key: "interactive-bed.en" | "interactive-bed.ge"
+) {
+  const document = readContentDocument(db, key);
+  const fallback = defaultDocument(key);
+  if (!document || !Array.isArray(document.hotspots)) return;
+
+  const defaultById = new Map<string, Record<string, any>>(
+    (fallback.hotspots || []).map((item: Record<string, any>) => [item.id, item])
+  );
+  let changed = false;
+  const next = { ...document } as Record<string, any>;
+
+  if (isReplaceableDemoImage(next.bedImage)) {
+    next.bedImage = fallback.bedImage;
+    changed = true;
+  }
+
+  next.hotspots = document.hotspots.map((hotspot: Record<string, any>) => {
+    const replacement = defaultById.get(hotspot.id);
+    if (!replacement) return hotspot;
+
+    let hotspotChanged = false;
+    const nextHotspot = { ...hotspot };
+    if (isReplaceableDemoImage(hotspot.image)) {
+      nextHotspot.image = replacement.image;
+      hotspotChanged = true;
+    }
+
+    if (Array.isArray(hotspot.materialVariants)) {
+      const defaultVariants = new Map<string, Record<string, any>>(
+        (replacement.materialVariants || []).map((variant: Record<string, any>) => [
+          variant.id,
+          variant
+        ])
+      );
+      nextHotspot.materialVariants = hotspot.materialVariants.map(
+        (variant: Record<string, any>) => {
+          const defaultVariant = defaultVariants.get(variant.id);
+          if (!defaultVariant || !isReplaceableDemoImage(variant.image)) {
+            return variant;
+          }
+          hotspotChanged = true;
+          return { ...variant, image: defaultVariant.image };
+        }
+      );
+    }
+
+    if (hotspotChanged) changed = true;
+    return nextHotspot;
+  });
+
+  if (changed) updateContentDocument(db, key, next);
+}
+
+function repairGalleryImages(db: Database) {
+  const key = "gallery" as const;
+  const document = readContentDocument(db, key);
+  const fallback = defaultDocument(key);
+  if (!document || !Array.isArray(document.images)) return;
+
+  let changed = false;
+  const images = document.images.map(
+    (item: Record<string, any>, index: number) => {
+      const replacement = fallback.images?.[index];
+      if (!replacement || !isReplaceableDemoImage(item.image)) return item;
+      changed = true;
+      return { ...item, image: replacement.image };
+    }
+  );
+
+  if (changed) updateContentDocument(db, key, { ...document, images });
+}
+
+function repairEditorialContent(db: Database) {
+  repairSiteDocument(db, "site.en");
+  repairSiteDocument(db, "site.ge");
+  repairProductDocument(db, "products.en");
+  repairProductDocument(db, "products.ge");
+  repairInteractiveBedImages(db, "interactive-bed.en");
+  repairInteractiveBedImages(db, "interactive-bed.ge");
+  repairGalleryImages(db);
+}
+
 export async function getDb() {
   if (!dbStatePromise) {
     dbStatePromise = (async () => {
@@ -163,6 +315,7 @@ export async function getDb() {
       runMigrations(db);
       seedContent(db);
       repairInteractiveBedContent(db);
+      repairEditorialContent(db);
       persistDb(db, filePath);
 
       return { db, filePath };

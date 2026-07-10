@@ -50,7 +50,7 @@ export default function HomePageClient({ content }: HomePageClientProps) {
   );
 
   return (
-    <>
+    <div className="public-site">
       <Header
         content={site}
         allContent={content}
@@ -77,6 +77,6 @@ export default function HomePageClient({ content }: HomePageClientProps) {
         visibleSections={visibleSections}
       />
       <MobileQuoteCTA content={content.quoteForm} language={language} />
-    </>
+    </div>
   );
 }

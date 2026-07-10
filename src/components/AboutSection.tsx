@@ -17,12 +17,15 @@ export default function AboutSection({ about }: AboutSectionProps) {
     .sort((a, b) => a.sortOrder - b.sortOrder);
 
   return (
-    <SectionWrapper id="about" className="bg-white dark:bg-ink">
-      <div className="container-shell grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <SectionWrapper
+      id="about"
+      className="border-b border-stone-200 bg-mist dark:border-stone-800 dark:bg-[#202020]"
+    >
+      <div className="container-shell grid gap-8 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-14">
         <motion.img
           src={about.image || "/placeholders/towels.svg"}
           alt={about.imageAlt}
-          className="aspect-[4/3] w-full rounded-lg border border-stone-200/80 object-cover shadow-[0_18px_50px_rgba(28,26,23,0.10)] dark:border-stone-800"
+          className="aspect-[5/4] w-full object-cover"
           whileHover={{ scale: 1.015 }}
           transition={{ duration: 0.35 }}
         />
@@ -32,7 +35,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
           <p className="section-copy">{about.description}</p>
 
           {features.length > 0 ? (
-            <div className="mt-4 grid gap-2.5 sm:grid-cols-3">
+            <div className="mt-6 divide-y divide-stone-300 border-y border-stone-300 dark:divide-stone-700 dark:border-stone-700">
               {features.map((feature) => {
                 const Icon =
                   iconMap[feature.icon as keyof typeof iconMap] ||
@@ -41,17 +44,19 @@ export default function AboutSection({ about }: AboutSectionProps) {
                 return (
                   <article
                     key={feature.title}
-                    className="rounded-lg border border-stone-200 bg-white p-2.5 dark:border-stone-800 dark:bg-stone-950"
+                    className="grid grid-cols-[2.25rem_1fr] gap-3 py-4"
                   >
-                    <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-full bg-champagne/25 text-brass dark:text-champagne">
+                    <div className="flex h-8 w-8 items-center justify-center border border-peach/55 text-peach dark:border-[#d99677]/55 dark:text-[#ebb49a]">
                       <Icon aria-hidden size={15} />
                     </div>
-                    <h3 className="font-serif text-base font-semibold text-charcoal dark:text-ivory">
-                      {feature.title}
-                    </h3>
-                    <p className="mt-1.5 text-[11px] leading-4 text-stone-600 dark:text-stone-300">
-                      {feature.description}
-                    </p>
+                    <div>
+                      <h3 className="text-sm font-medium text-graphite dark:text-white">
+                        {feature.title}
+                      </h3>
+                      <p className="mt-1 text-xs font-light leading-5 text-stone-500 dark:text-stone-400">
+                        {feature.description}
+                      </p>
+                    </div>
                   </article>
                 );
               })}

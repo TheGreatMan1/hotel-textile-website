@@ -23,9 +23,12 @@ export default function GallerySection({
   if (images.length === 0) return null;
 
   return (
-    <SectionWrapper id="gallery" className="bg-white dark:bg-stone-950">
+    <SectionWrapper
+      id="gallery"
+      className="border-b border-stone-200 bg-white dark:border-stone-800 dark:bg-[#161616]"
+    >
       <div className="container-shell">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-xl text-center">
           <p className="eyebrow">{localized(gallery.eyebrow, language)}</p>
           <h2 className="section-title">{localized(gallery.title, language)}</h2>
           <p className="section-copy mx-auto">
@@ -33,28 +36,37 @@ export default function GallerySection({
           </p>
         </div>
 
-        <div className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
-          {images.map((image, index) => (
-            <motion.figure
+        <div className="mt-9 grid auto-rows-[12rem] gap-2 sm:grid-cols-2 sm:auto-rows-[15rem] lg:grid-cols-4 lg:auto-rows-[13rem]">
+          {images.map((image, index) => {
+            const layoutClass =
+              index === 0
+                ? "sm:row-span-2 lg:col-span-2 lg:row-span-2"
+                : index === 3
+                  ? "lg:col-span-2"
+                  : "";
+
+            return (
+              <motion.figure
               key={`${image.image}-${image.sortOrder}`}
-              className="group overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm dark:border-stone-800 dark:bg-ink"
+              className={`group relative overflow-hidden bg-mist dark:bg-[#202020] ${layoutClass}`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.45, delay: index * 0.04 }}
             >
-              <div className="overflow-hidden">
+              <div className="h-full overflow-hidden">
                 <img
                   src={image.image || "/placeholders/hero.svg"}
                   alt={image.alt}
-                  className="aspect-[5/6] w-full object-cover transition duration-700 group-hover:scale-[1.05]"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
                 />
               </div>
-              <figcaption className="px-2.5 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-stone-700 dark:text-stone-300">
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-4 pb-3 pt-10 text-[9px] font-medium uppercase tracking-[0.15em] text-white">
                 {localized(image.caption, language)}
               </figcaption>
             </motion.figure>
-          ))}
+            );
+          })}
         </div>
       </div>
     </SectionWrapper>

@@ -1,8 +1,9 @@
 "use client";
 
 import { getSectionVisibility } from "@/lib/content";
+import { iconMap } from "@/lib/icons";
 import type { Language, SiteContent, WebsiteContent } from "@/lib/types";
-import { ArrowRight, Menu, Sparkles } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
@@ -29,67 +30,110 @@ export default function Header({
   const navLinks = content.navLinks.filter(
     (link) => visibleSections[link.sectionKey]
   );
+  const serviceItems = content.hero.stats
+    .filter((item) => item.isVisible)
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .slice(0, 3);
   const brandMain = content.brandName.replace(/\s*Hotel Textiles$/i, "");
   const brandSub =
     brandMain === content.brandName ? content.tagline : "Hotel Textiles";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-stone-200/80 bg-white/92 shadow-[0_8px_28px_rgba(28,26,23,0.05)] backdrop-blur-xl transition-colors dark:border-stone-800 dark:bg-ink/90">
-      <div className="container-shell flex min-h-12 items-center justify-between gap-2.5">
-        <a
-          href="#top"
-          className="group flex min-w-0 items-center gap-2.5"
-          aria-label="Back to top"
-        >
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brass/35 bg-champagne/20 text-brass dark:border-champagne/40 dark:bg-champagne/10 dark:text-champagne">
-            <Sparkles aria-hidden size={17} strokeWidth={1.6} />
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate font-serif text-lg font-semibold leading-none text-charcoal transition group-hover:text-brass dark:text-ivory dark:group-hover:text-champagne">
+    <header className="sticky top-0 z-40 border-b border-stone-200 bg-white text-graphite transition-colors dark:border-stone-800 dark:bg-[#161616] dark:text-white">
+      {content.announcementBar?.isVisible ? (
+        <div className="bg-graphite px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-white dark:bg-black">
+          {content.announcementBar.text}
+        </div>
+      ) : null}
+
+      <div className="border-b border-stone-200 dark:border-stone-800">
+        <div className="container-shell grid min-h-14 grid-cols-[1fr_auto_1fr] items-center">
+          <div className="flex items-center">
+            <button
+              type="button"
+              className="icon-button lg:hidden"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={isMenuOpen}
+            >
+              <Menu aria-hidden size={18} />
+            </button>
+            <span className="hidden text-[9px] font-medium uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400 lg:block">
+              {content.tagline}
+            </span>
+          </div>
+
+          <a href="#top" className="group text-center" aria-label="Back to top">
+            <span className="block text-[1.35rem] font-light uppercase leading-none tracking-[0.14em] transition group-hover:text-peach sm:text-[1.55rem]">
               {brandMain}
             </span>
-            <span className="hidden text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400 sm:block">
+            <span className="mt-1 block text-[8px] font-medium uppercase tracking-[0.32em] text-stone-500 dark:text-stone-400">
               {brandSub}
             </span>
-          </span>
-        </a>
-
-        <nav
-          className="hidden items-center gap-3 xl:gap-4 lg:flex"
-          aria-label="Main navigation"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative text-[9px] font-bold uppercase tracking-[0.08em] text-stone-700 transition after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-brass after:transition-all hover:text-brass hover:after:w-full dark:text-stone-300 dark:after:bg-champagne dark:hover:text-champagne"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-1.5">
-          <a
-            href="#quote-form"
-            className="primary-button hidden xl:inline-flex"
-          >
-            {content.hero.primaryButtonText}
-            <ArrowRight aria-hidden className="ml-2" size={15} />
           </a>
-          <LanguageSwitcher language={language} onChange={onLanguageChange} />
-          <ThemeToggle />
-          <button
-            type="button"
-            className="icon-button lg:hidden"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open navigation menu"
-            aria-expanded={isMenuOpen}
-          >
-            <Menu aria-hidden size={20} />
-          </button>
+
+          <div className="flex items-center justify-end gap-2">
+            <LanguageSwitcher
+              language={language}
+              onChange={onLanguageChange}
+            />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
+
+      <div className="hidden border-b border-stone-200 dark:border-stone-800 lg:block">
+        <div className="container-shell relative flex min-h-11 items-center justify-center">
+          <nav className="flex items-center gap-7" aria-label="Main navigation">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[10px] font-medium uppercase tracking-[0.13em] text-stone-600 transition hover:text-peach dark:text-stone-300 dark:hover:text-[#ebb49a]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <a
+            href="#quote-form"
+            className="absolute right-0 text-[10px] font-semibold uppercase tracking-[0.15em] text-peach transition hover:text-graphite dark:text-[#ebb49a] dark:hover:text-white"
+          >
+            {content.hero.primaryButtonText}
+          </a>
+        </div>
+      </div>
+
+      {serviceItems.length > 0 ? (
+        <div className="bg-mist transition-colors dark:bg-[#202020]">
+          <div className="container-shell grid grid-cols-3 divide-x divide-stone-300/80 dark:divide-stone-700">
+            {serviceItems.map((item) => {
+              const Icon =
+                iconMap[item.icon as keyof typeof iconMap] || iconMap.Sparkles;
+              return (
+                <div
+                  key={item.title}
+                  className="flex min-h-9 items-center justify-center gap-2 px-2 text-center"
+                >
+                  <Icon
+                    aria-hidden
+                    className="hidden text-peach sm:block"
+                    size={13}
+                    strokeWidth={1.6}
+                  />
+                  <span className="text-[8px] font-medium uppercase tracking-[0.1em] text-stone-600 dark:text-stone-300 sm:text-[9px]">
+                    {item.title}
+                  </span>
+                  <span className="hidden text-[9px] text-stone-400 xl:inline">
+                    {item.description}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
+
       <MobileMenu
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}

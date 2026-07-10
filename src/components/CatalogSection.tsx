@@ -19,15 +19,18 @@ export default function CatalogSection({
   const hasPdf = Boolean(catalog.pdfFile?.trim());
 
   return (
-    <section id="catalog" className="bg-white py-8 text-charcoal dark:bg-ink dark:text-ivory sm:py-10 lg:py-12">
+    <section
+      id="catalog"
+      className="border-b border-stone-200 bg-peach-soft/55 py-12 text-graphite transition-colors dark:border-stone-800 dark:bg-[#302521] dark:text-white sm:py-14"
+    >
       <div className="container-shell">
-        <div className="grid gap-4 rounded-lg border border-stone-200 bg-white p-4 shadow-[0_12px_30px_rgba(28,26,23,0.06)] dark:border-stone-800 dark:bg-stone-950 sm:p-5 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="eyebrow">{localized(catalog.eyebrow, language)}</p>
-            <h2 className="mt-2 font-serif text-2xl font-semibold leading-tight sm:text-[1.8rem]">
+            <h2 className="mt-3 max-w-2xl text-3xl font-light leading-tight">
               {localized(catalog.title, language)}
             </h2>
-            <p className="mt-2.5 max-w-2xl text-[13px] leading-5 text-stone-700 dark:text-stone-300 sm:text-sm sm:leading-6">
+            <p className="mt-3 max-w-xl text-sm font-light leading-6 text-stone-600 dark:text-stone-300">
               {localized(catalog.description, language)}
             </p>
           </div>
@@ -47,7 +50,7 @@ export default function CatalogSection({
               {localized(catalog.buttonText, language)}
             </a>
           ) : (
-            <p className="rounded-md border border-stone-300 px-5 py-3 text-sm text-stone-600 dark:border-stone-700 dark:text-stone-300">
+            <p className="border border-stone-400 px-5 py-3 text-sm text-stone-600 dark:border-stone-600 dark:text-stone-300">
               {localized(catalog.noFileText, language)}
             </p>
           )}

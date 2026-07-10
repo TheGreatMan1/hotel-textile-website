@@ -30,7 +30,8 @@ export default function Footer({
   const privacyLabel =
     language === "ge" ? "კონფიდენციალურობა" : "Privacy Policy";
   const brandMain = site.brandName.replace(/\s*Hotel Textiles$/i, "");
-  const brandSub = brandMain === site.brandName ? site.tagline : "Hotel Textiles";
+  const brandSub =
+    brandMain === site.brandName ? site.tagline : "Hotel Textiles";
   const columnLabels =
     language === "ge"
       ? {
@@ -41,24 +42,24 @@ export default function Footer({
       : { products: "Products", company: "Company", resources: "Resources" };
 
   return (
-    <footer className="overflow-hidden border-t border-stone-800 bg-[linear-gradient(135deg,#11100f,#1c1a17_58%,#0b0f0f)] py-7 text-ivory">
+    <footer className="overflow-hidden border-t border-stone-200 bg-mist py-12 text-graphite transition-colors dark:border-stone-800 dark:bg-[#202020] dark:text-white">
       <div className="container-shell">
-        <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+        <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.8fr_1fr]">
           <div className="max-w-md">
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-champagne/40 bg-champagne/10 text-champagne">
-                <Sparkles aria-hidden size={18} strokeWidth={1.6} />
+              <span className="flex h-9 w-9 items-center justify-center border border-peach/60 text-peach dark:border-[#d99677]/60 dark:text-[#ebb49a]">
+                <Sparkles aria-hidden size={16} strokeWidth={1.5} />
               </span>
               <div>
-                <p className="font-serif text-xl font-semibold leading-none">
+                <p className="text-lg font-light uppercase leading-none tracking-[0.12em]">
                   {brandMain}
                 </p>
-                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
+                <p className="mt-1 text-[8px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
                   {brandSub}
                 </p>
               </div>
             </div>
-            <p className="mt-3 text-xs leading-5 text-stone-300 sm:text-sm">
+            <p className="mt-4 max-w-sm text-xs font-light leading-5 text-stone-500 dark:text-stone-400">
               {localized(footer.tagline, language)}
             </p>
           </div>
@@ -73,22 +74,25 @@ export default function Footer({
           />
 
           <div>
-            <h3 className="font-serif text-base font-semibold text-ivory">
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.16em]">
               {columnLabels.resources}
             </h3>
-            <div className="mt-2.5 flex flex-col gap-1.5 text-xs font-semibold text-stone-300 sm:text-sm">
-              <a href="/privacy" className="transition hover:text-champagne">
+            <div className="mt-4 flex flex-col gap-2 text-xs font-light text-stone-500 dark:text-stone-400">
+              <a href="/privacy" className="transition hover:text-peach">
                 {privacyLabel}
               </a>
-              <a href="#quote-form" className="inline-flex items-center text-champagne">
+              <a
+                href="#quote-form"
+                className="inline-flex items-center text-peach dark:text-[#ebb49a]"
+              >
                 {site.hero.primaryButtonText}
-                <ArrowRight aria-hidden className="ml-2" size={15} />
+                <ArrowRight aria-hidden className="ml-2" size={14} />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 border-t border-white/10 pt-3.5 text-[11px] text-stone-500">
+        <div className="mt-10 border-t border-stone-300 pt-4 text-[10px] font-light text-stone-500 dark:border-stone-700">
           &copy; {new Date().getFullYear()} {site.brandName}.{" "}
           {localized(footer.copyright, language)}
         </div>
@@ -102,13 +106,15 @@ function FooterLinkColumn({ title, links }: { title: string; links: NavLink[] })
 
   return (
     <div>
-      <h3 className="font-serif text-base font-semibold text-ivory">{title}</h3>
-      <div className="mt-2.5 flex flex-col gap-1.5 text-xs font-semibold text-stone-300 sm:text-sm">
+      <h3 className="text-[10px] font-semibold uppercase tracking-[0.16em]">
+        {title}
+      </h3>
+      <div className="mt-4 flex flex-col gap-2 text-xs font-light text-stone-500 dark:text-stone-400">
         {links.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className="transition hover:text-champagne"
+            className="transition hover:text-peach"
           >
             {link.label}
           </a>

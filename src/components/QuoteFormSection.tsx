@@ -134,9 +134,12 @@ export default function QuoteFormSection({
   }
 
   return (
-    <SectionWrapper id="quote-form" className="bg-white dark:bg-ink">
-      <div className="container-shell grid gap-4 lg:grid-cols-[0.68fr_1.32fr] lg:items-start">
-        <div className="lux-card p-3.5">
+    <SectionWrapper
+      id="quote-form"
+      className="border-b border-stone-200 bg-white dark:border-stone-800 dark:bg-[#161616]"
+    >
+      <div className="container-shell grid border border-stone-200 dark:border-stone-800 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch">
+        <div className="bg-mist p-6 dark:bg-[#202020] sm:p-8 lg:p-10">
           <p className="eyebrow">{localized(content.eyebrow, language)}</p>
           <h2 className="section-title">{localized(content.title, language)}</h2>
           <p className="section-copy">
@@ -146,7 +149,7 @@ export default function QuoteFormSection({
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg border border-stone-200 bg-white p-3.5 shadow-[0_12px_30px_rgba(28,26,23,0.06)] dark:border-stone-800 dark:bg-stone-950 sm:p-4"
+          className="border-t border-stone-200 bg-white p-6 dark:border-stone-800 dark:bg-[#181818] sm:p-8 lg:border-l lg:border-t-0"
         >
           <input
             type="hidden"
@@ -176,7 +179,7 @@ export default function QuoteFormSection({
             />
           ))}
 
-          <div className="grid gap-2.5 sm:grid-cols-2">
+          <div className="grid gap-2 sm:grid-cols-2">
             <TextField
               label={localized(fields.companyName.label, language)}
               placeholder={localized(fields.companyName.placeholder, language)}
@@ -259,13 +262,13 @@ export default function QuoteFormSection({
             />
           </div>
 
-          <button type="submit" disabled={isSubmitting} className="primary-button mt-4">
+          <button type="submit" disabled={isSubmitting} className="primary-button mt-3.5">
             <Send aria-hidden className="mr-2" size={15} />
             {localized(content.submitButtonText, language)}
           </button>
 
           {status === "success" ? (
-            <p className="mt-4 text-sm font-semibold text-brass dark:text-champagne">
+            <p className="mt-4 text-sm font-medium text-peach dark:text-[#ebb49a]">
               {localized(content.successMessage, language)}
             </p>
           ) : null}
@@ -292,7 +295,7 @@ type FieldProps = {
 };
 
 const fieldClass =
-  "mt-1.5 min-h-9 w-full rounded-md border border-stone-300 bg-white px-2.5 text-xs text-charcoal outline-none transition placeholder:text-stone-400 focus:border-brass focus:ring-2 focus:ring-champagne/40 dark:border-stone-700 dark:bg-ink dark:text-ivory dark:placeholder:text-stone-500 sm:text-sm";
+  "mt-1.5 min-h-10 w-full border border-stone-300 bg-white px-3 text-xs font-light text-graphite outline-none transition placeholder:text-stone-400 focus:border-peach focus:ring-1 focus:ring-peach dark:border-stone-700 dark:bg-[#161616] dark:text-white dark:placeholder:text-stone-500";
 
 const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     {
@@ -308,7 +311,7 @@ const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
     ref
   ) {
     return (
-      <label className={`block text-xs font-semibold text-charcoal dark:text-ivory sm:text-sm ${className}`}>
+      <label className={`block text-[10px] font-medium uppercase tracking-[0.1em] text-stone-600 dark:text-stone-300 ${className}`}>
         {label}
         <input
           ref={ref}
@@ -333,10 +336,10 @@ function TextAreaField({
   onChange
 }: FieldProps) {
   return (
-    <label className="block text-xs font-semibold text-charcoal dark:text-ivory sm:col-span-2 sm:text-sm">
+    <label className="block text-[10px] font-medium uppercase tracking-[0.1em] text-stone-600 dark:text-stone-300 sm:col-span-2">
       {label}
       <textarea
-        className={`${fieldClass} min-h-20 py-2.5`}
+        className={`${fieldClass} min-h-20 py-2 lg:min-h-16`}
         name={name}
         value={value}
         placeholder={placeholder}

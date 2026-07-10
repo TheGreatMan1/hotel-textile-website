@@ -23,28 +23,20 @@ export default function WhyChooseUsSection({
   return (
     <SectionWrapper
       id="why-us"
-      className="relative overflow-hidden bg-[linear-gradient(135deg,#11100f,#1c1a17_52%,#0d1111)] text-ivory"
+      className="relative overflow-hidden border-b border-stone-200 bg-white dark:border-stone-800 dark:bg-[#161616]"
     >
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.14]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(120deg, rgba(215,189,127,0.35) 0 1px, transparent 1px 115px)"
-        }}
-      />
       <div className="container-shell">
-        <div className="relative mx-auto max-w-2xl text-center">
+        <div className="relative mx-auto max-w-xl text-center">
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold leading-[1.05] text-ivory sm:text-[2.15rem] lg:text-[2.35rem]">
+          <h2 className="section-title">
             {content.title}
           </h2>
-          <p className="mx-auto mt-2.5 max-w-2xl text-[13px] leading-5 text-stone-300 sm:text-sm sm:leading-6">
+          <p className="section-copy mx-auto">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="relative mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="relative mt-9 grid border-y border-stone-200 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 dark:border-stone-800">
           {features.map((feature, index) => {
             const Icon =
               iconMap[feature.icon as keyof typeof iconMap] || iconMap.Sparkles;
@@ -52,7 +44,7 @@ export default function WhyChooseUsSection({
             return (
               <motion.article
                 key={feature.title}
-                className="text-center"
+                className="border-b border-stone-200 px-4 py-6 text-center sm:border-r lg:min-h-[12rem] xl:border-b-0 dark:border-stone-800"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -4 }}
@@ -64,13 +56,13 @@ export default function WhyChooseUsSection({
                   damping: 24
                 }}
               >
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-champagne/45 bg-champagne/5 text-champagne">
-                  <Icon aria-hidden size={18} strokeWidth={1.55} />
+                <div className="mx-auto flex h-9 w-9 items-center justify-center border border-peach/60 text-peach dark:border-[#d99677]/60 dark:text-[#ebb49a]">
+                  <Icon aria-hidden size={16} strokeWidth={1.55} />
                 </div>
-                <h3 className="mt-2.5 font-serif text-base font-semibold text-ivory">
+                <h3 className="mt-3 text-sm font-medium text-graphite dark:text-white">
                   {feature.title}
                 </h3>
-                <p className="mt-1.5 text-[11px] leading-4 text-stone-300">
+                <p className="mt-2 text-[11px] font-light leading-5 text-stone-500 dark:text-stone-400">
                   {feature.description}
                 </p>
               </motion.article>

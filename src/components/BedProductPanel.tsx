@@ -102,14 +102,14 @@ export default function BedProductPanel({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-end bg-ink/28 p-3 backdrop-blur-sm md:p-6"
+      className="fixed inset-0 z-50 flex items-end justify-end bg-black/35 p-3 backdrop-blur-[2px] md:p-5"
       role="dialog"
       aria-modal="true"
       aria-label={hotspot.title}
       onClick={onClose}
     >
       <motion.aside
-        className="max-h-[92vh] w-full overflow-y-auto rounded-lg border border-stone-200 bg-white shadow-[0_18px_60px_rgba(17,16,15,0.18)] dark:border-stone-800 dark:bg-stone-950 md:max-w-[25rem]"
+        className="max-h-[92vh] w-full overflow-y-auto border border-stone-200 bg-white shadow-[0_18px_50px_rgba(17,16,15,0.16)] dark:border-stone-800 dark:bg-[#1b1b1b] md:max-w-[23rem]"
         initial={
           reduceMotion
             ? false
@@ -124,10 +124,10 @@ export default function BedProductPanel({
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-stone-200 p-3.5 dark:border-stone-800">
+        <div className="flex items-start justify-between gap-3 border-b border-stone-200 p-3 dark:border-stone-800">
           <div>
             <p className="eyebrow">{hotspot.category}</p>
-            <h3 className="mt-1.5 font-serif text-xl font-semibold leading-tight text-charcoal dark:text-ivory">
+            <h3 className="mt-1 text-xl font-light leading-tight text-graphite dark:text-white">
               {hotspot.title}
             </h3>
           </div>
@@ -141,25 +141,25 @@ export default function BedProductPanel({
           </button>
         </div>
 
-        <div className="p-3.5">
+        <div className="p-3">
           <img
             src={image}
             alt={imageAlt}
-            className="aspect-[16/11] w-full rounded-md object-cover shadow-sm"
+            className="aspect-[16/11] w-full object-cover"
           />
 
-          <p className="mt-3 text-xs leading-5 text-stone-700 dark:text-stone-300">
+          <p className="mt-2.5 text-[11px] leading-5 text-stone-700 dark:text-stone-300">
             {hotspot.shortDescription}
           </p>
-          <p className="mt-2 text-xs leading-5 text-stone-600 dark:text-stone-400">
+          <p className="mt-1.5 text-[11px] leading-5 text-stone-600 dark:text-stone-400">
             {description}
           </p>
 
-          <PriceBlock price={formattedPrice} className="mt-3.5" />
+          <PriceBlock price={formattedPrice} className="mt-3" />
 
           {variants.length > 1 ? (
-            <div className="mt-4">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
+            <div className="mt-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-stone-400">
                 {content.materialsLabel}
               </p>
               <div className="mt-2 flex flex-wrap gap-1.5">
@@ -168,10 +168,10 @@ export default function BedProductPanel({
                     key={variant.id}
                     type="button"
                     onClick={() => handleMaterialSelect(variant.id)}
-                    className={`rounded-md border px-2.5 py-1.5 text-xs font-semibold transition ${
+                    className={`border px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] transition ${
                       selectedVariant?.id === variant.id
-                        ? "border-brass bg-brass text-white dark:border-champagne dark:bg-champagne dark:text-ink"
-                        : "border-stone-300 text-charcoal hover:border-brass dark:border-stone-700 dark:text-ivory dark:hover:border-champagne"
+                        ? "border-peach bg-peach text-white dark:border-[#d99677] dark:bg-[#d99677]"
+                        : "border-stone-300 text-graphite hover:border-peach hover:text-peach dark:border-stone-700 dark:text-white dark:hover:border-[#ebb49a] dark:hover:text-[#ebb49a]"
                     }`}
                   >
                     {variant.label}
@@ -180,32 +180,32 @@ export default function BedProductPanel({
               </div>
             </div>
           ) : variants.length === 1 ? (
-            <p className="mt-4 inline-flex rounded-md border border-champagne/70 px-3 py-1.5 text-sm font-semibold text-brass dark:text-champagne">
+            <p className="mt-4 inline-flex border border-peach/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-peach dark:text-[#ebb49a]">
               {variants[0].label}
             </p>
           ) : null}
 
-          <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {sizes.length > 0 ? (
-              <div className="rounded-md border border-stone-200 bg-white/65 p-2.5 dark:border-stone-800 dark:bg-ink/70">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
+              <div className="border border-stone-200 bg-white p-2.5 dark:border-stone-800 dark:bg-[#202020]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                   {content.sizesLabel}
                 </p>
-                <p className="mt-1.5 text-xs leading-5 text-charcoal dark:text-ivory">
+                <p className="mt-1.5 text-xs font-light leading-5 text-graphite dark:text-white">
                   {sizes.join(", ")}
                 </p>
               </div>
             ) : null}
             {colors.length > 0 ? (
-              <div className="rounded-md border border-stone-200 bg-white/65 p-2.5 dark:border-stone-800 dark:bg-ink/70">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
+              <div className="border border-stone-200 bg-white p-2.5 dark:border-stone-800 dark:bg-[#202020]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-stone-500 dark:text-stone-400">
                   {content.colorsLabel}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {colors.map((color) => (
                     <span
                       key={color}
-                      className="rounded-full bg-stone-100 px-2.5 py-1 text-xs text-stone-700 dark:bg-stone-800 dark:text-stone-200"
+                      className="bg-mist px-2.5 py-1 text-[10px] text-stone-600 dark:bg-stone-800 dark:text-stone-200"
                     >
                       {color}
                     </span>
@@ -215,7 +215,7 @@ export default function BedProductPanel({
             ) : null}
           </div>
 
-          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+          <div className="mt-3.5 flex flex-col gap-2 sm:flex-row">
             {hotspot.linkedProductSlug ? (
               <a
                 href={`#product-${hotspot.linkedProductSlug}`}

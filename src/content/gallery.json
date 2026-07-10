@@ -14,7 +14,7 @@
   },
   "images": [
     {
-      "image": "/placeholders/gallery-room.svg",
+      "image": "/uploads/images/editorial-hero-v2.png",
       "alt": "Hotel room with layered bed textiles",
       "caption": {
         "en": "Layered guest room styling",
@@ -24,7 +24,7 @@
       "sortOrder": 1
     },
     {
-      "image": "/placeholders/gallery-towels.svg",
+      "image": "/uploads/images/editorial-about-v2.png",
       "alt": "Premium stacked bath towels",
       "caption": {
         "en": "Soft towel collections",
@@ -34,7 +34,7 @@
       "sortOrder": 2
     },
     {
-      "image": "/placeholders/gallery-fabric.svg",
+      "image": "/uploads/images/editorial-gallery-v2.png",
       "alt": "Neutral textile fabric close-up",
       "caption": {
         "en": "Refined fabric details",
@@ -44,7 +44,7 @@
       "sortOrder": 3
     },
     {
-      "image": "/placeholders/gallery-suite.svg",
+      "image": "/uploads/images/interactive-bed-editorial-v2.png",
       "alt": "Hotel suite with cushions and linen",
       "caption": {
         "en": "Suite-ready textile sets",
@@ -54,7 +54,7 @@
       "sortOrder": 4
     },
     {
-      "image": "/placeholders/gallery-bedrunner.svg",
+      "image": "/uploads/images/product-duvet-cover-v2.png",
       "alt": "Hotel bed runner and decorative cushions",
       "caption": {
         "en": "Decorative bed accents",
@@ -64,7 +64,7 @@
       "sortOrder": 5
     },
     {
-      "image": "/placeholders/gallery-bath.svg",
+      "image": "/uploads/images/product-bed-sheet-v2.png",
       "alt": "Bath textile presentation",
       "caption": {
         "en": "Bath textile presentation",

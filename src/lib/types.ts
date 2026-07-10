@@ -47,6 +47,10 @@ export type Feature = {
 export type SiteContent = {
   brandName: string;
   tagline: string;
+  announcementBar: {
+    isVisible: boolean;
+    text: string;
+  };
   navLinks: NavLink[];
   hero: {
     isVisible: boolean;

@@ -14,7 +14,7 @@ export default function LanguageSwitcher({
   return (
     <div
       aria-label="Select language"
-      className="flex rounded-md border border-stone-300/80 bg-white/85 p-1 text-[10px] font-bold shadow-sm backdrop-blur dark:border-stone-700 dark:bg-stone-950/75"
+      className="flex border border-stone-300 bg-white p-0.5 text-[9px] font-medium uppercase tracking-[0.08em] dark:border-stone-700 dark:bg-[#1d1d1d]"
     >
       {(["en", "ge"] as Language[]).map((item) => (
         <button
@@ -22,10 +22,10 @@ export default function LanguageSwitcher({
           type="button"
           aria-pressed={language === item}
           onClick={() => onChange(item)}
-          className={`h-6 rounded px-2 transition focus:outline-none focus:ring-2 focus:ring-brass dark:focus:ring-champagne sm:h-7 sm:px-2.5 ${
+          className={`h-7 px-2.5 transition focus:outline-none focus:ring-2 focus:ring-peach ${
             language === item
-              ? "bg-charcoal text-ivory dark:bg-champagne dark:text-ink"
-              : "text-stone-600 hover:text-brass dark:text-stone-300 dark:hover:text-champagne"
+              ? "bg-graphite text-white dark:bg-[#d99677]"
+              : "text-stone-500 hover:text-peach dark:text-stone-300 dark:hover:text-[#ebb49a]"
           }`}
         >
           {item === "en" ? "EN" : "GE"}

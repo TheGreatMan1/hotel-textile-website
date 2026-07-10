@@ -10,13 +10,13 @@ export default function PriceBlock({ price, className = "" }: PriceBlockProps) {
 
   return (
     <div
-      className={`rounded-md border border-champagne/70 bg-champagne/20 px-2.5 py-2 text-charcoal dark:border-champagne/30 dark:bg-champagne/10 dark:text-ivory ${className}`}
+      className={`border-y border-peach/55 bg-peach-soft/40 px-3 py-2.5 text-graphite dark:border-[#d99677]/45 dark:bg-[#3b2b25]/45 dark:text-white ${className}`}
     >
-      <p className="font-serif text-xl font-semibold leading-tight">
+      <p className="text-lg font-light leading-tight">
         {price.displayText}
       </p>
       {price.unitText ? (
-        <p className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.16em] text-brass dark:text-champagne">
+        <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-peach dark:text-[#ebb49a]">
           {price.unitText}
         </p>
       ) : null}

@@ -23,14 +23,14 @@ export default function MobileMenu({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="fixed inset-0 z-50 bg-ink/55 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-50 bg-black/45 backdrop-blur-sm lg:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
         >
           <motion.div
-            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-5 shadow-soft dark:bg-ink"
+            className="ml-auto flex h-full w-full max-w-sm flex-col bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.16)] dark:bg-[#181818]"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -39,10 +39,10 @@ export default function MobileMenu({
           >
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brass/35 bg-champagne/20 text-brass dark:border-champagne/40 dark:bg-champagne/10 dark:text-champagne">
-                  <Sparkles aria-hidden size={20} strokeWidth={1.6} />
+                <span className="flex h-9 w-9 items-center justify-center border border-peach/60 text-peach dark:border-[#d99677]/60 dark:text-[#ebb49a]">
+                  <Sparkles aria-hidden size={17} strokeWidth={1.5} />
                 </span>
-                <span className="font-serif text-2xl font-semibold text-charcoal dark:text-ivory">
+                <span className="text-xl font-light uppercase tracking-[0.12em] text-graphite dark:text-white">
                   {brandMain}
                 </span>
               </span>
@@ -56,7 +56,7 @@ export default function MobileMenu({
               </button>
             </div>
             <nav
-              className="mt-8 flex flex-col gap-2"
+              className="mt-8 flex flex-col border-t border-stone-200 dark:border-stone-800"
               aria-label="Mobile navigation"
             >
               {navLinks.map((link) => (
@@ -64,7 +64,7 @@ export default function MobileMenu({
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className="rounded-md px-3 py-4 text-base font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-stone-50 dark:text-ivory dark:hover:bg-stone-900"
+                  className="border-b border-stone-200 px-1 py-4 text-sm font-medium uppercase tracking-[0.12em] text-graphite transition hover:pl-3 hover:text-peach dark:border-stone-800 dark:text-white dark:hover:text-[#ebb49a]"
                 >
                   {link.label}
                 </a>

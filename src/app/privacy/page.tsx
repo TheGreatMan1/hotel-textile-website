@@ -8,27 +8,27 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white py-12 text-charcoal dark:bg-ink dark:text-ivory">
-      <div className="container-shell max-w-4xl">
+    <main className="public-site min-h-screen bg-white py-12 text-graphite dark:bg-[#161616] dark:text-white">
+      <div className="container-shell max-w-3xl">
         <Link
           href="/"
-          className="text-sm font-bold text-brass transition hover:text-charcoal dark:text-champagne dark:hover:text-ivory"
+          className="text-[10px] font-semibold uppercase tracking-[0.15em] text-peach transition hover:text-graphite dark:text-[#ebb49a] dark:hover:text-white"
         >
           Back to website
         </Link>
-        <h1 className="mt-6 font-serif text-4xl font-semibold">
+        <h1 className="mt-7 text-4xl font-light tracking-[0.01em]">
           Privacy Policy
         </h1>
-        <p className="mt-5 text-lg leading-8 text-stone-700 dark:text-stone-300">
+        <p className="mt-5 text-base font-light leading-7 text-stone-600 dark:text-stone-300">
           This placeholder privacy policy explains how LuxeTex Hotel Textiles
           may collect and use information from this B2B showroom website. The
           website does not process online payments and does not provide customer
           accounts.
         </p>
 
-        <div className="mt-8 space-y-6 text-sm leading-7 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 border-t border-stone-200 pt-8 text-sm font-light leading-7 text-stone-600 dark:border-stone-800 dark:text-stone-300">
           <section>
-            <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+            <h2 className="text-xl font-normal text-graphite dark:text-white">
               Quote Inquiry Data
             </h2>
             <p className="mt-3">
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+            <h2 className="text-xl font-normal text-graphite dark:text-white">
               Campaign and Advertising Data
             </h2>
             <p className="mt-3">
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+            <h2 className="text-xl font-normal text-graphite dark:text-white">
               No Online Payments
             </h2>
             <p className="mt-3">
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+            <h2 className="text-xl font-normal text-graphite dark:text-white">
               Contact
             </h2>
             <p className="mt-3">
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
           </section>
 
           <section lang="ka">
-            <h2 className="font-serif text-3xl font-semibold text-charcoal dark:text-ivory">
+            <h2 className="text-xl font-normal text-graphite dark:text-white">
               ქართული მოკლე ვერსია
             </h2>
             <p className="mt-3">

@@ -41,7 +41,7 @@ export default function ThemeToggle() {
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Light mode" : "Dark mode"}
     >
-      {isDark ? <Sun aria-hidden size={18} /> : <Moon aria-hidden size={18} />}
+      {isDark ? <Sun aria-hidden size={16} /> : <Moon aria-hidden size={16} />}
     </button>
   );
 }
