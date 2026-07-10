@@ -67,6 +67,31 @@ http://localhost:3000/admin
 
 On first startup, the SQLite database is created and seeded from the existing JSON files in `src/content`.
 
+## Free Local Public Preview
+
+The current review environment uses this computer as the server and publishes it through a Cloudflare Tunnel:
+
+```text
+https://preview.standardtextile.ge
+```
+
+The reusable Windows launcher is:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\scripts\start-local-preview.ps1"
+```
+
+The launcher:
+
+- starts the local Next.js development server when port `3000` is not already serving the website
+- starts the named Cloudflare connector when it is not already running
+- keeps the Cloudflare token outside the repository in `%LOCALAPPDATA%\LuxeTex\named-tunnel.token`
+- writes runtime logs and the connector PID under `%LOCALAPPDATA%\LuxeTex`
+
+On the configured Windows computer, `LuxeTexLocalPreview` is registered under the current user's Windows startup entries. The website and connector therefore start when that user signs in. The computer must remain powered on, awake, signed in, and connected to the internet.
+
+Do not commit the private tunnel token. A different computer or a future VPS should receive a newly issued Cloudflare tunnel token instead of copying the current one.
+
 ## Build
 
 ```bash
