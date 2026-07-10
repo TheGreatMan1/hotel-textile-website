@@ -48,12 +48,35 @@ if (-not (Test-LuxeTexWebsite)) {
   }
 }
 
+$connectorProcesses = @(
+  Get-Process -Name "cloudflared" -ErrorAction SilentlyContinue |
+    Where-Object { $_.Path -eq $cloudflared }
+)
+
 $configuredConnector = $null
 if (Test-Path -LiteralPath $pidFile) {
   $savedProcessId = Get-Content -LiteralPath $pidFile -Raw -ErrorAction SilentlyContinue
   if ($savedProcessId -match "^\d+$") {
-    $configuredConnector = Get-Process -Id ([int]$savedProcessId) -ErrorAction SilentlyContinue
+    $configuredConnector = $connectorProcesses |
+      Where-Object { $_.Id -eq [int]$savedProcessId } |
+      Select-Object -First 1
   }
+}
+
+if (-not $configuredConnector -and $connectorProcesses.Count -gt 0) {
+  $configuredConnector = $connectorProcesses | Select-Object -First 1
+}
+
+if ($configuredConnector) {
+  $duplicateConnectors = @(
+    $connectorProcesses | Where-Object { $_.Id -ne $configuredConnector.Id }
+  )
+
+  if ($duplicateConnectors.Count -gt 0) {
+    Stop-Process -Id $duplicateConnectors.Id -Force
+  }
+
+  Set-Content -LiteralPath $pidFile -Value $configuredConnector.Id
 }
 
 if (-not $configuredConnector) {
@@ -73,7 +96,7 @@ if (-not $configuredConnector) {
   $connector = Start-Process `
     -WindowStyle Hidden `
     -FilePath $cloudflared `
-    -ArgumentList @("tunnel", "run", "--token", $token, "--url", "http://localhost:3000") `
+    -ArgumentList @("tunnel", "--protocol", "http2", "run", "--token", $token, "--url", "http://localhost:3000") `
     -RedirectStandardOutput (Join-Path $localState "named-tunnel.stdout.log") `
     -RedirectStandardError (Join-Path $localState "named-tunnel.stderr.log") `
     -PassThru
