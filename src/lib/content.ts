@@ -10,6 +10,7 @@ import processGe from "@/content/process.ge.json";
 import productsEn from "@/content/products.en.json";
 import productsGe from "@/content/products.ge.json";
 import quoteForm from "@/content/quote-form.json";
+import settings from "@/content/settings.json";
 import siteEn from "@/content/site.en.json";
 import siteGe from "@/content/site.ge.json";
 import type {
@@ -24,6 +25,7 @@ import type {
   ProductsContent,
   QuoteFormContent,
   SectionKey,
+  SettingsContent,
   SiteContent,
   WebsiteContent
 } from "./types";
@@ -31,6 +33,7 @@ import type {
 export const languages: Language[] = ["en", "ge"];
 
 export const websiteContent: WebsiteContent = {
+  settings: settings as SettingsContent,
   site: {
     en: siteEn as SiteContent,
     ge: siteGe as SiteContent

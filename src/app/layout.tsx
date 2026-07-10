@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
 import MetaPixel from "@/components/MetaPixel";
-import settings from "@/content/settings.json";
+import { getFullBrandName } from "@/lib/branding";
+import { getContentDocument } from "@/lib/server/contentStore";
+import type { SettingsContent } from "@/lib/types";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.URL || "http://localhost:3000"),
-  title: settings.seoTitle,
-  description: settings.seoDescription,
-  openGraph: {
-    title: settings.siteName,
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = (await getContentDocument("settings")) as SettingsContent;
+  const fullBrandName = getFullBrandName(settings);
+
+  return {
+    metadataBase: new URL(process.env.URL || "http://localhost:3000"),
+    title: settings.seoTitle || fullBrandName,
     description: settings.seoDescription,
-    type: "website"
-  },
-  icons: {
-    icon: "/favicon.svg"
-  }
-};
+    openGraph: {
+      title: fullBrandName,
+      description: settings.seoDescription,
+      type: "website"
+    },
+    icons: {
+      icon: "/favicon.svg"
+    }
+  };
+}
 
 export default function RootLayout({
   children

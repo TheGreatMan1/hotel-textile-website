@@ -31,7 +31,7 @@ if (-not (Test-LuxeTexWebsite)) {
   Start-Process `
     -WindowStyle Hidden `
     -FilePath $node `
-    -ArgumentList @($next, "dev") `
+    -ArgumentList @("`"$next`"", "dev") `
     -WorkingDirectory $projectRoot `
     -RedirectStandardOutput (Join-Path $localState "website.stdout.log") `
     -RedirectStandardError (Join-Path $localState "website.stderr.log")

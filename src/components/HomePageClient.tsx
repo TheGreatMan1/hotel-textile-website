@@ -53,6 +53,7 @@ export default function HomePageClient({ content }: HomePageClientProps) {
     <div className="public-site">
       <Header
         content={site}
+        settings={content.settings}
         allContent={content}
         language={language}
         onLanguageChange={handleLanguageChange}
@@ -72,6 +73,7 @@ export default function HomePageClient({ content }: HomePageClientProps) {
       </main>
       <Footer
         site={site}
+        settings={content.settings}
         footer={content.footer}
         language={language}
         visibleSections={visibleSections}

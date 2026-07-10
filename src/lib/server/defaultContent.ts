@@ -23,6 +23,7 @@ import type {
   ProcessContent,
   ProductsContent,
   QuoteFormContent,
+  SettingsContent,
   SiteContent,
   WebsiteContent
 } from "@/lib/types";
@@ -69,6 +70,7 @@ export function assembleWebsiteContent(
   documents: Record<ContentDocumentKey, unknown>
 ): WebsiteContent {
   return {
+    settings: documents.settings as SettingsContent,
     site: {
       en: documents["site.en"] as SiteContent,
       ge: documents["site.ge"] as SiteContent

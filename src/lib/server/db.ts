@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import initSqlJs, { type Database, type SqlJsStatic } from "sql.js";
+import { deriveBrandSettings } from "@/lib/branding";
 import {
   contentDocumentKeys,
   defaultContentDocuments,
@@ -166,6 +167,31 @@ function defaultDocument(key: ContentDocumentKey) {
   return defaultContentDocuments[key] as Record<string, any>;
 }
 
+function repairSettingsContent(db: Database) {
+  const key = "settings" as const;
+  const document = readContentDocument(db, key);
+  if (!document) return;
+
+  const derived = deriveBrandSettings(document);
+  let changed = false;
+  const next = { ...document } as Record<string, any>;
+
+  if (typeof next.brandName !== "string" || !next.brandName.trim()) {
+    next.brandName = derived.brandName;
+    changed = true;
+  }
+  if (typeof next.brandDescriptor !== "string") {
+    next.brandDescriptor = derived.brandDescriptor;
+    changed = true;
+  }
+  if (typeof next.siteName !== "string" || !next.siteName.trim()) {
+    next.siteName = derived.siteName;
+    changed = true;
+  }
+
+  if (changed) updateContentDocument(db, key, next);
+}
+
 function repairSiteDocument(
   db: Database,
   key: "site.en" | "site.ge"
@@ -293,6 +319,7 @@ function repairGalleryImages(db: Database) {
 }
 
 function repairEditorialContent(db: Database) {
+  repairSettingsContent(db);
   repairSiteDocument(db, "site.en");
   repairSiteDocument(db, "site.ge");
   repairProductDocument(db, "products.en");

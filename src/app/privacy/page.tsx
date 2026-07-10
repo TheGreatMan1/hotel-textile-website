@@ -1,12 +1,25 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { getFullBrandName } from "@/lib/branding";
+import { getContentDocument } from "@/lib/server/contentStore";
+import type { SettingsContent } from "@/lib/types";
 
-export const metadata = {
-  title: "Privacy Policy | LuxeTex Hotel Textiles",
-  description:
-    "Privacy information for quote inquiries, campaign attribution, and advertising tracking."
-};
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-export default function PrivacyPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = (await getContentDocument("settings")) as SettingsContent;
+  return {
+    title: `Privacy Policy | ${getFullBrandName(settings)}`,
+    description:
+      "Privacy information for quote inquiries, campaign attribution, and advertising tracking."
+  };
+}
+
+export default async function PrivacyPage() {
+  const settings = (await getContentDocument("settings")) as SettingsContent;
+  const fullBrandName = getFullBrandName(settings);
+
   return (
     <main className="public-site min-h-screen bg-white py-12 text-graphite dark:bg-[#161616] dark:text-white">
       <div className="container-shell max-w-3xl">
@@ -20,7 +33,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mt-5 text-base font-light leading-7 text-stone-600 dark:text-stone-300">
-          This placeholder privacy policy explains how LuxeTex Hotel Textiles
+          This placeholder privacy policy explains how {fullBrandName}
           may collect and use information from this B2B showroom website. The
           website does not process online payments and does not provide customer
           accounts.

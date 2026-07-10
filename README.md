@@ -106,6 +106,7 @@ The admin dashboard replaces Decap CMS completely.
 Admin features:
 
 - Login/logout with `ADMIN_EMAIL` and `ADMIN_PASSWORD`
+- Global brand name, descriptor, and SEO editor at `/admin/branding`
 - JSON editor for all website content documents
 - Image and catalog PDF uploads
 - Quote lead inbox
@@ -113,6 +114,7 @@ Admin features:
 
 Editable content includes:
 
+- Shared public/admin branding and SEO metadata
 - Site settings
 - English and Georgian page content
 - English and Georgian products and pricing

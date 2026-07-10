@@ -40,6 +40,13 @@ import {
   useState
 } from "react";
 import { formatPriceDisplay } from "@/lib/pricing";
+import {
+  BRAND_DESCRIPTOR_MAX_LENGTH,
+  BRAND_NAME_MAX_LENGTH,
+  deriveBrandSettings,
+  getFullBrandName,
+  replaceBrandReference
+} from "@/lib/branding";
 
 type ContentKey =
   | "settings"
@@ -65,6 +72,12 @@ type NavItem = {
   label: string;
   icon: ReactNode;
 };
+type BrandingDraft = {
+  brandName: string;
+  brandDescriptor: string;
+  seoTitle: string;
+  seoDescription: string;
+};
 
 const contentKeys: ContentKey[] = [
   "settings",
@@ -86,6 +99,7 @@ const contentKeys: ContentKey[] = [
 
 const navItems: NavItem[] = [
   { id: "dashboard", label: "Dashboard", icon: <LayoutDashboard size={18} /> },
+  { id: "branding", label: "Branding & SEO", icon: <Sparkles size={18} /> },
   { id: "hero", label: "Hero Section", icon: <Home size={18} /> },
   { id: "bed", label: "Interactive Bed", icon: <BedDouble size={18} /> },
   { id: "products", label: "Products", icon: <Package size={18} /> },
@@ -126,6 +140,12 @@ const sectionToggles = [
 ] as const;
 
 const emptyDocs = Object.fromEntries(contentKeys.map((key) => [key, {}])) as Docs;
+const emptyBrandingDraft: BrandingDraft = {
+  brandName: "",
+  brandDescriptor: "",
+  seoTitle: "",
+  seoDescription: ""
+};
 
 export default function AdminPage() {
   const pathname = usePathname();
@@ -152,6 +172,7 @@ export default function AdminPage() {
   const [jsonText, setJsonText] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [adminTheme, setAdminTheme] = useState<"light" | "dark">("light");
+  const [brandingDraft, setBrandingDraft] = useState<BrandingDraft>(emptyBrandingDraft);
 
   useEffect(() => {
     fetch("/api/admin/me")
@@ -186,6 +207,9 @@ export default function AdminPage() {
   const activeHotspotGe = hotspotsGe[selectedHotspot] || hotspotsGe[0] || {};
   const visibleProducts = productsEn.filter((product: any) => product.isVisible);
   const visibleHotspots = hotspotsEn.filter((hotspot: any) => hotspot.isVisible);
+  const currentBranding = deriveBrandSettings(docs.settings || {});
+  const adminBrandName = currentBranding.brandName || "Website";
+  const adminBrandDescriptor = currentBranding.brandDescriptor;
 
   const analytics = useMemo(() => {
     const total = leads.length;
@@ -211,7 +235,15 @@ export default function AdminPage() {
 
     if (contentResponse.ok) {
       const content = await contentResponse.json();
-      setDocs({ ...emptyDocs, ...content });
+      const mergedDocs = { ...emptyDocs, ...content } as Docs;
+      const branding = deriveBrandSettings(mergedDocs.settings || {});
+      setDocs(mergedDocs);
+      setBrandingDraft({
+        brandName: branding.brandName,
+        brandDescriptor: branding.brandDescriptor,
+        seoTitle: mergedDocs.settings?.seoTitle || branding.siteName,
+        seoDescription: mergedDocs.settings?.seoDescription || ""
+      });
     }
 
     if (leadsResponse.ok) {
@@ -278,6 +310,143 @@ export default function AdminPage() {
       setMessage(success);
     } catch {
       setMessage("Could not save content. Please try again.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function saveBranding() {
+    const brandName = brandingDraft.brandName.trim();
+    const brandDescriptor = brandingDraft.brandDescriptor.trim();
+    const seoDescription = brandingDraft.seoDescription.trim();
+    const originalBranding = deriveBrandSettings(docs.settings || {});
+    const oldFullName = getFullBrandName({
+      ...docs.settings,
+      ...originalBranding
+    });
+    const nextFullName = [brandName, brandDescriptor].filter(Boolean).join(" ");
+
+    if (!brandName) {
+      setMessage("Brand name is required.");
+      return;
+    }
+    if (brandName.length > BRAND_NAME_MAX_LENGTH) {
+      setMessage(`Brand name must be ${BRAND_NAME_MAX_LENGTH} characters or fewer.`);
+      return;
+    }
+    if (brandDescriptor.length > BRAND_DESCRIPTOR_MAX_LENGTH) {
+      setMessage(`Brand descriptor must be ${BRAND_DESCRIPTOR_MAX_LENGTH} characters or fewer.`);
+      return;
+    }
+    if (!seoDescription) {
+      setMessage("SEO description is required.");
+      return;
+    }
+    if (seoDescription.length > 180) {
+      setMessage("SEO description must be 180 characters or fewer.");
+      return;
+    }
+
+    const originalSeoTitle = String(docs.settings?.seoTitle || "").trim();
+    const enteredSeoTitle = brandingDraft.seoTitle.trim();
+    const seoTitle =
+      !enteredSeoTitle || enteredSeoTitle === originalSeoTitle
+        ? String(
+            replaceBrandReference(
+              originalSeoTitle || oldFullName,
+              originalBranding.brandName,
+              oldFullName,
+              brandName,
+              nextFullName
+            )
+          )
+        : enteredSeoTitle;
+
+    if (!seoTitle) {
+      setMessage("SEO title is required.");
+      return;
+    }
+    if (seoTitle.length > 90) {
+      setMessage("SEO title must be 90 characters or fewer.");
+      return;
+    }
+
+    const updateSiteBrand = (source: any) => {
+      const next = clone(source || {});
+      next.brandName = nextFullName;
+      if (next.about) {
+        next.about.eyebrow = replaceBrandReference(
+          next.about.eyebrow,
+          originalBranding.brandName,
+          oldFullName,
+          brandName,
+          nextFullName
+        );
+        next.about.title = replaceBrandReference(
+          next.about.title,
+          originalBranding.brandName,
+          oldFullName,
+          brandName,
+          nextFullName
+        );
+        next.about.description = replaceBrandReference(
+          next.about.description,
+          originalBranding.brandName,
+          oldFullName,
+          brandName,
+          nextFullName
+        );
+      }
+      return next;
+    };
+
+    const nextContact = clone(docs.contact || {});
+    nextContact.methods = (nextContact.methods || []).map((method: any) => {
+      if (method.value === oldFullName) {
+        return { ...method, value: nextFullName };
+      }
+      if (method.value === originalBranding.brandName) {
+        return { ...method, value: brandName };
+      }
+      return method;
+    });
+
+    const nextDocs = {
+      ...docs,
+      settings: {
+        ...docs.settings,
+        brandName,
+        brandDescriptor,
+        siteName: nextFullName,
+        seoTitle,
+        seoDescription
+      },
+      "site.en": updateSiteBrand(docs["site.en"]),
+      "site.ge": updateSiteBrand(docs["site.ge"]),
+      contact: nextContact
+    } as Docs;
+    const keys: ContentKey[] = ["settings", "site.en", "site.ge", "contact"];
+
+    setSaving(true);
+    setMessage("");
+    try {
+      const responses = await Promise.all(
+        keys.map((key) =>
+          fetch(`/api/admin/content/${key}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(nextDocs[key])
+          })
+        )
+      );
+      if (responses.some((response) => !response.ok)) {
+        throw new Error("Branding save failed");
+      }
+      setDocs(nextDocs);
+      setBrandingDraft({ brandName, brandDescriptor, seoTitle, seoDescription });
+      setMessage("Branding and SEO saved.");
+    } catch {
+      setMessage("Could not save branding. Please try again.");
     } finally {
       setSaving(false);
     }
@@ -396,7 +565,7 @@ export default function AdminPage() {
             <LogoMark />
             <div>
               <h1 className="font-serif text-3xl font-semibold text-charcoal">
-                LuxeTex Admin
+                Website Admin
               </h1>
               <p className="text-sm text-stone-500">Visual content dashboard</p>
             </div>
@@ -432,10 +601,14 @@ export default function AdminPage() {
           <div className="flex items-center gap-3">
             <LogoMark />
             <div>
-              <p className="font-serif text-3xl font-semibold leading-none">LuxeTex</p>
-              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
-                Hotel Textiles
+              <p className="max-w-[11rem] truncate font-serif text-3xl font-semibold leading-none">
+                {adminBrandName}
               </p>
+              {adminBrandDescriptor ? (
+                <p className="max-w-[11rem] truncate text-[10px] font-bold uppercase tracking-[0.22em] text-stone-400">
+                  {adminBrandDescriptor}
+                </p>
+              ) : null}
             </div>
           </div>
           <button className="lg:hidden" onClick={() => setSidebarOpen(false)} aria-label="Close menu">
@@ -464,7 +637,7 @@ export default function AdminPage() {
         </nav>
 
         <div className="mt-5 rounded-xl border border-champagne/25 bg-white/5 p-4">
-          <p className="font-serif text-xl font-semibold">LuxeTex Hotel Textiles</p>
+          <p className="font-serif text-xl font-semibold">{currentBranding.siteName}</p>
           <p className="mt-2 text-sm leading-6 text-stone-300">
             Manage showroom content, pricing, leads, and uploads.
           </p>
@@ -564,6 +737,104 @@ export default function AdminPage() {
           ) : null}
 
           <div className="contents">
+            <DashboardCard id="branding" title="Branding & SEO">
+              <div className="grid gap-5 xl:grid-cols-[1fr_19rem]">
+                <div className="space-y-4">
+                  <label className="block">
+                    <span className="admin-label">Brand Name</span>
+                    <input
+                      className="admin-input"
+                      value={brandingDraft.brandName}
+                      maxLength={BRAND_NAME_MAX_LENGTH}
+                      onChange={(event) =>
+                        setBrandingDraft((current) => ({
+                          ...current,
+                          brandName: event.target.value
+                        }))
+                      }
+                      placeholder="Example: LuxeTex"
+                    />
+                    <span className="mt-1 block text-[11px] text-stone-500">
+                      {brandingDraft.brandName.length}/{BRAND_NAME_MAX_LENGTH} characters. Shared by English and Georgian.
+                    </span>
+                  </label>
+
+                  <label className="block">
+                    <span className="admin-label">Brand Descriptor</span>
+                    <input
+                      className="admin-input"
+                      value={brandingDraft.brandDescriptor}
+                      maxLength={BRAND_DESCRIPTOR_MAX_LENGTH}
+                      onChange={(event) =>
+                        setBrandingDraft((current) => ({
+                          ...current,
+                          brandDescriptor: event.target.value
+                        }))
+                      }
+                      placeholder="Example: Hotel Textiles"
+                    />
+                    <span className="mt-1 block text-[11px] text-stone-500">
+                      Optional second line shown below the brand name.
+                    </span>
+                  </label>
+
+                  <label className="block">
+                    <span className="admin-label">SEO Page Title</span>
+                    <input
+                      className="admin-input"
+                      value={brandingDraft.seoTitle}
+                      maxLength={90}
+                      onChange={(event) =>
+                        setBrandingDraft((current) => ({
+                          ...current,
+                          seoTitle: event.target.value
+                        }))
+                      }
+                    />
+                    <span className="mt-1 block text-[11px] text-stone-500">
+                      {brandingDraft.seoTitle.length}/90 characters.
+                    </span>
+                  </label>
+
+                  <label className="block">
+                    <span className="admin-label">SEO Description</span>
+                    <textarea
+                      className="admin-input min-h-24 py-3"
+                      value={brandingDraft.seoDescription}
+                      maxLength={180}
+                      onChange={(event) =>
+                        setBrandingDraft((current) => ({
+                          ...current,
+                          seoDescription: event.target.value
+                        }))
+                      }
+                    />
+                    <span className="mt-1 block text-[11px] text-stone-500">
+                      {brandingDraft.seoDescription.length}/180 characters.
+                    </span>
+                  </label>
+                </div>
+
+                <div className="border border-stone-200 bg-[#fbf7ef] p-5 text-center">
+                  <p className="admin-label text-left">Brand Preview</p>
+                  <div className="mt-8 border-y border-stone-200 bg-white px-4 py-7">
+                    <p className="break-words text-2xl font-light uppercase tracking-[0.14em] text-graphite">
+                      {brandingDraft.brandName || "Brand Name"}
+                    </p>
+                    {brandingDraft.brandDescriptor ? (
+                      <p className="mt-2 break-words text-[9px] font-medium uppercase tracking-[0.28em] text-stone-500">
+                        {brandingDraft.brandDescriptor}
+                      </p>
+                    ) : null}
+                  </div>
+                  <p className="mt-4 text-xs leading-5 text-stone-500">
+                    Saving also updates the public header, footer, admin identity, privacy page, metadata, and known company-name copy.
+                  </p>
+                </div>
+              </div>
+              <SaveRow onSave={saveBranding} saving={saving} />
+            </DashboardCard>
+
             <DashboardCard
               id="hero"
               title="1. Hero Section Editor"
@@ -1060,7 +1331,7 @@ export default function AdminPage() {
           ) : null}
 
           <footer className="py-4 text-center text-xs text-stone-500">
-            © 2026 LuxeTex Hotel Textiles. Admin dashboard.
+            &copy; 2026 {currentBranding.siteName}. Admin dashboard.
           </footer>
         </div>
       </main>

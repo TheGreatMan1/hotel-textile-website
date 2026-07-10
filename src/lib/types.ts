@@ -36,6 +36,16 @@ export type PriceData = {
   priceNote?: string;
 };
 
+export type SettingsContent = {
+  brandName: string;
+  brandDescriptor: string;
+  siteName: string;
+  defaultLanguage: Language;
+  seoTitle: string;
+  seoDescription: string;
+  adminNote: string;
+};
+
 export type Feature = {
   title: string;
   description: string;
@@ -264,6 +274,7 @@ export type FooterContent = {
 };
 
 export type WebsiteContent = {
+  settings: SettingsContent;
   site: Record<Language, SiteContent>;
   products: Record<Language, ProductsContent>;
   interactiveBed: Record<Language, InteractiveBedContent>;

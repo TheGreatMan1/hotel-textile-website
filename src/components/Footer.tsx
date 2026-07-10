@@ -4,12 +4,14 @@ import type {
   Language,
   NavLink,
   SectionKey,
+  SettingsContent,
   SiteContent
 } from "@/lib/types";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 type FooterProps = {
   site: SiteContent;
+  settings: SettingsContent;
   footer: FooterContent;
   language: Language;
   visibleSections: Record<SectionKey, boolean>;
@@ -17,6 +19,7 @@ type FooterProps = {
 
 export default function Footer({
   site,
+  settings,
   footer,
   language,
   visibleSections
@@ -29,9 +32,8 @@ export default function Footer({
   const splitIndex = Math.ceil(navLinks.length / 2);
   const privacyLabel =
     language === "ge" ? "კონფიდენციალურობა" : "Privacy Policy";
-  const brandMain = site.brandName.replace(/\s*Hotel Textiles$/i, "");
-  const brandSub =
-    brandMain === site.brandName ? site.tagline : "Hotel Textiles";
+  const brandMain = settings.brandName;
+  const brandSub = settings.brandDescriptor;
   const columnLabels =
     language === "ge"
       ? {
@@ -54,9 +56,11 @@ export default function Footer({
                 <p className="text-lg font-light uppercase leading-none tracking-[0.12em]">
                   {brandMain}
                 </p>
-                <p className="mt-1 text-[8px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
-                  {brandSub}
-                </p>
+                {brandSub ? (
+                  <p className="mt-1 text-[8px] font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
+                    {brandSub}
+                  </p>
+                ) : null}
               </div>
             </div>
             <p className="mt-4 max-w-sm text-xs font-light leading-5 text-stone-500 dark:text-stone-400">
@@ -93,7 +97,7 @@ export default function Footer({
         </div>
 
         <div className="mt-10 border-t border-stone-300 pt-4 text-[10px] font-light text-stone-500 dark:border-stone-700">
-          &copy; {new Date().getFullYear()} {site.brandName}.{" "}
+          &copy; {new Date().getFullYear()} {settings.siteName}.{" "}
           {localized(footer.copyright, language)}
         </div>
       </div>

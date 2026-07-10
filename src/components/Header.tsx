@@ -2,7 +2,12 @@
 
 import { getSectionVisibility } from "@/lib/content";
 import { iconMap } from "@/lib/icons";
-import type { Language, SiteContent, WebsiteContent } from "@/lib/types";
+import type {
+  Language,
+  SettingsContent,
+  SiteContent,
+  WebsiteContent
+} from "@/lib/types";
 import { Menu } from "lucide-react";
 import { useMemo, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -11,6 +16,7 @@ import ThemeToggle from "./ThemeToggle";
 
 type HeaderProps = {
   content: SiteContent;
+  settings: SettingsContent;
   allContent: WebsiteContent;
   language: Language;
   onLanguageChange: (language: Language) => void;
@@ -18,6 +24,7 @@ type HeaderProps = {
 
 export default function Header({
   content,
+  settings,
   allContent,
   language,
   onLanguageChange
@@ -34,9 +41,8 @@ export default function Header({
     .filter((item) => item.isVisible)
     .sort((a, b) => a.sortOrder - b.sortOrder)
     .slice(0, 3);
-  const brandMain = content.brandName.replace(/\s*Hotel Textiles$/i, "");
-  const brandSub =
-    brandMain === content.brandName ? content.tagline : "Hotel Textiles";
+  const brandMain = settings.brandName;
+  const brandSub = settings.brandDescriptor;
 
   return (
     <header className="sticky top-0 z-40 border-b border-stone-200 bg-white text-graphite transition-colors dark:border-stone-800 dark:bg-[#161616] dark:text-white">
@@ -64,12 +70,14 @@ export default function Header({
           </div>
 
           <a href="#top" className="group text-center" aria-label="Back to top">
-            <span className="block text-[1.35rem] font-light uppercase leading-none tracking-[0.14em] transition group-hover:text-peach sm:text-[1.55rem]">
+            <span className="block max-w-[10rem] truncate text-[1.35rem] font-light uppercase leading-none tracking-[0.14em] transition group-hover:text-peach sm:max-w-[18rem] sm:text-[1.55rem]">
               {brandMain}
             </span>
-            <span className="mt-1 block text-[8px] font-medium uppercase tracking-[0.32em] text-stone-500 dark:text-stone-400">
-              {brandSub}
-            </span>
+            {brandSub ? (
+              <span className="mt-1 block max-w-[10rem] truncate text-[8px] font-medium uppercase tracking-[0.32em] text-stone-500 dark:text-stone-400 sm:max-w-[18rem]">
+                {brandSub}
+              </span>
+            ) : null}
           </a>
 
           <div className="flex items-center justify-end gap-2">
@@ -138,7 +146,8 @@ export default function Header({
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
         navLinks={navLinks}
-        brandName={content.brandName}
+        brandName={brandMain}
+        brandDescriptor={brandSub}
       />
     </header>
   );

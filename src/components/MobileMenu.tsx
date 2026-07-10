@@ -9,16 +9,16 @@ type MobileMenuProps = {
   onClose: () => void;
   navLinks: NavLink[];
   brandName: string;
+  brandDescriptor: string;
 };
 
 export default function MobileMenu({
   isOpen,
   onClose,
   navLinks,
-  brandName
+  brandName,
+  brandDescriptor
 }: MobileMenuProps) {
-  const brandMain = brandName.replace(/\s*Hotel Textiles$/i, "");
-
   return (
     <AnimatePresence>
       {isOpen ? (
@@ -42,8 +42,15 @@ export default function MobileMenu({
                 <span className="flex h-9 w-9 items-center justify-center border border-peach/60 text-peach dark:border-[#d99677]/60 dark:text-[#ebb49a]">
                   <Sparkles aria-hidden size={17} strokeWidth={1.5} />
                 </span>
-                <span className="text-xl font-light uppercase tracking-[0.12em] text-graphite dark:text-white">
-                  {brandMain}
+                <span className="min-w-0 text-graphite dark:text-white">
+                  <span className="block truncate text-xl font-light uppercase tracking-[0.12em]">
+                    {brandName}
+                  </span>
+                  {brandDescriptor ? (
+                    <span className="mt-1 block truncate text-[8px] font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
+                      {brandDescriptor}
+                    </span>
+                  ) : null}
                 </span>
               </span>
               <button
